@@ -77,9 +77,7 @@ function WelcomeScreen() {
           <Button
             title={"Anmelden"}
             onPress={() =>
-              console.log(
-                "Stell dir vor, der User " + text + " wäre jz angemeldet"
-              )
+              alert("Stell dir vor, der User " + text + " wäre jz angemeldet")
             }
           />
         )}
