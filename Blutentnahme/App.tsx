@@ -22,7 +22,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar
-        barStyle={"dark-content"}
+        barStyle={"light-content"}
         backgroundColor={styles.container.backgroundColor}
       />
       <WelcomeScreen />
@@ -33,7 +33,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "#222222",
     paddingTop: Platform.OS === "android" ? 0 : 0,
     padding: "2%",
   },

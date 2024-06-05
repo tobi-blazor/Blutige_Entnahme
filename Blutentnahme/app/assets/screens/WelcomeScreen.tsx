@@ -19,10 +19,12 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 25,
+    color: "white",
     textAlign: "center",
   },
   text: {
     fontSize: 15,
+    color: "white",
     textAlign: "center",
   },
 });
