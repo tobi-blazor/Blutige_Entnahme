@@ -9,6 +9,7 @@ export default function EntnahmeListView({
   hinweise,
 }: Patient) {
   // TODO Entnahmedatum und Entnahmemenge
+  //TODO geburtsdatum usw werden eigentlich nicht benötigt
   return (
     <View>
       <Pressable>
