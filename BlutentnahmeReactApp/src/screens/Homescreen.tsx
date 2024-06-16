@@ -20,7 +20,7 @@ export default function HomeScreen() {
       <Button
         title="Anmelden"
         color={"#841584"}
-        onPress={() => navigation.navigate("About")}
+        onPress={() => navigation.navigate("Login")}
       ></Button>
     </View>
   );

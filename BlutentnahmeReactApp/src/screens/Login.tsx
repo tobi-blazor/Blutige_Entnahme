@@ -11,10 +11,10 @@ import { RootStackParamList } from "../types/navigation";
 
 type AboutScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  "About"
+  "Login"
 >;
 
-function WelcomeScreen() {
+function Login() {
   const navigation = useNavigation<AboutScreenNavigationProp>();
   const [startScan, setStartScan] = useState<boolean>(false);
   const [hasPermission, setHasPermission] = useState<boolean | null>(null);
@@ -47,7 +47,7 @@ function WelcomeScreen() {
 
   const handleLogin = () => {
     if (employeeNumber) {
-      navigation.navigate("Mainpage");
+      navigation.navigate("MainScreen");
     } else {
       alert("Bitte geben Sie eine Mitarbeitennummer ein");
     }
@@ -151,4 +151,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WelcomeScreen;
+export default Login;
