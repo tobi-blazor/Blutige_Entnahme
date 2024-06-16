@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+
+    <title>Spring-Boot Example</title>
+    <meta name="description" content="This is an example spring boot application">
+    <meta name="author" content="Timon Sachweh">
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+    <h1>Spring Boot example</h1>
+
+    <form action="#" th:action="@{/createUser}" th:object="${user}" method="post">
+        <p>Username: <input type="text" th:field="*{username}" /></p>
+        <p>E-Mail: <input type="email" th:field="*{email}" /></p>
+        <input type="submit" />
+        <input type="reset" value="Reset" />
+    </form>
+    <div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

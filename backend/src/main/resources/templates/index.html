@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring-Boot Example</title>
+    <meta name="description" content="This is an example spring boot application">
+    <meta name="author" content="Timon Sachweh">
+</head>
+<body>
+<h1>User Overview</h1>
+<table>
+    <thead>
+    <tr>
+        <th> Username</th>
+        <th> Email</th>
+        <th> Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${users == null}">
+        <td colspan="2"> No Users stored</td>
+    </tr>
+    <tr th:each="user: ${users}">
+        <td><span th:text="${user.username}"> Username </span></td>
+        <td><span th:text="${user.email}"> Email </span></td>
+        <td>
+            <a th:href="@{'/deleteUser/{id}'(id=${user.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>
