@@ -1,21 +1,9 @@
-export default class Personal {
-  personID: number;
-  vorname: string;
-  nachname: string;
-  geburtsdatum: Date;
-  hinweise: string | null;
-
+export default class Patient {
   constructor(
-    personID: number,
-    vorname: string,
-    nachname: string,
-    geburtsdatum: Date,
-    hinweise: string | null
-  ) {
-    this.personID = personID;
-    this.vorname = vorname;
-    this.nachname = nachname;
-    this.geburtsdatum = geburtsdatum;
-    this.hinweise = hinweise;
-  }
+    public personID: string,
+    public vorname: string,
+    public nachname: string,
+    public geburtsdatum: Date,
+    public hinweise: string | null
+  ) {}
 }

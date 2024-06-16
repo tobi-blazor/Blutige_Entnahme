@@ -1,23 +1,50 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, FlatList } from "react-native";
+import { PATIENTEN } from "../../data/dummy-data";
+import EntnahmeListView from "../../components/EntnahmeListView";
+import Patient from "../../models/Patient";
+
+function renderEntnahmeItem({ item }: { item: Patient }) {
+  if (!item) {
+    console.error("Invalid item:", item);
+    return (
+      <View>
+        <Text>Invalid patient data</Text>
+      </View>
+    );
+  }
+  return (
+    <EntnahmeListView
+      personID={item.personID}
+      vorname={item.vorname}
+      nachname={item.nachname}
+      geburtsdatum={item.geburtsdatum}
+      hinweise={item.hinweise}
+    />
+  );
+}
 
 function Entnahme() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Entnahme</Text>
-    </View>
+    <FlatList
+      data={PATIENTEN}
+      keyExtractor={(item) => item.personID}
+      renderItem={renderEntnahmeItem}
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+  itemContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    borderBottomWidth: 1,
+    borderColor: "lightgray",
+    padding: 15,
   },
-  text: {
-    fontSize: 20,
-    color: "black",
+  safeViewContainer: {
+    flexDirection: "column",
+    flex: 1,
   },
 });
 
