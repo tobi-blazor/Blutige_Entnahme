@@ -1,0 +1,34 @@
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Entnahme from "./Entnahme";
+import Transporte from "./Transporte";
+import { Ionicons } from "@expo/vector-icons"; // Importiere die Icon-Bibliothek
+
+const Tab = createBottomTabNavigator();
+
+function MainScreen() {
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ color, size }) => {
+          let iconName: keyof typeof Ionicons.glyphMap;
+
+          if (route.name === "Entnahme") {
+            iconName = "clipboard" as const; // Beispiel-Icon für Entnahme
+          } else if (route.name === "Transporte") {
+            iconName = "airplane" as const; // Beispiel-Icon für Transporte
+          }
+
+          return <Ionicons name={"clipboard"} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: "#841584",
+        tabBarInactiveTintColor: "gray",
+      })}
+    >
+      <Tab.Screen name="Entnahme" component={Entnahme} />
+      <Tab.Screen name="Transporte" component={Transporte} />
+    </Tab.Navigator>
+  );
+}
+
+export default MainScreen;
