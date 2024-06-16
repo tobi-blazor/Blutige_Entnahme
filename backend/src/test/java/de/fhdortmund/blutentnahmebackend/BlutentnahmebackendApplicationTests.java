@@ -1,10 +1,10 @@
-package de.fhdortmund.seelab.springbootexample;
+package de.fhdortmund.blutentnahmebackend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootExampleApplicationTests {
+class BlutentnahmebackendApplicationTests {
 
 	@Test
 	void contextLoads() {
