@@ -1,6 +1,11 @@
 import { View, StyleSheet, Text, Pressable } from "react-native";
 import Patient from "../models/Patient";
 import { MaterialIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../src/types/navigation";
+
+type AboutScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
 export default function EntnahmeListView({
   vorname,
@@ -15,9 +20,9 @@ export default function EntnahmeListView({
 }) {
   const timeDifference =
     Math.abs(timespan.getTime() - Date.now()) / (1000 * 60); // Difference in minutes
-  // TODO Entnahmedatum und Entnahmemenge
+  const navigation = useNavigation<AboutScreenNavigationProp>();
   return (
-    <Pressable>
+    <Pressable onPress={() => navigation.navigate("Transporte")}>
       <View style={styles.itemContainer}>
         <View style={{ alignItems: "flex-start" }}>
           <Text>in {Math.floor(timeDifference)} min</Text>
