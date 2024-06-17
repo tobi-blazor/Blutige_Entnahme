@@ -1,5 +1,6 @@
 import { View, StyleSheet, Text, Pressable } from "react-native";
 import Patient from "../models/Patient";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function EntnahmeListView({
   vorname,
@@ -27,11 +28,14 @@ export default function EntnahmeListView({
             })}
           </Text>
         </View>
-        <View style={{ alignItems: "flex-end" }}>
-          <Text>
-            {vorname} {nachname}
-          </Text>
-          <Text>{anzahl}x</Text>
+        <View style={{ flexDirection: "row" }}>
+          <View style={{ alignItems: "flex-end" }}>
+            <Text>
+              {vorname} {nachname}
+            </Text>
+            <Text>{anzahl}x</Text>
+          </View>
+          <MaterialIcons name="keyboard-arrow-right" size={40} color="black" />
         </View>
       </View>
     </Pressable>
