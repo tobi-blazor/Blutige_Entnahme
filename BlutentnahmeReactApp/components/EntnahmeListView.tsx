@@ -6,20 +6,32 @@ export default function EntnahmeListView({
   nachname,
   anzahl,
   timespan,
-}: any) {
+}: {
+  vorname: string;
+  nachname: string;
+  anzahl: number;
+  timespan: Date;
+}) {
+  const timeDifference =
+    Math.abs(timespan.getTime() - Date.now()) / (1000 * 60); // Difference in minutes
   // TODO Entnahmedatum und Entnahmemenge
   return (
     <Pressable>
       <View style={styles.itemContainer}>
         <View style={{ alignItems: "flex-start" }}>
-          <Text>in xxx min</Text>
-          <Text>10:55 Uhr</Text>
+          <Text>in {Math.floor(timeDifference)} min</Text>
+          <Text>
+            {timespan.toLocaleTimeString("de-DE", {
+              hour: "2-digit",
+              minute: "2-digit",
+            })}
+          </Text>
         </View>
         <View style={{ alignItems: "flex-end" }}>
           <Text>
             {vorname} {nachname}
           </Text>
-          <Text>2x</Text>
+          <Text>{anzahl}x</Text>
         </View>
       </View>
     </Pressable>
