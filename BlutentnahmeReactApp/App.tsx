@@ -9,6 +9,7 @@ import Transporte from "./src/screens/Transporte";
 import Login from "./src/screens/Login";
 
 import { RootStackParamList } from "./src/types/navigation";
+import EntnahmeDetails from "./src/screens/EntnahmeDetails";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -23,6 +24,7 @@ export default function App() {
         />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="MainScreen" component={MainScreen} />
+        <Stack.Screen name="EntnahmeDetails" component={EntnahmeDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );

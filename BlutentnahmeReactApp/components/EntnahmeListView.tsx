@@ -5,24 +5,24 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../src/types/navigation";
 
-type AboutScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
-
 export default function EntnahmeListView({
   vorname,
   nachname,
   anzahl,
   timespan,
+  onPress,
 }: {
   vorname: string;
   nachname: string;
   anzahl: number;
   timespan: Date;
+  onPress: any; //TODO: Type definieren
 }) {
   const timeDifference =
     Math.abs(timespan.getTime() - Date.now()) / (1000 * 60); // Difference in minutes
-  const navigation = useNavigation<AboutScreenNavigationProp>();
+
   return (
-    <Pressable onPress={() => navigation.navigate("Transporte")}>
+    <Pressable onPress={onPress}>
       <View style={styles.itemContainer}>
         <View style={{ alignItems: "flex-start" }}>
           <Text>in {Math.floor(timeDifference)} min</Text>

@@ -4,5 +4,5 @@ export type RootStackParamList = {
   MainScreen: undefined;
   Transporte: undefined;
   Entnahme: undefined;
-  EntnahmeDetail: undefined;
+  EntnahmeDetails: undefined;
 };
