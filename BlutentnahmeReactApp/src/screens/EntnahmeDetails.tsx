@@ -1,9 +1,10 @@
 import { View, Text, StyleSheet } from "react-native";
 
-function EntnahmeDetails() {
+function EntnahmeDetails({ route }: any) {
+  const auftragsID = route.params.auftragsID;
   return (
     <View style={styles.container}>
-      <Text>Patient Details</Text>
+      <Text>Patient Details - {auftragsID}</Text>
     </View>
   );
 }

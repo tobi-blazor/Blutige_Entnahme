@@ -16,7 +16,9 @@ type AboutScreenNavigationProp = NativeStackNavigationProp<
 function Entnahme({ navigation }: any) {
   function renderEntnahmeItem({ item }: { item: Auftrag }) {
     function pressHandler() {
-      navigation.navigate("EntnahmeDetails");
+      navigation.navigate("EntnahmeDetails", {
+        auftragsID: item.auftragsID,
+      });
     }
 
     if (!item) {
