@@ -13,15 +13,7 @@ function renderEntnahmeItem({ item }: { item: Patient }) {
       </View>
     );
   }
-  return (
-    <EntnahmeListView
-      personID={item.personID}
-      vorname={item.vorname}
-      nachname={item.nachname}
-      geburtsdatum={item.geburtsdatum}
-      hinweise={item.hinweise}
-    />
-  );
+  return <EntnahmeListView vorname={item.vorname} nachname={item.nachname} />;
 }
 
 function Entnahme() {

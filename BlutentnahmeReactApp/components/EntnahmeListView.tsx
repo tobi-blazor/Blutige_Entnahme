@@ -1,32 +1,28 @@
-import { View, Pressable, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Pressable } from "react-native";
 import Patient from "../models/Patient";
 
 export default function EntnahmeListView({
-  personID,
   vorname,
   nachname,
-  geburtsdatum,
-  hinweise,
-}: Patient) {
+  anzahl,
+  timespan,
+}: any) {
   // TODO Entnahmedatum und Entnahmemenge
-  //TODO geburtsdatum usw werden eigentlich nicht benötigt
   return (
-    <View>
-      <Pressable>
-        <View style={styles.itemContainer}>
-          <View style={{ alignItems: "flex-start" }}>
-            <Text>in 5 min</Text>
-            <Text>10:55 Uhr</Text>
-          </View>
-          <View style={{ alignItems: "flex-end" }}>
-            <Text>
-              {vorname} {nachname}
-            </Text>
-            <Text>2x</Text>
-          </View>
+    <Pressable>
+      <View style={styles.itemContainer}>
+        <View style={{ alignItems: "flex-start" }}>
+          <Text>in xxx min</Text>
+          <Text>10:55 Uhr</Text>
         </View>
-      </Pressable>
-    </View>
+        <View style={{ alignItems: "flex-end" }}>
+          <Text>
+            {vorname} {nachname}
+          </Text>
+          <Text>2x</Text>
+        </View>
+      </View>
+    </Pressable>
   );
 }
 
