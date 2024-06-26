@@ -5,4 +5,5 @@ export type RootStackParamList = {
   Transporte: undefined;
   Entnahme: undefined;
   EntnahmeDetails: undefined;
+  Profil: undefined;
 };
