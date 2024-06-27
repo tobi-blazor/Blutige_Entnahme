@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Image} from "react-native";
 function Profil() {
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require('./hogan_example.PNG')} />
+      <Image style={styles.image} source={{uri: 'https://cdn.pixabay.com/photo/2017/08/17/10/47/paris-2650808_960_720.jpg'}} />
       <Text style={styles.text}>Profil</Text>
     </View>
   );
