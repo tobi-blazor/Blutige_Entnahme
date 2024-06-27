@@ -1,8 +1,6 @@
-package de.fhdortmund.blutentnahmebackend.entity;
+package de.fhdortmund.blutentnahmebackend;
 
-import org.springframework.context.annotation.Bean;
-
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity

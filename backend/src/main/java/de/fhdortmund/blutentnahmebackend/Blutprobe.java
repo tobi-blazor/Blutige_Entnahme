@@ -1,8 +1,8 @@
-package de.fhdortmund.blutentnahmebackend.entity;
+package de.fhdortmund.blutentnahmebackend;
 
-import de.fhdortmund.blutentnahmebackend.Personal;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
 @Entity

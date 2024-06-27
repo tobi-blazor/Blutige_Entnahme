@@ -1,6 +1,5 @@
-package de.fhdortmund.blutentnahmebackend.repo;
+package de.fhdortmund.blutentnahmebackend;
 
-import de.fhdortmund.blutentnahmebackend.entity.Auftrag;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AuftragRepository extends JpaRepository<Auftrag, Long> {
