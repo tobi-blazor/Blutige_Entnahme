@@ -6,8 +6,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PersonalController {
+
+    private final PersonalRepository personalRepository;
+
     @Autowired
-    private PersonalRepository personalRepository;
+    public PersonalController(PersonalRepository personalRepository) {
+        this.personalRepository = personalRepository;
+    }
 
     @GetMapping("/get")
     public Personal get() {

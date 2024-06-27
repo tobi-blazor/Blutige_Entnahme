@@ -1,15 +1,17 @@
 package de.fhdortmund.blutentnahmebackend;
 
-import jakarta.persistence.*;
-import java.util.Date;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
+
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "Patient")
 public class Patient {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer patientId;
+    @Column(name = "PatientID", nullable = false)
+    private Integer id;
 
     @Column(name = "Vorname", nullable = false)
     private String vorname;
@@ -18,23 +20,18 @@ public class Patient {
     private String nachname;
 
     @Column(name = "Geburtsdatum", nullable = false)
-    @Temporal(TemporalType.DATE)
-    private Date geburtsdatum;
+    private LocalDate geburtsdatum;
 
+    @Lob
     @Column(name = "Hinweise")
     private String hinweise;
 
-    // Konstruktor
-    public Patient() {
+    public Integer getId() {
+        return id;
     }
 
-    // Getter und Setter Methoden
-    public Integer getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(Integer patientId) {
-        this.patientId = patientId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getVorname() {
@@ -53,11 +50,11 @@ public class Patient {
         this.nachname = nachname;
     }
 
-    public Date getGeburtsdatum() {
+    public LocalDate getGeburtsdatum() {
         return geburtsdatum;
     }
 
-    public void setGeburtsdatum(Date geburtsdatum) {
+    public void setGeburtsdatum(LocalDate geburtsdatum) {
         this.geburtsdatum = geburtsdatum;
     }
 
@@ -68,4 +65,5 @@ public class Patient {
     public void setHinweise(String hinweise) {
         this.hinweise = hinweise;
     }
+
 }

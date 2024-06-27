@@ -1,49 +1,44 @@
 package de.fhdortmund.blutentnahmebackend;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+
+import java.time.Instant;
 
 @Entity
-@Table(name = "Auftrag")
 public class Auftrag {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer auftragsId;
+    @Column(name = "AuftragsID", nullable = false)
+    private Integer id;
 
     @Column(name = "GeplanterZeitpunkt")
-    private LocalDateTime geplanterZeitpunkt;
+    private Instant geplanterZeitpunkt;
 
-    @ManyToOne
-    @JoinColumn(name = "PatientID", referencedColumnName = "PatientID")
-    private Patient patient;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PatientID")
+    private Patient patientID;
 
-    // Konstruktor
-    public Auftrag() {
+    public Integer getId() {
+        return id;
     }
 
-    // Getter und Setter Methoden
-    public Integer getAuftragsId() {
-        return auftragsId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setAuftragsId(Integer auftragsId) {
-        this.auftragsId = auftragsId;
-    }
-
-    public LocalDateTime getGeplanterZeitpunkt() {
+    public Instant getGeplanterZeitpunkt() {
         return geplanterZeitpunkt;
     }
 
-    public void setGeplanterZeitpunkt(LocalDateTime geplanterZeitpunkt) {
+    public void setGeplanterZeitpunkt(Instant geplanterZeitpunkt) {
         this.geplanterZeitpunkt = geplanterZeitpunkt;
     }
 
-    public Patient getPatient() {
-        return patient;
+    public Patient getPatientID() {
+        return patientID;
     }
 
-    public void setPatient(Patient patient) {
-        this.patient = patient;
+    public void setPatientID(Patient patientID) {
+        this.patientID = patientID;
     }
+
 }

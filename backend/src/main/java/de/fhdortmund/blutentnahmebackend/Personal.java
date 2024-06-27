@@ -1,15 +1,16 @@
 package de.fhdortmund.blutentnahmebackend;
 
-import jakarta.persistence.*;
-import java.util.Date;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "Personal")
 public class Personal {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer personalId;
+    @Column(name = "PersonalID", nullable = false)
+    private Integer id;
 
     @Column(name = "Vorname", nullable = false)
     private String vorname;
@@ -18,20 +19,14 @@ public class Personal {
     private String nachname;
 
     @Column(name = "Geburtsdatum", nullable = false)
-    @Temporal(TemporalType.DATE)
-    private Date geburtsdatum;
+    private LocalDate geburtsdatum;
 
-    // Konstruktor
-    public Personal() {
+    public Integer getId() {
+        return id;
     }
 
-    // Getter und Setter Methoden
-    public Integer getPersonalId() {
-        return personalId;
-    }
-
-    public void setPersonalId(Integer personalId) {
-        this.personalId = personalId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getVorname() {
@@ -50,11 +45,12 @@ public class Personal {
         this.nachname = nachname;
     }
 
-    public Date getGeburtsdatum() {
+    public LocalDate getGeburtsdatum() {
         return geburtsdatum;
     }
 
-    public void setGeburtsdatum(Date geburtsdatum) {
+    public void setGeburtsdatum(LocalDate geburtsdatum) {
         this.geburtsdatum = geburtsdatum;
     }
+
 }

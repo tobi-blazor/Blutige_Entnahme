@@ -1,52 +1,46 @@
 package de.fhdortmund.blutentnahmebackend;
 
-
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Entity
-@Table(name = "Blutprobe")
 public class Blutprobe {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer probeId;
+    @Column(name = "ProbeID", nullable = false)
+    private Integer id;
 
+    @Lob
     @Column(name = "Grund")
     private String grund;
 
+    @Lob
     @Column(name = "Hinweise")
     private String hinweise;
 
     @Column(name = "MaxVerweildauer")
-    private int maxVerweildauer;
+    private Integer maxVerweildauer;
 
     @Column(name = "EntnahmeZeitpunkt")
-    private LocalDateTime entnahmeZeitpunkt;
+    private Instant entnahmeZeitpunkt;
 
     @Column(name = "Laboreingang")
-    private LocalDateTime laboreingang;
+    private Instant laboreingang;
 
     @ManyToOne
-    @JoinColumn(name = "PersonalID", referencedColumnName = "PersonalID")
-    private Personal personal;
+    @JoinColumn(name = "PersonalID")
+    private Personal personalID;
 
     @ManyToOne
-    @JoinColumn(name = "AuftragsID", referencedColumnName = "AuftragsID")
-    private Auftrag auftrag;
+    @JoinColumn(name = "AuftragsID")
+    private Auftrag auftragsID;
 
-    // Konstruktor
-    public Blutprobe() {
+    public Integer getId() {
+        return id;
     }
 
-    // Getter und Setter Methoden
-    public Integer getProbeId() {
-        return probeId;
-    }
-
-    public void setProbeId(Integer probeId) {
-        this.probeId = probeId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getGrund() {
@@ -65,43 +59,44 @@ public class Blutprobe {
         this.hinweise = hinweise;
     }
 
-    public int getMaxVerweildauer() {
+    public Integer getMaxVerweildauer() {
         return maxVerweildauer;
     }
 
-    public void setMaxVerweildauer(int maxVerweildauer) {
+    public void setMaxVerweildauer(Integer maxVerweildauer) {
         this.maxVerweildauer = maxVerweildauer;
     }
 
-    public LocalDateTime getEntnahmeZeitpunkt() {
+    public Instant getEntnahmeZeitpunkt() {
         return entnahmeZeitpunkt;
     }
 
-    public void setEntnahmeZeitpunkt(LocalDateTime entnahmeZeitpunkt) {
+    public void setEntnahmeZeitpunkt(Instant entnahmeZeitpunkt) {
         this.entnahmeZeitpunkt = entnahmeZeitpunkt;
     }
 
-    public LocalDateTime getLaboreingang() {
+    public Instant getLaboreingang() {
         return laboreingang;
     }
 
-    public void setLaboreingang(LocalDateTime laboreingang) {
+    public void setLaboreingang(Instant laboreingang) {
         this.laboreingang = laboreingang;
     }
 
-    public Personal getPersonal() {
-        return personal;
+    public Personal getPersonalID() {
+        return personalID;
     }
 
-    public void setPersonal(Personal personal) {
-        this.personal = personal;
+    public void setPersonalID(Personal personalID) {
+        this.personalID = personalID;
     }
 
-    public Auftrag getAuftrag() {
-        return auftrag;
+    public Auftrag getAuftragsID() {
+        return auftragsID;
     }
 
-    public void setAuftrag(Auftrag auftrag) {
-        this.auftrag = auftrag;
+    public void setAuftragsID(Auftrag auftragsID) {
+        this.auftragsID = auftragsID;
     }
+
 }
