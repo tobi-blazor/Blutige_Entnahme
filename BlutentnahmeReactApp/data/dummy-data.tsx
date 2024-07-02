@@ -10,7 +10,7 @@ class Timespan {
 
 // Dummy data for Blutprobe
 const blutprobe1 = new Blutprobe(
-  "BP001",
+  "BPR001",
   "Patient fasting",
   "Routine checkup",
   new Timespan(
@@ -23,7 +23,7 @@ const blutprobe1 = new Blutprobe(
 );
 
 const blutprobe2 = new Blutprobe(
-  "BP002",
+  "BPR002",
   "Patient on medication",
   "Diabetes monitoring",
   new Timespan(
@@ -36,33 +36,33 @@ const blutprobe2 = new Blutprobe(
 );
 
 const blutprobe3 = new Blutprobe(
-  "BP003",
+  "BPR003",
   "Patient fasting",
   "Lipid profile",
   new Timespan(
     new Date("2024-06-17T09:00:00Z").getTime(),
     new Date("2024-06-18T09:00:00Z").getTime()
   ),
-  new Date("2024-06-17T09:00:00Z"),
+  undefined,
   undefined, // auftrag will be assigned later
   undefined // personal will be assigned later
 );
 
 const blutprobe4 = new Blutprobe(
-  "BP004",
+  "BPR004",
   "Patient experiencing fatigue",
   "Thyroid function test",
   new Timespan(
     new Date("2024-06-17T10:00:00Z").getTime(),
     new Date("2024-06-17T14:00:00Z").getTime()
   ),
-  new Date("2024-06-17T10:00:00Z"),
+  undefined,
   undefined, // auftrag will be assigned later
   undefined // personal will be assigned later
 );
 
 const blutprobe5 = new Blutprobe(
-  "BP005",
+  "BPR005",
   "Patient on antibiotics",
   "Infection monitoring",
   new Timespan(
