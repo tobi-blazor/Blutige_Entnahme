@@ -43,7 +43,7 @@ const blutprobe3 = new Blutprobe(
     new Date("2024-06-17T09:00:00Z").getTime(),
     new Date("2024-06-18T09:00:00Z").getTime()
   ),
-  new Date("2024-06-17T09:00:00Z"),
+  undefined,
   undefined, // auftrag will be assigned later
   undefined // personal will be assigned later
 );
@@ -56,7 +56,7 @@ const blutprobe4 = new Blutprobe(
     new Date("2024-06-17T10:00:00Z").getTime(),
     new Date("2024-06-17T14:00:00Z").getTime()
   ),
-  new Date("2024-06-17T10:00:00Z"),
+  undefined,
   undefined, // auftrag will be assigned later
   undefined // personal will be assigned later
 );
