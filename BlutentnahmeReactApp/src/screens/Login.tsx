@@ -86,9 +86,11 @@ function Login() {
         {scanned && (
           <Button
             title="Anmelden"
-            onPress={() =>
-              alert(`Stell dir vor, der User ${text} wäre jetzt angemeldet`)
-            }
+            onPress={() => {
+              alert(`Stell dir vor, der User ${text} wäre jetzt angemeldet`);
+              setEmployeeNumber(text);
+              handleLogin();
+            }}
           />
         )}
       </View>
