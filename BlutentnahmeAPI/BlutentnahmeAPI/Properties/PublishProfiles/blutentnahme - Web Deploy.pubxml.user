@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Diese Datei wird vom Veröffentlichungs-/Paketierungsprozess Ihres Webprojekts verwendet. Sie können das Verhalten dieses Prozesses anpassen,
+indem Sie diese MSBuild-Datei bearbeiten. Weitere Informationen hierzu finden Sie unter https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA9gyAoOk/Jky8lhEHkYgriQAAAAACAAAAAAADZgAAwAAAABAAAABn0G9ILrrPRPI/ipUoKSVNAAAAAASAAACgAAAAEAAAACRB19cuOaVUJ7WnkEvAVNkYAAAAZEnQD6pQoHOvabxLWmLCqRMLHmsJfRlnFAAAAET8u74dbZwSFzXF8Oa82Vks2qXV</EncryptedPassword>
+    <History>False|2024-07-03T10:49:34.2658828Z;False|2024-07-03T12:48:50.0479495+02:00;False|2024-07-03T12:46:53.3379799+02:00;False|2024-07-03T12:42:50.4541439+02:00;False|2024-07-03T12:36:02.6357412+02:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="AzureDB">
+      <Value>Server=blutbase.mysql.database.azure.com%3bUserID=blutadmin%3bPassword=MK9%2aFR!3kynqG_iBebsM78CH.XZ.dVYdTi2g_yByy2ekqdVHVGX%3bDatabase=blutentnahmebackend%3bSslMode=Required%3bSslCa=DigiCertGlobalRootG2.crt.pem</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="BlutentnahmeAPI.Data.BlutentnahmeDBContext">
+      <Value>Server=blutbase.mysql.database.azure.com%3bUserID=blutadmin%3bPassword=MK9%2aFR!3kynqG_iBebsM78CH.XZ.dVYdTi2g_yByy2ekqdVHVGX%3bDatabase=blutentnahmebackend%3bSslMode=Required%3bSslCa=DigiCertGlobalRootG2.crt.pem</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
