@@ -6,4 +6,5 @@ export type RootStackParamList = {
   Entnahme: undefined;
   EntnahmeDetails: undefined;
   Profil: undefined;
+  VerifyPatient: undefined;
 };

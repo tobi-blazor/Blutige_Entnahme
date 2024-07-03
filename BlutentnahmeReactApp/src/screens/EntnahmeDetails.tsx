@@ -1,41 +1,44 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, FlatList } from "react-native";
 import Patient from "../../models/Patient";
 import Auftrag from "../../models/Auftrag";
 import { auftragArray } from "../../data/dummy-data";
 import IconGenerator from "../../components/IconGenerator";
 import Blutprobe from "../../models/Blutprobe";
 import useFetchAuftrag from "../../components/fetchAuftrag";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../types/navigation";
+import { useNavigation } from "@react-navigation/native";
+import BlutprobeListView from "../../components/BlutprobeListView";
+
+type AboutScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  "EntnahmeDetails"
+>;
 
 function EntnahmeDetails({ route }: any) {
-  const printEntnahmeDetails = (
-    entnahmeList: Blutprobe[]
-  ): React.ReactNode[] => {
-    return entnahmeList.map((entnahme, index) => (
-      <View
-        key={index}
-        style={{
-          margin: 10,
-          padding: 10,
-          borderColor: "black",
-          borderWidth: 1,
-        }}
-      >
-        <Text>Blutprobe ID: {entnahme.probeID}</Text>
-        <Text>Hinweise: {entnahme.hinweise}</Text>
-        <Text>Grund: {entnahme.grund}</Text>
-        <Text>
-          Spätester Entnahmezeitpunkt:{" "}
-          {entnahme.spätesterEntnahmezeitpunkt.toLocaleString()}
-        </Text>
-        <Text>
-          Entnahme Zeitpunkt: {entnahme.entnahmeZeitpunkt?.toLocaleString()}
-        </Text>
-      </View>
-    ));
-  };
+  const navigation = useNavigation<AboutScreenNavigationProp>();
+
+  function renderBlutproben({ item }: { item: Blutprobe }) {
+    function pressHandler() {
+      navigation.navigate("VerifyPatient", {
+        probeNr: item.probeNr,
+      });
+    }
+
+    if (!item) {
+      console.error("Invalid item:", item);
+      return (
+        <View>
+          <Text>Invalid Blutprobe data</Text>
+        </View>
+      );
+    }
+
+    return <BlutprobeListView blutprobe={item} onPress={pressHandler} />;
+  }
 
   const { auftrag, loading, error } = useFetchAuftrag(
-    "https://blutentnahme.azurewebsites.net/api/Auftraege/" +
+    "https://blutentnahme.azurewebsites.net/api/Auftraege/aktiv/" +
       route.params.auftragsID
   );
 
@@ -54,21 +57,32 @@ function EntnahmeDetails({ route }: any) {
   if (auftrag === null) {
     throw new Error("Auftrag not found");
   }
+
   return (
-    <View style={styles.container}>
-      <View style={{ borderBottomColor: "black", borderBottomWidth: 1 }}>
-        <Text style={{ fontSize: 20 }}>
+    <View style={styles.safeViewContainer}>
+      <View
+        style={{
+          borderBottomColor: "black",
+          borderBottomWidth: 1,
+          paddingHorizontal: 15,
+        }}
+      >
+        <Text style={{ fontSize: 25, textAlign: "center" }}>
           {auftrag.patient.vorname} {auftrag.patient.nachname} -{" "}
           {auftrag.auftragsID}
         </Text>
         <IconGenerator input={auftrag?.auftragsID} />
-        <Text>Geboren: {auftrag.patient.geburtsdatum.toLocaleString()}</Text>
+        <Text>Geboren: {auftrag.patient.geburtsdatum.toDateString()}</Text>
         <Text>
           Geplanter Zeitpunkt:
           {auftrag.geplanterZeitpunkt.toLocaleString()}
         </Text>
-        {printEntnahmeDetails(auftrag.entnahmeList)}
       </View>
+      <FlatList
+        data={auftrag.entnahmeList}
+        keyExtractor={(item, index) => item.probeNr + ""}
+        renderItem={renderBlutproben}
+      />
     </View>
   );
 }
@@ -76,7 +90,15 @@ function EntnahmeDetails({ route }: any) {
 export default EntnahmeDetails;
 
 const styles = StyleSheet.create({
-  container: {
+  itemContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    borderBottomWidth: 1,
+    borderColor: "lightgray",
+    padding: 15,
+  },
+  safeViewContainer: {
+    flexDirection: "column",
     flex: 1,
   },
 });
