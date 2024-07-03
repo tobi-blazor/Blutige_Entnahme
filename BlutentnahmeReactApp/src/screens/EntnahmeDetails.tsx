@@ -4,48 +4,71 @@ import Auftrag from "../../models/Auftrag";
 import { auftragArray } from "../../data/dummy-data";
 import IconGenerator from "../../components/IconGenerator";
 import Blutprobe from "../../models/Blutprobe";
+import useFetchAuftrag from "../../components/fetchAuftrag";
 
 function EntnahmeDetails({ route }: any) {
+  const printEntnahmeDetails = (
+    entnahmeList: Blutprobe[]
+  ): React.ReactNode[] => {
+    return entnahmeList.map((entnahme, index) => (
+      <View
+        key={index}
+        style={{
+          margin: 10,
+          padding: 10,
+          borderColor: "black",
+          borderWidth: 1,
+        }}
+      >
+        <Text>Blutprobe ID: {entnahme.probeID}</Text>
+        <Text>Hinweise: {entnahme.hinweise}</Text>
+        <Text>Grund: {entnahme.grund}</Text>
+        <Text>
+          Spätester Entnahmezeitpunkt:{" "}
+          {entnahme.spätesterEntnahmezeitpunkt.toLocaleString()}
+        </Text>
+        <Text>
+          Entnahme Zeitpunkt: {entnahme.entnahmeZeitpunkt?.toLocaleString()}
+        </Text>
+      </View>
+    ));
+  };
 
-  function getAuftragDetailsById(auftraege: Auftrag[], auftragId: string): Auftrag | null {
-    for (const auftrag of auftraege) {
-      if (auftrag.auftragsID === auftragId) {
-        return auftrag;
-      }
+  const { auftrag, loading, error } = useFetchAuftrag(
+    "https://blutentnahme.azurewebsites.net/api/Auftraege/" +
+      route.params.auftragsID
+  );
+
+  if (loading) {
+    return <Text>Loading...</Text>;
   }
-  return null;
-}
 
-const printEntnahmeDetails = (entnahmeList: Blutprobe[]): React.ReactNode[] => {
-  return entnahmeList.map((entnahme, index) => (
-    <View key={index} style={{ margin: 10, padding: 10, borderColor: 'black', borderWidth: 1 }}>
-      <Text>Blutprobe ID: {entnahme.probeID}</Text>
-      <Text>Hinweise: {entnahme.hinweise}</Text>
-      <Text>Grund: {entnahme.grund}</Text>
-      <Text>
-        Maximale Verweildauer: 
-        Start: {entnahme.maximaleVerweildauer.startTime.toString()}, 
-        End: {entnahme.maximaleVerweildauer.endTime?.toString()}
-      </Text>
-      <Text>Entnahme Zeitpunkt: {entnahme.entnahmeZeitpunkt?.toString()}</Text>
-    </View>
-  ));
-};
+  if (error) {
+    return <Text>Error: {error}</Text>;
+  }
 
-  const auftrag : Auftrag|null= getAuftragDetailsById(auftragArray ,route.params.auftragsID);
+  if (!auftrag) {
+    return <Text>No data</Text>;
+  }
+
   if (auftrag === null) {
-  throw new Error('Auftrag not found');
-}
+    throw new Error("Auftrag not found");
+  }
   return (
     <View style={styles.container}>
-      <View style={{borderBottomColor:"black", borderBottomWidth:1}}>
-        <Text style={{fontSize: 20}}>{auftrag.patient.vorname} {auftrag.patient.nachname} - {auftrag.auftragsID}</Text>
-        <IconGenerator input={auftrag?.auftragsID } />
-        <Text>Geboren: {auftrag.patient.geburtsdatum.toDateString()}</Text>
-        <Text>Geplanter Zeitpunkt: {auftrag.geplanterZeitpunkt.toISOString()}</Text>
-      {printEntnahmeDetails(auftrag.entnahmeList)}
+      <View style={{ borderBottomColor: "black", borderBottomWidth: 1 }}>
+        <Text style={{ fontSize: 20 }}>
+          {auftrag.patient.vorname} {auftrag.patient.nachname} -{" "}
+          {auftrag.auftragsID}
+        </Text>
+        <IconGenerator input={auftrag?.auftragsID} />
+        <Text>Geboren: {auftrag.patient.geburtsdatum.toLocaleString()}</Text>
+        <Text>
+          Geplanter Zeitpunkt:
+          {auftrag.geplanterZeitpunkt.toLocaleString()}
+        </Text>
+        {printEntnahmeDetails(auftrag.entnahmeList)}
       </View>
-
     </View>
   );
 }

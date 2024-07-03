@@ -33,7 +33,10 @@ namespace BlutentnahmeAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Auftrag>> GetAuftrag(string id)
         {
-            var auftrag = await _context.Aufträge.FindAsync(id);
+            var auftrag = await _context.Aufträge
+                .Include(auftrag => auftrag.Blutproben)
+                .Include(auftrag => auftrag.Patient)
+                .FirstOrDefaultAsync(auftrag => auftrag.AuftragsID.Equals(id));
 
             if (auftrag == null)
             {
