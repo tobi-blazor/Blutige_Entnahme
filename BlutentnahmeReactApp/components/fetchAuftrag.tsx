@@ -17,7 +17,8 @@ const deserializeAuftrag = (data: any): Auftrag => {
   const blutproben: Blutprobe[] = data.blutproben.$values.map(
     (bp: any) =>
       new Blutprobe(
-        bp.probeID,
+        bp.probeNr,
+        bp.rohrID,
         bp.hinweise,
         bp.grund,
         new Date(bp.spätesterEntnahmezeitpunkt),

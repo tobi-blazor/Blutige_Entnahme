@@ -4,29 +4,34 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../src/types/navigation";
+import Blutprobe from "../models/Blutprobe";
 
-export default function EntnahmeListView({
-  vorname,
-  nachname,
-  anzahl,
-  timespan,
+export default function BlutprobeListView({
+  blutprobe,
   onPress,
 }: {
-  vorname: string;
-  nachname: string;
-  anzahl: number;
-  timespan: Date;
+  blutprobe: Blutprobe;
   onPress: any; //TODO: Type definieren
 }) {
-  const timeDifference = (timespan.getTime() - Date.now()) / (1000 * 60); // Difference in minutes
+  if (!blutprobe) {
+    console.error("Invalid item:", blutprobe);
+    return (
+      <View>
+        <Text>Invalid patient data</Text>
+      </View>
+    );
+  }
+
+  const timeDifference =
+    (blutprobe.spätesterEntnahmezeitpunkt.getTime() - Date.now()) / (1000 * 60); // Difference in minutes
 
   return (
     <Pressable onPress={onPress}>
       <View style={styles.itemContainer}>
         <View style={{ alignItems: "flex-start" }}>
-          <Text>in {Math.floor(timeDifference)} min</Text>
+          <Text>{Math.floor(timeDifference)} min verbleiben</Text>
           <Text>
-            {timespan.toLocaleTimeString("de-DE", {
+            {blutprobe.spätesterEntnahmezeitpunkt.toLocaleTimeString("de-DE", {
               hour: "2-digit",
               minute: "2-digit",
             })}
@@ -34,10 +39,8 @@ export default function EntnahmeListView({
         </View>
         <View style={{ flexDirection: "row" }}>
           <View style={{ alignItems: "flex-end" }}>
-            <Text>
-              {vorname} {nachname}
-            </Text>
-            <Text>{anzahl}x</Text>
+            <Text>{blutprobe.grund}</Text>
+            <Text>ProbeNr: {blutprobe.probeNr}</Text>
           </View>
           <MaterialIcons name="keyboard-arrow-right" size={40} color="black" />
         </View>
