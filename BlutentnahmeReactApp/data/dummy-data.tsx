@@ -13,10 +13,7 @@ const blutprobe1 = new Blutprobe(
   "BPR001",
   "Patient fasting",
   "Routine checkup",
-  new Timespan(
-    new Date("2024-06-17T08:30:00Z").getTime(),
-    new Date("2024-06-18T08:30:00Z").getTime()
-  ),
+  new Date("2024-06-18T08:30:00Z"),
   new Date("2024-06-17T08:30:00Z"),
   undefined, // auftrag will be assigned later
   undefined // personal will be assigned later
@@ -26,10 +23,7 @@ const blutprobe2 = new Blutprobe(
   "BPR002",
   "Patient on medication",
   "Diabetes monitoring",
-  new Timespan(
-    new Date("2024-06-17T07:45:00Z").getTime(),
-    new Date("2024-06-17T16:00:00Z").getTime()
-  ),
+  new Date("2024-06-17T16:00:00Z"),
   new Date("2024-06-17T07:45:00Z"),
   undefined, // auftrag will be assigned later
   undefined // personal will be assigned later
@@ -39,10 +33,7 @@ const blutprobe3 = new Blutprobe(
   "BPR003",
   "Patient fasting",
   "Lipid profile",
-  new Timespan(
-    new Date("2024-06-17T09:00:00Z").getTime(),
-    new Date("2024-06-18T09:00:00Z").getTime()
-  ),
+    new Date("2024-06-18T09:00:00Z"),
   undefined,
   undefined, // auftrag will be assigned later
   undefined // personal will be assigned later
@@ -52,10 +43,7 @@ const blutprobe4 = new Blutprobe(
   "BPR004",
   "Patient experiencing fatigue",
   "Thyroid function test",
-  new Timespan(
-    new Date("2024-06-17T10:00:00Z").getTime(),
-    new Date("2024-06-17T14:00:00Z").getTime()
-  ),
+  new Date("2024-06-17T14:00:00Z"),
   undefined,
   undefined, // auftrag will be assigned later
   undefined // personal will be assigned later
@@ -65,10 +53,7 @@ const blutprobe5 = new Blutprobe(
   "BPR005",
   "Patient on antibiotics",
   "Infection monitoring",
-  new Timespan(
-    new Date("2024-06-17T11:00:00Z").getTime(),
-    new Date("2024-06-17T18:00:00Z").getTime()
-  ),
+  new Date("2024-06-17T18:00:00Z"),
   new Date("2024-06-17T11:00:00Z"),
   undefined, // auftrag will be assigned later
   undefined // personal will be assigned later

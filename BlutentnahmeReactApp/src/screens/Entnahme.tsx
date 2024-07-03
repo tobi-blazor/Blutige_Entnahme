@@ -1,19 +1,49 @@
-import React from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
-import { auftragArray } from "../../data/dummy-data";
+import React, { useEffect, useState } from "react";
+import { View, Text, StyleSheet, FlatList, ActivityIndicator } from "react-native";
 import EntnahmeListView from "../../components/EntnahmeListView";
 import Patient from "../../models/Patient";
 import Auftrag from "../../models/Auftrag";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types/navigation";
+import { fetchAktiveAuftraege } from "../../components/api_requests";
 
 type AboutScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   "Entnahme"
 >;
 
+
+
 function Entnahme({ navigation }: any) {
+
+  const [auftraege, setAuftraege] = useState<Auftrag[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const data = await fetchAktiveAuftraege();
+        setAuftraege(data);
+      } catch (error) {
+        setError("Failed to fetch data");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
+
+  if (loading) {
+    return <ActivityIndicator size="large" color="#0000ff" />;
+  }
+
+  if (error) {
+    return <Text>{error}</Text>;
+  }
+
   function renderEntnahmeItem({ item }: { item: Auftrag }) {
     function pressHandler() {
       navigation.navigate("EntnahmeDetails", {
@@ -45,7 +75,7 @@ function Entnahme({ navigation }: any) {
 
   return (
     <FlatList
-      data={auftragArray}
+      data={auftraege}
       keyExtractor={(item) => item.auftragsID}
       renderItem={renderEntnahmeItem}
     />
