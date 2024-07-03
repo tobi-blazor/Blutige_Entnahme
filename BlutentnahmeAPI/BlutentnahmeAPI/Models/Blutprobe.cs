@@ -16,6 +16,5 @@ namespace BlutentnahmeAPI.Models
         public Personal? Personal { get; set; }
         public Auftrag Auftrag { get; set; } = null!;
         public DateTime? LaborEingang { get; set; }
-        public Labor? Labor { get; set; } = null!;
     }
 }
