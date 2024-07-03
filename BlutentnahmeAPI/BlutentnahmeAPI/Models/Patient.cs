@@ -10,6 +10,6 @@ namespace BlutentnahmeAPI.Models
         public string Nachname { get; set; }
         public DateTime Geburtsdatum { get; set; }
         public string Hinweise { get; set; }
-        public IEnumerable<Auftrag> Aufträge { get; set; }
+        public ICollection<Auftrag> Aufträge { get; } = new List<Auftrag>();
     }
 }
