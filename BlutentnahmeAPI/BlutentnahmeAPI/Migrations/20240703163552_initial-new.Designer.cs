@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlutentnahmeAPI.Migrations
 {
     [DbContext(typeof(BlutentnahmeDBContext))]
-    [Migration("20240702143816_laboreingang_vergessen")]
-    partial class laboreingang_vergessen
+    [Migration("20240703163552_initial-new")]
+    partial class initialnew
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,36 +43,42 @@ namespace BlutentnahmeAPI.Migrations
 
             modelBuilder.Entity("BlutentnahmeAPI.Models.Blutprobe", b =>
                 {
-                    b.Property<string>("ProbeID")
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("ProbeNr")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
                     b.Property<string>("AuftragsID")
                         .HasColumnType("varchar(255)");
 
-                    b.Property<DateTime>("EntnahmeZeitpunkt")
+                    b.Property<DateTime?>("EntnahmeZeitpunkt")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Grund")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Hinweise")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("LaborEingang")
+                    b.Property<DateTime?>("LaborEingang")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<TimeSpan>("MaximaleVerweildauer")
-                        .HasColumnType("time(6)");
-
-                    b.Property<string>("PersonalPersonID")
-                        .IsRequired()
+                    b.Property<string>("LaborID")
                         .HasColumnType("varchar(255)");
 
-                    b.HasKey("ProbeID");
+                    b.Property<string>("PersonalPersonID")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("RohrID")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("spätesterEntnahmezeitpunkt")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("ProbeNr");
 
                     b.HasIndex("AuftragsID");
+
+                    b.HasIndex("LaborID");
 
                     b.HasIndex("PersonalPersonID");
 
@@ -142,7 +148,7 @@ namespace BlutentnahmeAPI.Migrations
             modelBuilder.Entity("BlutentnahmeAPI.Models.Auftrag", b =>
                 {
                     b.HasOne("BlutentnahmeAPI.Models.Patient", "Patient")
-                        .WithMany()
+                        .WithMany("Aufträge")
                         .HasForeignKey("PatientPersonID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -153,18 +159,42 @@ namespace BlutentnahmeAPI.Migrations
             modelBuilder.Entity("BlutentnahmeAPI.Models.Blutprobe", b =>
                 {
                     b.HasOne("BlutentnahmeAPI.Models.Auftrag", "Auftrag")
-                        .WithMany()
+                        .WithMany("Blutproben")
                         .HasForeignKey("AuftragsID");
 
+                    b.HasOne("BlutentnahmeAPI.Models.Labor", "Labor")
+                        .WithMany("Blutproben")
+                        .HasForeignKey("LaborID");
+
                     b.HasOne("BlutentnahmeAPI.Models.Personal", "Personal")
-                        .WithMany()
-                        .HasForeignKey("PersonalPersonID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Blutentnahmen")
+                        .HasForeignKey("PersonalPersonID");
 
                     b.Navigation("Auftrag");
 
+                    b.Navigation("Labor");
+
                     b.Navigation("Personal");
+                });
+
+            modelBuilder.Entity("BlutentnahmeAPI.Models.Auftrag", b =>
+                {
+                    b.Navigation("Blutproben");
+                });
+
+            modelBuilder.Entity("BlutentnahmeAPI.Models.Labor", b =>
+                {
+                    b.Navigation("Blutproben");
+                });
+
+            modelBuilder.Entity("BlutentnahmeAPI.Models.Patient", b =>
+                {
+                    b.Navigation("Aufträge");
+                });
+
+            modelBuilder.Entity("BlutentnahmeAPI.Models.Personal", b =>
+                {
+                    b.Navigation("Blutentnahmen");
                 });
 #pragma warning restore 612, 618
         }
