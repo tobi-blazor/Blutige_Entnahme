@@ -131,7 +131,7 @@ namespace BlutentnahmeAPI.Controllers
 
         // nur nicht entnommene Blutproben sind drin
         // GET: api/Auftraege/aktiv/5
-        [HttpGet("aktuell/{id}")]
+        [HttpGet("aktiv/{id}")]
         public async Task<ActionResult<Auftrag>> GetAktivenlAuftrag(string id)
         {
             var auftrag = await _context.Aufträge
