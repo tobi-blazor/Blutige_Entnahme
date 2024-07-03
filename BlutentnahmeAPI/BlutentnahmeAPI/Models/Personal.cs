@@ -9,7 +9,7 @@ namespace BlutentnahmeAPI.Models
         public string Vorname { get; set; }
         public string Nachname { get; set; }
         public DateTime Geburtsdatum { get; set; }
-        public IEnumerable<Blutprobe> Blutentnahmen { get; set; }
+        public ICollection<Blutprobe> Blutentnahmen { get; } = new List<Blutprobe>();
 
     }
 }

@@ -7,5 +7,6 @@ namespace BlutentnahmeAPI.Models
         [Key]
         public string LaborID { get; set; }
         public string Name { get; set; }
+        public ICollection<Blutprobe> Blutproben { get; } = new List<Blutprobe>();
     }
 }

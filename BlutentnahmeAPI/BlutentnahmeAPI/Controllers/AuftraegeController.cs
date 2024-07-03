@@ -116,10 +116,14 @@ namespace BlutentnahmeAPI.Controllers
         }
 
         // GET: api/Auftraege/aktiv
-        [HttpGet("/aktiv")]
+        [HttpGet("aktiv")]
         public async Task<ActionResult<IEnumerable<Auftrag>>> GetAktiveAufträge()
         {
-            return await _context.Aufträge.Where(auftrag => auftrag.Blutproben.Any(probe =>probe.EntnahmeZeitpunkt == null)).ToListAsync();
+            return await _context.Aufträge
+                .Include(auftrag => auftrag.Blutproben)
+                .Include(auftrag => auftrag.Patient)
+                .Where(auftrag => auftrag.Blutproben.Any(probe =>probe.EntnahmeZeitpunkt == null))
+                .ToListAsync();
         }
 
 
