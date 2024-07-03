@@ -7,7 +7,7 @@ namespace BlutentnahmeAPI.Models
         [Key]
         public string AuftragsID  { get; set; }
         public DateTime GeplanterZeitpunkt { get; set; }
-        public Patient Patient { get; set; }
-        public IEnumerable<Blutprobe> Blutproben { get; set; }
+        public Patient Patient { get; set; } = null!;
+        public ICollection<Blutprobe> Blutproben { get; } = new List<Blutprobe>();
     }
 }
