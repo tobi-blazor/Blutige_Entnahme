@@ -3,6 +3,6 @@
 ################################################################################
 
 /.vs
-/BlutentnahmeAPI/.vs
-/BlutentnahmeAPI/BlutentnahmeAPI/obj
-/BlutentnahmeAPI/BlutentnahmeAPI/bin
+/BlutentnahmeAPI/.vs/**
+/BlutentnahmeAPI/BlutentnahmeAPI/obj/**
+/BlutentnahmeAPI/BlutentnahmeAPI/bin/**
