@@ -24,7 +24,8 @@ const deserializeAuftrag = (data: any): Auftrag => {
         new Date(bp.spätesterEntnahmezeitpunkt),
         bp.entnahmeZeitpunkt ? new Date(bp.entnahmeZeitpunkt) : undefined,
         undefined, // We'll populate this later
-        undefined // Assuming personal is not provided in the API response
+        undefined, // Assuming personal is not provided in the API response
+        bp.laborEingang ? new Date(bp.laborEingang) : undefined
       )
   );
 
