@@ -166,6 +166,40 @@ namespace BlutentnahmeAPI.Controllers
         }
 
 
+        // PUT: api/Blutproben/entnommen/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("transport/{id}")]
+        public async Task<IActionResult> PutBlutprobeInLaborTransportiert(int id)
+        {
+
+            var blutprobe = await _context.Blutproben.FindAsync(id);
+            if (blutprobe == null)
+            {
+                return NotFound();
+            }
+
+            blutprobe.LaborEingang = DateTime.Now;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!BlutprobeExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+
 
         private bool BlutprobeExists(int id)
         {
