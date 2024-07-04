@@ -7,15 +7,16 @@ import Qrscan from "../../components/Qrscan";
 
 type AboutScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  "VerifyPatient"
+  "VerifyRohr"
 >;
 
-function VerifyPatient({ route }: any) {
+function VerifyRohr({ route }: any) {
   const navigation = useNavigation<AboutScreenNavigationProp>();
-  let [patientID, setPatientID] = useState("");
+  let [rohrID, setRohrID] = useState("");
+  let [scanComplete, setScanComplete] = useState(false);
 
   const handleScan = (scannedValue: string) => {
-    setPatientID(scannedValue);
+    setRohrID(scannedValue);
     showAlert(scannedValue);
   };
 
@@ -26,28 +27,32 @@ function VerifyPatient({ route }: any) {
       [
         {
           text: "Wiederholen",
-          onPress: () => setPatientID(""),
+          onPress: () => setRohrID(""),
           style: "cancel",
         },
         {
           text: "OK",
-          onPress: () => navigation.navigate("VerifyRohr"),
+          onPress: () => setScanComplete(true),
         },
       ],
       { cancelable: false }
     );
   };
 
-  if (patientID == "") {
+  if (rohrID == "") {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>PatientID: {patientID}</Text>
-        <Text>{route.params.probeNr}</Text>
-
         <Qrscan onScan={handleScan} />
+      </View>
+    );
+  } else if (scanComplete) {
+    return (
+      <View>
+        <Text>Rohr: {rohrID}</Text>
+        <Button title="Abschließen" />
       </View>
     );
   }
 }
 
-export default VerifyPatient;
+export default VerifyRohr;
