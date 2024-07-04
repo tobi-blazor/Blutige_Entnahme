@@ -11,6 +11,6 @@ export default class Blutprobe {
     public entnahmeZeitpunkt: Date | undefined,
     public auftrag: Auftrag | undefined,
     public personal: Personal | undefined,
-    public laborEingang: Date
+    public laborEingang: Date | undefined
   ) {}
 }

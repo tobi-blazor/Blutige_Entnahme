@@ -123,6 +123,50 @@ namespace BlutentnahmeAPI.Controllers
         }
 
 
+        // PUT: api/Blutproben/entnommen/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("entnommen/{id}")]
+        public async Task<IActionResult> PutEntnommeneBlutprobe(int id, string rohrID, string personalID)
+        {
+
+            var blutprobe = await _context.Blutproben.FindAsync(id);
+            if (blutprobe == null)
+            {
+                return NotFound();
+            }
+
+            var personal = await _context.Personal.FindAsync(personalID);
+
+            if (personal == null)
+            {
+                return NotFound();
+            }
+
+            blutprobe.EntnahmeZeitpunkt = DateTime.Now;
+            blutprobe.RohrID = rohrID;
+            blutprobe.Personal = personal;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!BlutprobeExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+
+
         private bool BlutprobeExists(int id)
         {
             return _context.Blutproben.Any(e => e.ProbeNr == id);
