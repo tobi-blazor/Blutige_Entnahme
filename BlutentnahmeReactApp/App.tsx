@@ -11,6 +11,7 @@ import Login from "./src/screens/Login";
 import { RootStackParamList } from "./src/types/navigation";
 import EntnahmeDetails from "./src/screens/EntnahmeDetails";
 import VerifyPatient from "./src/screens/VerifyPatient";
+import VerifyRohr from "./src/screens/VerifyRohr";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -27,6 +28,7 @@ export default function App() {
         <Stack.Screen name="MainScreen" component={MainScreen} />
         <Stack.Screen name="EntnahmeDetails" component={EntnahmeDetails} />
         <Stack.Screen name="VerifyPatient" component={VerifyPatient} />
+        <Stack.Screen name="VerifyRohr" component={VerifyRohr} />
       </Stack.Navigator>
     </NavigationContainer>
   );
