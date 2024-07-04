@@ -22,6 +22,7 @@ function EntnahmeDetails({ route }: any) {
     function pressHandler() {
       navigation.navigate("VerifyPatient", {
         probeNr: item.probeNr,
+        auftrag: auftrag,
       });
     }
 
@@ -69,9 +70,9 @@ function EntnahmeDetails({ route }: any) {
       >
         <Text style={{ fontSize: 25, textAlign: "center" }}>
           {auftrag.patient.vorname} {auftrag.patient.nachname} -{" "}
-          {auftrag.auftragsID}
+          {auftrag.patient.personID}
         </Text>
-        <IconGenerator input={auftrag?.auftragsID} />
+        <IconGenerator input={auftrag?.patient.personID} />
         <Text>Geboren: {auftrag.patient.geburtsdatum.toDateString()}</Text>
         <Text>
           Geplanter Zeitpunkt:
