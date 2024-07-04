@@ -1,6 +1,6 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList, Button } from "react-native";
 import { RootStackParamList } from "../types/navigation";
 import { useNavigation } from "@react-navigation/native";
 import Blutprobe from "../../models/Blutprobe";
@@ -50,6 +50,7 @@ function Transporte() {
 
   return (
     <View style={styles.safeViewContainer}>
+      <Button title="Scannen und abgeben" />
       <FlatList
         data={blutproben}
         keyExtractor={(item, index) => item.probeNr + ""}
