@@ -10,6 +10,7 @@ export default class Blutprobe {
     public spätesterEntnahmezeitpunkt: Date, // richtiger Datentyp?
     public entnahmeZeitpunkt: Date | undefined,
     public auftrag: Auftrag | undefined,
-    public personal: Personal | undefined
+    public personal: Personal | undefined,
+    public laborEingang: Date
   ) {}
 }

@@ -4,21 +4,24 @@ import { View, Text, StyleSheet, FlatList, Button, Alert } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import Qrscan from "../../components/Qrscan";
+import useFetchBlutprobe from "../../components/fetchBlutprobe";
 
 type AboutScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   "VerifyRohr"
 >;
 
-function VerifyRohr({ route }: any) {
+function VerifyRohr({ route }: { route: any }) {
   const navigation = useNavigation<AboutScreenNavigationProp>();
   let [rohrID, setRohrID] = useState("");
-  let [scanComplete, setScanComplete] = useState(false);
+  const { probeNr, patientID } = route.params;
 
   const handleScan = (scannedValue: string) => {
-    setRohrID(scannedValue);
-    showAlert(scannedValue);
+    rohrID = scannedValue;
+    showAlert(rohrID);
   };
+
+  function pressHandler() {}
 
   const showAlert = (scannedValue: string) => {
     Alert.alert(
@@ -32,7 +35,12 @@ function VerifyRohr({ route }: any) {
         },
         {
           text: "OK",
-          onPress: () => setScanComplete(true),
+          onPress: () =>
+            navigation.navigate("FinishEntnahme", {
+              probeNr: probeNr,
+              patientID: patientID,
+              rohrID: scannedValue,
+            }),
         },
       ],
       { cancelable: false }
@@ -45,13 +53,8 @@ function VerifyRohr({ route }: any) {
         <Qrscan onScan={handleScan} />
       </View>
     );
-  } else if (scanComplete) {
-    return (
-      <View>
-        <Text>Rohr: {rohrID}</Text>
-        <Button title="Abschließen" />
-      </View>
-    );
+  } else {
+    return <Text> Irgendwas schiefgelaufen</Text>;
   }
 }
 
