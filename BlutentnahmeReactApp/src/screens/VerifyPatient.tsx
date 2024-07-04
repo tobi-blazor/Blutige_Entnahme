@@ -13,6 +13,7 @@ type AboutScreenNavigationProp = NativeStackNavigationProp<
 function VerifyPatient({ route }: any) {
   const navigation = useNavigation<AboutScreenNavigationProp>();
   let [patientID, setPatientID] = useState("");
+  const [probeNr, setProbeNr] = useState(route.params.probeNr);
 
   const handleScan = (scannedValue: string) => {
     setPatientID(scannedValue);
@@ -31,7 +32,11 @@ function VerifyPatient({ route }: any) {
         },
         {
           text: "OK",
-          onPress: () => navigation.navigate("VerifyRohr"),
+          onPress: () =>
+            navigation.navigate("VerifyRohr", {
+              probeNr: probeNr,
+              patientID: scannedValue,
+            }),
         },
       ],
       { cancelable: false }
@@ -42,7 +47,7 @@ function VerifyPatient({ route }: any) {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <Text>PatientID: {patientID}</Text>
-        <Text>{route.params.probeNr}</Text>
+        <Text>{probeNr}</Text>
 
         <Qrscan onScan={handleScan} />
       </View>

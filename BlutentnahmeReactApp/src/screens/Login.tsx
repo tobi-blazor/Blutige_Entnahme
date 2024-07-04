@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { View, Text, StyleSheet, Button, TextInput } from "react-native";
 import {
   BarCodeScanner,
@@ -8,6 +8,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types/navigation";
+import { GlobalContext } from "../../components/CreateContext";
 
 type AboutScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -21,6 +22,12 @@ function Login() {
   const [scanned, setScanned] = useState(false);
   const [text, setText] = useState("Nichts gescannt");
   const [employeeNumber, setEmployeeNumber] = useState<string>("");
+  const context = useContext(GlobalContext);
+  if (!context) {
+    throw new Error("SomeComponent must be used within a GlobalProvider");
+  }
+
+  const { globalState, setGlobalState } = context;
 
   const scanIDwithCamera = () => {
     console.log("open camera");
@@ -47,6 +54,7 @@ function Login() {
 
   const handleLogin = () => {
     if (employeeNumber) {
+      setGlobalState({ ...globalState, personalID: employeeNumber });
       navigation.navigate("MainScreen");
     } else {
       alert("Bitte geben Sie eine Mitarbeitennummer ein");
