@@ -17,13 +17,15 @@ const deserializeAuftrag = (data: any): Auftrag => {
   const blutproben: Blutprobe[] = data.blutproben.$values.map(
     (bp: any) =>
       new Blutprobe(
-        bp.probeID,
+        bp.probeNr,
+        bp.rohrID,
         bp.hinweise,
         bp.grund,
         new Date(bp.spätesterEntnahmezeitpunkt),
         bp.entnahmeZeitpunkt ? new Date(bp.entnahmeZeitpunkt) : undefined,
         undefined, // We'll populate this later
-        undefined // Assuming personal is not provided in the API response
+        undefined, // Assuming personal is not provided in the API response
+        bp.laborEingang ? new Date(bp.laborEingang) : undefined
       )
   );
 

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, Button, TextInput } from "react-native";
+import React, { useState, useEffect, useContext } from "react";
+import { View, Text, StyleSheet, Button, TextInput, Alert } from "react-native";
 import {
   BarCodeScanner,
   BarCodeEvent,
@@ -8,6 +8,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types/navigation";
+import { GlobalContext } from "../../components/CreateContext";
 
 type AboutScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -20,7 +21,15 @@ function Login() {
   const [hasPermission, setHasPermission] = useState<boolean | null>(null);
   const [scanned, setScanned] = useState(false);
   const [text, setText] = useState("Nichts gescannt");
-  const [employeeNumber, setEmployeeNumber] = useState<string>("");
+  let [employeeNumber, setEmployeeNumber] = useState<string>("");
+  const [employeeData, setEmployeeData] = useState(null);
+
+  const context = useContext(GlobalContext);
+  if (!context) {
+    throw new Error("SomeComponent must be used within a GlobalProvider");
+  }
+
+  const { globalState, setGlobalState } = context;
 
   const scanIDwithCamera = () => {
     console.log("open camera");
@@ -46,11 +55,39 @@ function Login() {
   };
 
   const handleLogin = () => {
-    if (employeeNumber) {
-      navigation.navigate("MainScreen");
-    } else {
-      alert("Bitte geben Sie eine Mitarbeitennummer ein");
+    verifyEmployeeID(employeeNumber);
+  };
+
+  const verifyEmployeeID = async (id: string) => {
+    try {
+      const response = await fetch(
+        `https://blutentnahme.azurewebsites.net/api/Personal/${id}`
+      );
+      if (response.ok && employeeNumber != "") {
+        const data = await response.json();
+        setEmployeeData(data);
+        setGlobalState({ ...globalState, personalID: employeeNumber });
+        navigation.navigate("MainScreen");
+      } else {
+        showErrorAlert();
+      }
+    } catch (error) {
+      showErrorAlert();
     }
+  };
+
+  const showErrorAlert = () => {
+    Alert.alert(
+      "Fehler",
+      "Personal konnte nicht verifiziert werden. Bitte erneut versuchen.",
+      [
+        {
+          text: "OK",
+          onPress: () => setEmployeeNumber(""),
+        },
+      ],
+      { cancelable: false }
+    );
   };
 
   if (hasPermission === null) {
@@ -86,9 +123,10 @@ function Login() {
         {scanned && (
           <Button
             title="Anmelden"
-            onPress={() =>
-              alert(`Stell dir vor, der User ${text} wäre jetzt angemeldet`)
-            }
+            onPress={() => {
+              employeeNumber = text;
+              handleLogin();
+            }}
           />
         )}
       </View>

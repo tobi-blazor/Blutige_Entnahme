@@ -129,6 +129,24 @@ namespace BlutentnahmeAPI.Controllers
                 .ToListAsync();
         }
 
+        // nur nicht entnommene Blutproben sind drin
+        // GET: api/Auftraege/aktiv/5
+        [HttpGet("aktiv/{id}")]
+        public async Task<ActionResult<Auftrag>> GetAktivenlAuftrag(string id)
+        {
+            var auftrag = await _context.Aufträge
+                .Include(auftrag => auftrag.Blutproben.Where(blutprobe => blutprobe.EntnahmeZeitpunkt == null))
+                .Include(auftrag => auftrag.Patient)
+                .FirstOrDefaultAsync(auftrag => auftrag.AuftragsID.Equals(id));
+
+            if (auftrag == null)
+            {
+                return NotFound();
+            }
+
+            return auftrag;
+        }
+
 
 
         private bool AuftragExists(string id)
