@@ -40,8 +40,9 @@ namespace BlutentnahmeAPI.Migrations
 
             modelBuilder.Entity("BlutentnahmeAPI.Models.Blutprobe", b =>
                 {
-                    b.Property<string>("ProbeID")
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("ProbeNr")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
                     b.Property<string>("AuftragsID")
                         .HasColumnType("varchar(255)");
@@ -50,49 +51,30 @@ namespace BlutentnahmeAPI.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Grund")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Hinweise")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<DateTime?>("LaborEingang")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("LaborID")
+                    b.Property<string>("PersonalPersonID")
                         .HasColumnType("varchar(255)");
 
-                    b.Property<string>("PersonalPersonID")
-                        .IsRequired()
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("RohrID")
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("spätesterEntnahmezeitpunkt")
                         .HasColumnType("datetime(6)");
 
-                    b.HasKey("ProbeID");
+                    b.HasKey("ProbeNr");
 
                     b.HasIndex("AuftragsID");
-
-                    b.HasIndex("LaborID");
 
                     b.HasIndex("PersonalPersonID");
 
                     b.ToTable("Blutproben");
-                });
-
-            modelBuilder.Entity("BlutentnahmeAPI.Models.Labor", b =>
-                {
-                    b.Property<string>("LaborID")
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("LaborID");
-
-                    b.ToTable("Labore");
                 });
 
             modelBuilder.Entity("BlutentnahmeAPI.Models.Patient", b =>
@@ -158,29 +140,16 @@ namespace BlutentnahmeAPI.Migrations
                         .WithMany("Blutproben")
                         .HasForeignKey("AuftragsID");
 
-                    b.HasOne("BlutentnahmeAPI.Models.Labor", "Labor")
-                        .WithMany("Blutproben")
-                        .HasForeignKey("LaborID");
-
                     b.HasOne("BlutentnahmeAPI.Models.Personal", "Personal")
                         .WithMany("Blutentnahmen")
-                        .HasForeignKey("PersonalPersonID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PersonalPersonID");
 
                     b.Navigation("Auftrag");
-
-                    b.Navigation("Labor");
 
                     b.Navigation("Personal");
                 });
 
             modelBuilder.Entity("BlutentnahmeAPI.Models.Auftrag", b =>
-                {
-                    b.Navigation("Blutproben");
-                });
-
-            modelBuilder.Entity("BlutentnahmeAPI.Models.Labor", b =>
                 {
                     b.Navigation("Blutproben");
                 });

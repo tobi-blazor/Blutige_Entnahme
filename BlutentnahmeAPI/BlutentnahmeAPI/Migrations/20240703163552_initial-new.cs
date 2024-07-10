@@ -1,12 +1,13 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using MySql.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
 namespace BlutentnahmeAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class initialnew : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -82,28 +83,36 @@ namespace BlutentnahmeAPI.Migrations
                 name: "Blutproben",
                 columns: table => new
                 {
-                    ProbeID = table.Column<string>(type: "varchar(255)", nullable: false),
-                    MaximaleVerweildauer = table.Column<TimeSpan>(type: "time(6)", nullable: false),
-                    Grund = table.Column<string>(type: "longtext", nullable: false),
-                    Hinweise = table.Column<string>(type: "longtext", nullable: false),
-                    EntnahmeZeitpunkt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    PersonalPersonID = table.Column<string>(type: "varchar(255)", nullable: false),
-                    AuftragsID = table.Column<string>(type: "varchar(255)", nullable: true)
+                    ProbeNr = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    RohrID = table.Column<string>(type: "longtext", nullable: true),
+                    spätesterEntnahmezeitpunkt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    Grund = table.Column<string>(type: "longtext", nullable: true),
+                    Hinweise = table.Column<string>(type: "longtext", nullable: true),
+                    EntnahmeZeitpunkt = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    PersonalPersonID = table.Column<string>(type: "varchar(255)", nullable: true),
+                    AuftragsID = table.Column<string>(type: "varchar(255)", nullable: true),
+                    LaborEingang = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    LaborID = table.Column<string>(type: "varchar(255)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Blutproben", x => x.ProbeID);
+                    table.PrimaryKey("PK_Blutproben", x => x.ProbeNr);
                     table.ForeignKey(
                         name: "FK_Blutproben_Aufträge_AuftragsID",
                         column: x => x.AuftragsID,
                         principalTable: "Aufträge",
                         principalColumn: "AuftragsID");
                     table.ForeignKey(
+                        name: "FK_Blutproben_Labore_LaborID",
+                        column: x => x.LaborID,
+                        principalTable: "Labore",
+                        principalColumn: "LaborID");
+                    table.ForeignKey(
                         name: "FK_Blutproben_Personal_PersonalPersonID",
                         column: x => x.PersonalPersonID,
                         principalTable: "Personal",
-                        principalColumn: "PersonID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "PersonID");
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -118,6 +127,11 @@ namespace BlutentnahmeAPI.Migrations
                 column: "AuftragsID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Blutproben_LaborID",
+                table: "Blutproben",
+                column: "LaborID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Blutproben_PersonalPersonID",
                 table: "Blutproben",
                 column: "PersonalPersonID");
@@ -130,10 +144,10 @@ namespace BlutentnahmeAPI.Migrations
                 name: "Blutproben");
 
             migrationBuilder.DropTable(
-                name: "Labore");
+                name: "Aufträge");
 
             migrationBuilder.DropTable(
-                name: "Aufträge");
+                name: "Labore");
 
             migrationBuilder.DropTable(
                 name: "Personal");
