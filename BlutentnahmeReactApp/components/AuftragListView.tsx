@@ -13,7 +13,7 @@ export default function AuftragListView({
   timespan: Date;
   onPress: any; //TODO: Type definieren
 }) {
-  const timeDifference = (timespan.getTime() - Date.now()) / (1000 * 60); // Difference in minutes
+  const timeDifference = (timespan.getTime() - Date.now()) / (1000 * 60);
 
   return (
     <Pressable onPress={onPress}>
