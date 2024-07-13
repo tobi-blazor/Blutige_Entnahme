@@ -1,15 +1,14 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types/navigation";
-import { View, Text, StyleSheet, FlatList, Button, Alert } from "react-native";
+import { View, Text, StyleSheet, Alert } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import Qrscan from "../../components/Qrscan";
-import useFetchBlutprobe from "../../components/fetchBlutprobe";
 import IconGenerator from "../../components/IconGenerator";
 
 type AboutScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  "VerifyRohr"
+  "AddRohr"
 >;
 
 function VerifyRohr({ route }: { route: any }) {
@@ -21,8 +20,6 @@ function VerifyRohr({ route }: { route: any }) {
     rohrID = scannedValue;
     showAlert(rohrID);
   };
-
-  function pressHandler() {}
 
   const showAlert = (scannedValue: string) => {
     Alert.alert(

@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import Patient from "../models/Patient";
-import Blutprobe from "../models/Blutprobe";
-import Auftrag from "../models/Auftrag";
 
 // Helper function to deserialize JSON into class instances
 const deserializePatient = (data: any): Patient => {

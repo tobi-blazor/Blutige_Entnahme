@@ -7,7 +7,7 @@ export default class Blutprobe {
     public rohrID: string | undefined,
     public hinweise: string | undefined,
     public grund: string | undefined,
-    public spätesterEntnahmezeitpunkt: Date, // richtiger Datentyp?
+    public spätesterEntnahmezeitpunkt: Date,
     public entnahmeZeitpunkt: Date | undefined,
     public auftrag: Auftrag | undefined,
     public personal: Personal | undefined,

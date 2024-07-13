@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, Button, TextInput } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 import {
   BarCodeScanner,
   BarCodeEvent,
   BarCodeScannedCallback,
 } from "expo-barcode-scanner";
-import { useNavigation } from "@react-navigation/native";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 function Qrscan({ onScan }: { onScan: (value: string) => void }) {
   const [hasPermission, setHasPermission] = useState<boolean | null>(true);

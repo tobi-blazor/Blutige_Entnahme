@@ -13,8 +13,6 @@ type AboutScreenNavigationProp = NativeStackNavigationProp<
 >;
 
 function Transporte() {
-  const navigation = useNavigation<AboutScreenNavigationProp>();
-
   function renderBlutproben({ item }: { item: Blutprobe }) {
     if (!item) {
       console.error("Invalid item:", item);
