@@ -9,7 +9,7 @@ import BlutprobeListView from "../../components/BlutprobeListView";
 
 type AboutScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  "EntnahmeDetails"
+  "AuftragDetails"
 >;
 
 function AuftragDetails({ route }: any) {

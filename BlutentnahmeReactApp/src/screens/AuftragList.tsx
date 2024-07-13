@@ -25,28 +25,27 @@ function AuftragList({ navigation }: any) {
 
   function renderEntnahmeItem({ item }: { item: Auftrag }) {
     function pressHandler() {
-      navigation.navigate("EntnahmeDetails", {
+      navigation.navigate("AuftragDetails", {
         auftragsID: item.auftragsID,
       });
     }
 
     if (!item) {
-      console.error("Invalid item:", item);
       return (
         <View>
-          <Text>Invalid patient data</Text>
+          <Text>Ungültige Daten</Text>
         </View>
       );
     }
 
-    const vorname = item.patient.vorname ?? "Unknown";
-    const nachname = item.patient.nachname ?? "Unknown";
+    const vorname = item.patient.vorname ?? "Unbekannt";
+    const nachname = item.patient.nachname ?? "Unbekannt";
     return (
       <AuftragListView
         vorname={vorname}
         nachname={nachname}
-        anzahl={item.entnahmeList.length} // Example: Number of Blutprobe entries
-        timespan={item.geplanterZeitpunkt} // Example: Planned time
+        anzahl={item.entnahmeList.length}
+        timespan={item.geplanterZeitpunkt}
         onPress={pressHandler}
       />
     );

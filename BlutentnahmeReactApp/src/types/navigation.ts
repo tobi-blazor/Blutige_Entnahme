@@ -6,7 +6,7 @@ export type RootStackParamList = {
   MainScreen: undefined;
   Transporte: undefined;
   Aufträge: undefined;
-  EntnahmeDetails: undefined;
+  AuftragDetails: undefined;
   Profil: undefined;
   VerifyPatient: { probeNr: number; auftrag: Auftrag | null };
   AddRohr: { probeNr: number; patientID: string; auftrag: Auftrag | null };
