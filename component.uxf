@@ -1,0 +1,25 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLGeneric</id><coordinates><x>396</x><y>108</y><w>180</w><h>36</h></coordinates><panel_attributes>symbol=component
+Benutzeroberfläche</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>396</x><y>243</y><w>126</w><h>72</h></coordinates><panel_attributes>&lt;&lt;executable&gt;&gt;
+App.ipa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>81</x><y>234</y><w>126</w><h>45</h></coordinates><panel_attributes>&lt;&lt;source&gt;&gt;
+LoginScreen.js</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>396</x><y>459</y><w>126</w><h>90</h></coordinates><panel_attributes>&lt;&lt;source&gt;&gt;
+ScanScreen.js</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>180</x><y>351</y><w>225</w><h>36</h></coordinates><panel_attributes>&lt;&lt;source&gt;&gt;
+PlannedOverviewScreen.js</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLFrame</id><coordinates><x>45</x><y>90</y><w>783</w><h>594</h></coordinates><panel_attributes>Mobile_App_Application</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>459</x><y>135</y><w>81</w><h>126</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;manifest&gt;&gt;</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>90</x><y>477</y><w>126</w><h>36</h></coordinates><panel_attributes>&lt;&lt;library&gt;&gt;
+React Native</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>198</x><y>243</y><w>216</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>10;20;220;20</additional_attributes></element><element><id>Relation</id><coordinates><x>234</x><y>279</y><w>180</w><h>90</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>10;80;10;20;180;20</additional_attributes></element><element><id>Relation</id><coordinates><x>441</x><y>306</y><w>27</w><h>171</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>10;170;10;10</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>630</x><y>225</y><w>153</w><h>36</h></coordinates><panel_attributes>symbol=artifact
+package.json</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>630</x><y>567</y><w>153</w><h>36</h></coordinates><panel_attributes>symbol=artifact
+index.js</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>666</x><y>423</y><w>108</w><h>45</h></coordinates><panel_attributes>symbol=artifact
+app.json</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>144</x><y>270</y><w>27</w><h>225</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>10;230;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>189</x><y>378</y><w>27</w><h>117</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>207</x><y>477</y><w>207</w><h>36</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>10;20;210;20</additional_attributes></element><element><id>Relation</id><coordinates><x>477</x><y>306</y><w>216</w><h>279</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;
+</panel_attributes><additional_attributes>190;290;190;60;10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>513</x><y>234</y><w>135</w><h>45</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;
+</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>513</x><y>270</y><w>261</w><h>171</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;
+</panel_attributes><additional_attributes>270;170;270;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>459</y><w>27</w><h>126</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>189</x><y>504</y><w>522</w><h>153</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>10;10;10;150;560;150;560;110</additional_attributes></element></diagram>
