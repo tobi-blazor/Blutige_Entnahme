@@ -1,4 +1,3 @@
-import { FlatList } from "react-native";
 import Blutprobe from "./Blutprobe";
 export default class Personal {
   constructor(

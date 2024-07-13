@@ -1,9 +1,5 @@
 import { View, StyleSheet, Text, Pressable } from "react-native";
-import Patient from "../models/Patient";
 import { MaterialIcons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../src/types/navigation";
 import Blutprobe from "../models/Blutprobe";
 
 export default function BlutprobeListView({

@@ -2,16 +2,13 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./src/screens/Homescreen";
-import AboutScreen from "./src/screens/Login";
 import MainScreen from "./src/screens/MainScreen";
-import Entnahme from "./src/screens/Entnahme";
-import Transporte from "./src/screens/Transporte";
 import Login from "./src/screens/Login";
 
 import { RootStackParamList } from "./src/types/navigation";
-import EntnahmeDetails from "./src/screens/EntnahmeDetails";
+import AuftragDetails from "./src/screens/AuftragDetails";
 import VerifyPatient from "./src/screens/VerifyPatient";
-import VerifyRohr from "./src/screens/VerifyRohr";
+import AddRohr from "./src/screens/AddRohr";
 import FinishEntnahme from "./src/screens/FinishEntnahme";
 import { GlobalProvider } from "./components/CreateContext";
 
@@ -29,9 +26,9 @@ export default function App() {
           />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="MainScreen" component={MainScreen} />
-          <Stack.Screen name="EntnahmeDetails" component={EntnahmeDetails} />
+          <Stack.Screen name="EntnahmeDetails" component={AuftragDetails} />
           <Stack.Screen name="VerifyPatient" component={VerifyPatient} />
-          <Stack.Screen name="VerifyRohr" component={VerifyRohr} />
+          <Stack.Screen name="AddRohr" component={AddRohr} />
           <Stack.Screen name="FinishEntnahme" component={FinishEntnahme} />
         </Stack.Navigator>
       </NavigationContainer>
