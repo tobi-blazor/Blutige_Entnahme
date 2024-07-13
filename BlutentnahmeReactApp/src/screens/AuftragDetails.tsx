@@ -1,7 +1,4 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
-import Patient from "../../models/Patient";
-import Auftrag from "../../models/Auftrag";
-import { auftragArray } from "../../data/dummy-data";
 import IconGenerator from "../../components/IconGenerator";
 import Blutprobe from "../../models/Blutprobe";
 import useFetchAuftrag from "../../components/fetchAuftrag";
@@ -12,10 +9,10 @@ import BlutprobeListView from "../../components/BlutprobeListView";
 
 type AboutScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
-  "EntnahmeDetails"
+  "AuftragDetails"
 >;
 
-function EntnahmeDetails({ route }: any) {
+function AuftragDetails({ route }: any) {
   const navigation = useNavigation<AboutScreenNavigationProp>();
 
   function renderBlutproben({ item }: { item: Blutprobe }) {
@@ -88,7 +85,7 @@ function EntnahmeDetails({ route }: any) {
   );
 }
 
-export default EntnahmeDetails;
+export default AuftragDetails;
 
 const styles = StyleSheet.create({
   itemContainer: {

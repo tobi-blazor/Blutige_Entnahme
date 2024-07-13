@@ -52,7 +52,7 @@ function VerifyPatient({ route }: any) {
         {
           text: "OK",
           onPress: () =>
-            navigation.navigate("VerifyRohr", {
+            navigation.navigate("AddRohr", {
               probeNr: probeNr,
               patientID: scannedValue,
               auftrag: auftrag,

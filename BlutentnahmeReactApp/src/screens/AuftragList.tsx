@@ -6,20 +6,11 @@ import {
   FlatList,
   ActivityIndicator,
 } from "react-native";
-import EntnahmeListView from "../../components/EntnahmeListView";
-import Patient from "../../models/Patient";
+import AuftragListView from "../../components/AuftragListView";
 import Auftrag from "../../models/Auftrag";
-import { useNavigation } from "@react-navigation/native";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../types/navigation";
 import useFetchAuftraege from "../../components/fetchAuftraege";
 
-type AboutScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
-  "Entnahme"
->;
-
-function Entnahme({ navigation }: any) {
+function AuftragList({ navigation }: any) {
   const { auftraege, loading, error } = useFetchAuftraege(
     "https://blutentnahme.azurewebsites.net/api/Auftraege/aktiv"
   );
@@ -34,28 +25,27 @@ function Entnahme({ navigation }: any) {
 
   function renderEntnahmeItem({ item }: { item: Auftrag }) {
     function pressHandler() {
-      navigation.navigate("EntnahmeDetails", {
+      navigation.navigate("AuftragDetails", {
         auftragsID: item.auftragsID,
       });
     }
 
     if (!item) {
-      console.error("Invalid item:", item);
       return (
         <View>
-          <Text>Invalid patient data</Text>
+          <Text>Ungültige Daten</Text>
         </View>
       );
     }
 
-    const vorname = item.patient.vorname ?? "Unknown";
-    const nachname = item.patient.nachname ?? "Unknown";
+    const vorname = item.patient.vorname ?? "Unbekannt";
+    const nachname = item.patient.nachname ?? "Unbekannt";
     return (
-      <EntnahmeListView
+      <AuftragListView
         vorname={vorname}
         nachname={nachname}
-        anzahl={item.entnahmeList.length} // Example: Number of Blutprobe entries
-        timespan={item.geplanterZeitpunkt} // Example: Planned time
+        anzahl={item.entnahmeList.length}
+        timespan={item.geplanterZeitpunkt}
         onPress={pressHandler}
       />
     );
@@ -84,4 +74,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Entnahme;
+export default AuftragList;
