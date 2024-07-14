@@ -45,10 +45,10 @@ function Transporte() {
   if (blutproben === null) {
     throw new Error("Keine Blutproben");
   }
-
+//TODO: Hier muss das Aufrufen des Barcodescanners reingeschrieben werden. Barcodescanner wurde schon in Login.tsx genutzt, gutes vorbild
   return (
     <View style={styles.safeViewContainer}>
-      <Button title="Scannen und abgeben" />
+      <Button title="Scannen und abgeben" /> 
       <FlatList
         data={blutproben}
         keyExtractor={(item, index) => item.probeNr + ""}
