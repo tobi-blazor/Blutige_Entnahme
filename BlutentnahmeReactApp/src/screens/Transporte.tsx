@@ -1,6 +1,6 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React, { useState, useEffect, useContext } from "react";
-import { View, Text, StyleSheet, FlatList, Button } from "react-native";
+import { View, Text, StyleSheet, FlatList, Button, Alert } from "react-native";
 import { RootStackParamList } from "../types/navigation";
 import { useNavigation } from "@react-navigation/native";
 import Blutprobe from "../../models/Blutprobe";
@@ -19,20 +19,54 @@ type AboutScreenNavigationProp = NativeStackNavigationProp<
 
 function Transporte() {
   const [startScan, setStartScan] = useState<boolean>(false);
-  const [scanned, setScanned] = useState(false);
+
   const [text, setText] = useState("Nichts gescannt");
 
   const handleBarCodeScanned: BarCodeScannedCallback = ({
     type,
     data,
   }: BarCodeEvent) => {
-    setScanned(true);
     setText(data);
     setStartScan(false);
     console.log("Type: " + type + "\nData: " + data);
     //TODO: Hier sollt die put aufgerufen werden mit der aktuellen sys time
   };
 
+  /*
+  const putRequest = async (probe:string) => {
+    const currentDate = new Date();
+    try
+    {
+      const response = await fetch("https://blutentnahme.azurewebsites.net/api/Blutproben", {
+        method: "PUT",
+        body: JSON.stringify({
+          id: probe,
+          laborEingang: currentDate.getTime(),
+        }),
+      })
+      if (response.ok) {
+        const data = await response.json();
+      } else {
+        showErrorAlert();
+      }
+    }catch (error) {
+      showErrorAlert();
+    }
+  };
+
+  const showErrorAlert = () => {
+    Alert.alert(
+      "Fehler",
+      "Röhrchen konnte nicht geupdated werden",
+      [
+        {
+          text: "OK",
+        },
+      ],
+      { cancelable: false }
+    );
+  };
+*/
   function renderBlutproben({ item }: { item: Blutprobe }) {
     if (!item) {
       console.error("Invalid item:", item);
@@ -69,12 +103,13 @@ function Transporte() {
   {
     return (
       <View style={styles.container}>
-          <View style={styles.barcodescanner}>
+          <View style={styles.container}>
             <BarCodeScanner
-              onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-              style={{ height: 400, width: 400 }}
+              onBarCodeScanned={handleBarCodeScanned}
+              style={{ height: 600, width: 500 }}
             />
-            <Button title = "Abbrechen" onPress={() => setStartScan(false)}/>
+            <Text>{text}</Text>
+            <Button title = "Abbrechen" onPress={() => {setStartScan(false)}}/>
           </View>
       </View>
     );
