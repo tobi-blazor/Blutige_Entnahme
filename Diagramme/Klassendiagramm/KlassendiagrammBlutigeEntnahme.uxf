@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>330</x>
-      <y>696</y>
+      <x>774</x>
+      <y>582</y>
       <w>63</w>
       <h>36</h>
     </coordinates>
@@ -22,8 +22,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>417</x>
-      <y>624</y>
+      <x>861</x>
+      <y>510</y>
       <w>63</w>
       <h>30</h>
     </coordinates>
@@ -37,8 +37,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>324</x>
-      <y>516</y>
+      <x>768</x>
+      <y>402</y>
       <w>63</w>
       <h>27</h>
     </coordinates>
@@ -52,8 +52,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>327</x>
-      <y>627</y>
+      <x>771</x>
+      <y>513</y>
       <w>63</w>
       <h>39</h>
     </coordinates>
@@ -71,8 +71,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>408</x>
-      <y>495</y>
+      <x>852</x>
+      <y>381</y>
       <w>153</w>
       <h>36</h>
     </coordinates>
@@ -90,8 +90,8 @@ BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>387</x>
-      <y>633</y>
+      <x>831</x>
+      <y>519</y>
       <w>36</w>
       <h>12</h>
     </coordinates>
@@ -102,8 +102,8 @@ BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>390</x>
-      <y>651</y>
+      <x>834</x>
+      <y>537</y>
       <w>63</w>
       <h>66</h>
     </coordinates>
@@ -114,8 +114,8 @@ BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>357</x>
-      <y>528</y>
+      <x>801</x>
+      <y>414</y>
       <w>66</w>
       <h>105</h>
     </coordinates>
@@ -125,8 +125,8 @@ BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>405</x>
-      <y>447</y>
+      <x>849</x>
+      <y>333</y>
       <w>63</w>
       <h>27</h>
     </coordinates>
@@ -141,8 +141,8 @@ BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>435</x>
-      <y>471</y>
+      <x>879</x>
+      <y>357</y>
       <w>9</w>
       <h>30</h>
     </coordinates>
@@ -152,8 +152,8 @@ BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>288</x>
-      <y>639</y>
+      <x>732</x>
+      <y>525</y>
       <w>45</w>
       <h>12</h>
     </coordinates>
@@ -164,8 +164,8 @@ BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>210</x>
-      <y>627</y>
+      <x>654</x>
+      <y>513</y>
       <w>81</w>
       <h>30</h>
     </coordinates>
@@ -182,8 +182,8 @@ BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>351</x>
-      <y>663</y>
+      <x>795</x>
+      <y>549</y>
       <w>27</w>
       <h>39</h>
     </coordinates>
@@ -194,16 +194,17 @@ BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>207</x>
-      <y>513</y>
+      <x>651</x>
+      <y>396</y>
       <w>72</w>
-      <h>36</h>
+      <h>39</h>
     </coordinates>
-    <panel_attributes>Auftrag
+    <panel_attributes>&lt;&lt;DTO&gt;&gt;
+Auftrag
 --
 - AuftragsID: String
 - GeplanterZeitpunkt: DateTime
-- Blutproben: ICollection&lt;Blutprobe&gt;
+- Blutproben: Blutprobe[]
 - Patient: Patient
 --
 </panel_attributes>
@@ -212,19 +213,20 @@ BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>216</x>
-      <y>570</y>
+      <x>660</x>
+      <y>456</y>
       <w>63</w>
-      <h>45</h>
+      <h>51</h>
     </coordinates>
-    <panel_attributes>Patient
+    <panel_attributes>&lt;&lt;DTO&gt;&gt;
+Patient
 --
 - PersonID: String
 - Vorname: String
 - Nachname: String
 - Geburtsdatum: DateTime
 - Hinweise: String
-- Aufträge: ICollection&lt;Auftrag&gt;
+- Aufträge: Auftrag[]
 --
 </panel_attributes>
     <additional_attributes/>
@@ -232,8 +234,8 @@ BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>303</x>
-      <y>429</y>
+      <x>747</x>
+      <y>315</y>
       <w>81</w>
       <h>39</h>
     </coordinates>
@@ -243,7 +245,7 @@ BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
 - Vorname: String
 - Nachname: String
 - Geburtsdatum: DateTime
-- Blutentnahmen: ICollection&lt;Blutprobe&gt;
+- Blutentnahmen: Blutprobe[]
 --
 </panel_attributes>
     <additional_attributes/>
@@ -251,12 +253,13 @@ BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>195</x>
-      <y>429</y>
+      <x>639</x>
+      <y>312</y>
       <w>84</w>
-      <h>57</h>
+      <h>60</h>
     </coordinates>
-    <panel_attributes>Blutprobe
+    <panel_attributes>&lt;&lt;DTO&gt;&gt;
+Blutprobe
 --
 - ProbeNr: int
 - RohrID: String?
@@ -274,22 +277,22 @@ BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>249</x>
-      <y>483</y>
+      <x>693</x>
+      <y>369</y>
       <w>15</w>
-      <h>36</h>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=0..*
 bg=black</panel_attributes>
-    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>249</x>
-      <y>546</y>
+      <x>693</x>
+      <y>432</y>
       <w>15</w>
       <h>30</h>
     </coordinates>
@@ -301,8 +304,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>276</x>
-      <y>450</y>
+      <x>720</x>
+      <y>336</y>
       <w>33</w>
       <h>12</h>
     </coordinates>
@@ -315,8 +318,8 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>384</x>
-      <y>522</y>
+      <x>828</x>
+      <y>408</y>
       <w>30</w>
       <h>9</h>
     </coordinates>
@@ -326,8 +329,8 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>345</x>
-      <y>465</y>
+      <x>789</x>
+      <y>351</y>
       <w>21</w>
       <h>57</h>
     </coordinates>
@@ -338,8 +341,8 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>276</x>
-      <y>477</y>
+      <x>720</x>
+      <y>363</y>
       <w>57</w>
       <h>45</h>
     </coordinates>
@@ -350,8 +353,8 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>276</x>
-      <y>525</y>
+      <x>720</x>
+      <y>411</y>
       <w>54</w>
       <h>12</h>
     </coordinates>
@@ -362,8 +365,8 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>276</x>
-      <y>540</y>
+      <x>720</x>
+      <y>426</y>
       <w>63</w>
       <h>54</h>
     </coordinates>
@@ -374,8 +377,8 @@ bg=black</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>441</x>
-      <y>564</y>
+      <x>885</x>
+      <y>450</y>
       <w>135</w>
       <h>51</h>
     </coordinates>
@@ -395,8 +398,8 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>489</x>
-      <y>528</y>
+      <x>933</x>
+      <y>414</y>
       <w>9</w>
       <h>42</h>
     </coordinates>
@@ -406,8 +409,8 @@ bg=black</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>582</x>
-      <y>531</y>
+      <x>1026</x>
+      <y>417</y>
       <w>135</w>
       <h>51</h>
     </coordinates>
@@ -428,8 +431,8 @@ bg=black</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>582</x>
-      <y>459</y>
+      <x>1026</x>
+      <y>345</y>
       <w>135</w>
       <h>66</h>
     </coordinates>
@@ -453,8 +456,8 @@ bg=black</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>477</x>
-      <y>384</y>
+      <x>921</x>
+      <y>270</y>
       <w>135</w>
       <h>66</h>
     </coordinates>
@@ -477,8 +480,8 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>558</x>
-      <y>513</y>
+      <x>1002</x>
+      <y>399</y>
       <w>30</w>
       <h>9</h>
     </coordinates>
@@ -488,8 +491,8 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>528</y>
+      <x>957</x>
+      <y>414</y>
       <w>75</w>
       <h>27</h>
     </coordinates>
@@ -499,12 +502,331 @@ bg=black</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>522</x>
-      <y>447</y>
+      <x>966</x>
+      <y>333</y>
       <w>9</w>
       <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>459</x>
+      <y>429</y>
+      <w>63</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>VerifyPatient
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>363</x>
+      <y>348</y>
+      <w>63</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>App
+--
++ Stack:
+--
+
+????</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>459</x>
+      <y>480</y>
+      <w>63</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>AuftragDetails
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>459</x>
+      <y>573</y>
+      <w>63</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>FinishEntnahme
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>267</x>
+      <y>417</y>
+      <w>63</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Homescreen
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>264</x>
+      <y>264</y>
+      <w>63</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Login
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>186</x>
+      <y>417</y>
+      <w>63</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>MainScreen
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>183</x>
+      <y>261</y>
+      <w>63</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Profile
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>363</x>
+      <y>261</y>
+      <w>63</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Transporte
+--
+-styles:StyleSheet
+--
++ Transporte()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>465</x>
+      <y>531</y>
+      <w>63</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>AddRohr
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>630</y>
+      <w>63</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>Qrscan
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>453</x>
+      <y>258</y>
+      <w>87</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>TransportListView
+--
+-styles:StyleSheet
+--
+TransportListView(blutprobe: Blutprobe)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>357</x>
+      <y>516</y>
+      <w>63</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>IconGenerator
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>369</x>
+      <y>456</y>
+      <w>63</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>AuftragListView
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>357</x>
+      <y>570</y>
+      <w>63</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>BlutprobeListView
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>402</x>
+      <y>219</y>
+      <w>63</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Text
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>477</x>
+      <y>219</y>
+      <w>63</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>View
+--
+
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>537</x>
+      <y>276</y>
+      <w>138</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>440.0;120.0;440.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>453</x>
+      <y>240</y>
+      <w>9</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>495</x>
+      <y>240</y>
+      <w>9</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>423</x>
+      <y>270</y>
+      <w>36</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
   </element>
 </diagram>
