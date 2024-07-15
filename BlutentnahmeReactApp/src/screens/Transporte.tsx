@@ -32,41 +32,7 @@ function Transporte() {
     //TODO: Hier sollt die put aufgerufen werden mit der aktuellen sys time
   };
 
-  /*
-  const putRequest = async (probe:string) => {
-    const currentDate = new Date();
-    try
-    {
-      const response = await fetch("https://blutentnahme.azurewebsites.net/api/Blutproben", {
-        method: "PUT",
-        body: JSON.stringify({
-          id: probe,
-          laborEingang: currentDate.getTime(),
-        }),
-      })
-      if (response.ok) {
-        const data = await response.json();
-      } else {
-        showErrorAlert();
-      }
-    }catch (error) {
-      showErrorAlert();
-    }
-  };
 
-  const showErrorAlert = () => {
-    Alert.alert(
-      "Fehler",
-      "Röhrchen konnte nicht geupdated werden",
-      [
-        {
-          text: "OK",
-        },
-      ],
-      { cancelable: false }
-    );
-  };
-*/
   function renderBlutproben({ item }: { item: Blutprobe }) {
     if (!item) {
       console.error("Invalid item:", item);
