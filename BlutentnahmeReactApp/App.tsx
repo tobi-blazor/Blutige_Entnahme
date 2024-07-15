@@ -26,7 +26,7 @@ export default function App() {
           />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="MainScreen" component={MainScreen} />
-          <Stack.Screen name="EntnahmeDetails" component={AuftragDetails} />
+          <Stack.Screen name="AuftragDetails" component={AuftragDetails} />
           <Stack.Screen name="VerifyPatient" component={VerifyPatient} />
           <Stack.Screen name="AddRohr" component={AddRohr} />
           <Stack.Screen name="FinishEntnahme" component={FinishEntnahme} />
