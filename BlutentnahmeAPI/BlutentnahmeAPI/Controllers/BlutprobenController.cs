@@ -172,7 +172,7 @@ namespace BlutentnahmeAPI.Controllers
         public async Task<IActionResult> PutBlutprobeInLaborTransportiert(string id)
         {
 
-            var blutprobe = await _context.Blutproben.SingleOrDefaultAsync(b => b.RohrID == id);
+            var blutprobe = await _context.Blutproben.FirstOrDefaultAsync(b => b.RohrID == id);
             if (blutprobe == null)
             {
                 return NotFound();
