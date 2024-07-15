@@ -1,11 +1,16 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { View, Text, StyleSheet, FlatList, Button } from "react-native";
 import { RootStackParamList } from "../types/navigation";
 import { useNavigation } from "@react-navigation/native";
 import Blutprobe from "../../models/Blutprobe";
 import TransportListView from "../../components/TransportListView";
 import useFetchBlutproben from "../../components/fetchBlutproben";
+import {
+  BarCodeScanner,
+  BarCodeEvent,
+  BarCodeScannedCallback,
+} from "expo-barcode-scanner";
 
 type AboutScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -13,6 +18,21 @@ type AboutScreenNavigationProp = NativeStackNavigationProp<
 >;
 
 function Transporte() {
+  const [startScan, setStartScan] = useState<boolean>(false);
+  const [scanned, setScanned] = useState(false);
+  const [text, setText] = useState("Nichts gescannt");
+
+  const handleBarCodeScanned: BarCodeScannedCallback = ({
+    type,
+    data,
+  }: BarCodeEvent) => {
+    setScanned(true);
+    setText(data);
+    setStartScan(false);
+    console.log("Type: " + type + "\nData: " + data);
+    //TODO: Hier sollt die put aufgerufen werden mit der aktuellen sys time
+  };
+
   function renderBlutproben({ item }: { item: Blutprobe }) {
     if (!item) {
       console.error("Invalid item:", item);
@@ -45,17 +65,33 @@ function Transporte() {
   if (blutproben === null) {
     throw new Error("Keine Blutproben");
   }
-//TODO: Hier muss das Aufrufen des Barcodescanners reingeschrieben werden. Barcodescanner wurde schon in Login.tsx genutzt, gutes vorbild
-  return (
-    <View style={styles.safeViewContainer}>
-      <Button title="Scannen und abgeben" /> 
-      <FlatList
-        data={blutproben}
-        keyExtractor={(item, index) => item.probeNr + ""}
-        renderItem={renderBlutproben}
-      />
-    </View>
-  );
+  if(startScan)
+  {
+    return (
+      <View style={styles.container}>
+          <View style={styles.barcodescanner}>
+            <BarCodeScanner
+              onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+              style={{ height: 400, width: 400 }}
+            />
+            <Button title = "Abbrechen" onPress={() => setStartScan(false)}/>
+          </View>
+      </View>
+    );
+  }
+  if(startScan === false)
+  {
+    return (
+        <View style={styles.safeViewContainer}>
+          <Button title="Scannen und abgeben" onPress={() => setStartScan(true)}/> 
+          <FlatList
+            data={blutproben}
+            keyExtractor={(item, index) => item.probeNr + ""}
+            renderItem={renderBlutproben}
+          />
+        </View>
+      );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -70,6 +106,14 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     flex: 1,
   },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  barcodescanner: {
+    marginBottom: 20,
+  }
 });
 
 export default Transporte;
