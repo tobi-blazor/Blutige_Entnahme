@@ -30,8 +30,22 @@ function Transporte() {
     setStartScan(false);
     console.log("Type: " + type + "\nData: " + data);
     //TODO: Hier sollt die put aufgerufen werden mit der aktuellen sys time
+    fetchRequest(data);
   };
 
+  const fetchRequest = async (id:string) => {
+    const apiUrl = 'https://blutentnahme.azurewebsites.net/api/Blutproben/transport/' + id;
+    console.log(apiUrl);
+    const response = await fetch(apiUrl, {
+      method: "PUT",
+      body: JSON.stringify({
+        rohrID: id,
+      })
+    });
+    if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+  };
 
   function renderBlutproben({ item }: { item: Blutprobe }) {
     if (!item) {
