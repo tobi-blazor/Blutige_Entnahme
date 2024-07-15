@@ -166,18 +166,18 @@ namespace BlutentnahmeAPI.Controllers
         }
 
 
-        // PUT: api/Blutproben/entnommen/5
+        // PUT: api/Blutproben/transport/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("transport/{id}")]
-        public async Task<IActionResult> PutBlutprobeInLaborTransportiert(int id)
+        public async Task<IActionResult> PutBlutprobeInLaborTransportiert(string id)
         {
 
-            var blutprobe = await _context.Blutproben.FindAsync(id);
+            var blutprobe = await _context.Blutproben.FirstOrDefaultAsync(b => b.RohrID == id);
             if (blutprobe == null)
             {
                 return NotFound();
             }
-
+                
             blutprobe.LaborEingang = DateTime.Now;
 
             try
@@ -186,7 +186,7 @@ namespace BlutentnahmeAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!BlutprobeExists(id))
+                if (!_context.Blutproben.Any(e => e.RohrID == id))
                 {
                     return NotFound();
                 }
