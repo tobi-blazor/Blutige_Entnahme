@@ -1,48 +1,50 @@
-<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLDeployment</id><coordinates><x>27</x><y>72</y><w>306</w><h>243</h></coordinates><panel_attributes>&lt;&lt;device&gt;&gt; 
-IPad 10</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>459</x><y>81</y><w>261</w><h>432</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; 
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLDeployment</id><coordinates><x>34</x><y>175</y><w>238</w><h>343</h></coordinates><panel_attributes>&lt;&lt;device&gt;&gt; 
+IPad 10</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>370</x><y>182</y><w>203</w><h>336</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; 
 Ubuntu LTS 22.04
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1035</x><y>189</y><w>180</w><h>108</h></coordinates><panel_attributes>&lt;&lt;Message Broker&gt;&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>818</x><y>266</y><w>140</w><h>84</h></coordinates><panel_attributes>&lt;&lt;Message Broker&gt;&gt;
 RabbitMQ : MQTT-Broker
 
 _Main.class_
 _Recv.class_
 _Send.class_
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1026</x><y>378</y><w>180</w><h>243</h></coordinates><panel_attributes>&lt;&lt;Database&gt;&gt;
-MySQL</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>477</x><y>135</y><w>216</w><h>108</h></coordinates><panel_attributes>&lt;&lt;Logging&gt;&gt;
-Log4j</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>477</x><y>297</y><w>216</w><h>198</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>811</x><y>413</y><w>140</w><h>189</h></coordinates><panel_attributes>&lt;&lt;Database&gt;&gt;
+MySQL</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>384</x><y>224</y><w>168</w><h>84</h></coordinates><panel_attributes>&lt;&lt;Logging&gt;&gt;
+Log4j</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>384</x><y>350</y><w>168</w><h>154</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt;
 .NET Runtime
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>63</x><y>171</y><w>216</w><h>99</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; React.native</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1503</x><y>126</y><w>153</w><h>81</h></coordinates><panel_attributes>&lt;&lt;Hospital Management&gt;&gt; 
-ixserv.4</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1206</x><y>180</y><w>315</w><h>81</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
-MQTT</panel_attributes><additional_attributes>330;10;10;70</additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1467</x><y>72</y><w>216</w><h>162</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; 
-Ubuntu LTS 22.04 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>45</x><y>117</y><w>261</w><h>180</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; IOS</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>684</x><y>351</y><w>360</w><h>72</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
-https</panel_attributes><additional_attributes>10;10;380;60</additional_attributes></element><element><id>Relation</id><coordinates><x>657</x><y>243</y><w>396</w><h>72</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
-https</panel_attributes><additional_attributes>10;60;420;10</additional_attributes></element><element><id>Relation</id><coordinates><x>585</x><y>234</y><w>81</w><h>81</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
-https</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>207</y><w>225</w><h>171</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
-https</panel_attributes><additional_attributes>10;10;230;170</additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>432</x><y>27</y><w>324</w><h>504</h></coordinates><panel_attributes>&lt;&lt;device&gt;&gt; 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>62</x><y>252</y><w>168</w><h>210</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; React.native</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1182</x><y>217</y><w>119</w><h>63</h></coordinates><panel_attributes>&lt;&lt;Hospital Management&gt;&gt; 
+ixserv.4</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>951</x><y>259</y><w>245</w><h>63</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
+MQTT</panel_attributes><additional_attributes>330;10;10;70</additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1154</x><y>175</y><w>168</w><h>126</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; 
+Ubuntu LTS 22.04 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>48</x><y>210</y><w>203</w><h>273</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; IOS</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>545</x><y>392</y><w>280</w><h>56</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
+https</panel_attributes><additional_attributes>10;10;380;60</additional_attributes></element><element><id>Relation</id><coordinates><x>524</x><y>308</y><w>308</w><h>56</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
+https</panel_attributes><additional_attributes>10;60;420;10</additional_attributes></element><element><id>Relation</id><coordinates><x>468</x><y>301</y><w>63</w><h>63</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
+https</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>223</x><y>280</y><w>175</w><h>133</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
+https</panel_attributes><additional_attributes>10;10;230;170</additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>349</x><y>140</y><w>252</w><h>392</h></coordinates><panel_attributes>&lt;&lt;device&gt;&gt; 
 HP ultra xxl mega SRV00420i
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1440</x><y>27</y><w>279</w><h>234</h></coordinates><panel_attributes>&lt;&lt;device&gt;&gt; 
-HP ultra xxl mega SRV00420i</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1440</x><y>360</y><w>279</w><h>324</h></coordinates><panel_attributes>&lt;&lt;device&gt;&gt; 
-HP ultra xxl mega SRV00420i</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1467</x><y>414</y><w>216</w><h>252</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; 
-Ubuntu LTS 22.04</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1494</x><y>468</y><w>153</w><h>72</h></coordinates><panel_attributes>&lt;&lt;KIS&gt;&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1494</x><y>576</y><w>162</w><h>72</h></coordinates><panel_attributes>&lt;&lt;SSO&gt;&gt;
-Microsoft SSO</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>657</x><y>486</y><w>855</w><h>234</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
-https</panel_attributes><additional_attributes>10;10;320;230;750;230;930;160</additional_attributes></element><element><id>Relation</id><coordinates><x>1557</x><y>531</y><w>81</w><h>63</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
-https</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>954</x><y>27</y><w>342</w><h>648</h></coordinates><panel_attributes>&lt;&lt;device&gt;&gt; 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1133</x><y>140</y><w>217</w><h>182</h></coordinates><panel_attributes>&lt;&lt;device&gt;&gt; 
+HP ultra xxl mega SRV00420i</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1133</x><y>469</y><w>217</w><h>182</h></coordinates><panel_attributes>&lt;&lt;device&gt;&gt; 
+Microsoft Server</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1154</x><y>511</y><w>168</w><h>126</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; 
+Ubuntu LTS 22.04</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1175</x><y>567</y><w>126</w><h>56</h></coordinates><panel_attributes>&lt;&lt;SSO&gt;&gt;
+Microsoft SSO</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>524</x><y>497</y><w>665</w><h>182</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
+https</panel_attributes><additional_attributes>10;10;320;230;750;230;930;160</additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>755</x><y>140</y><w>266</w><h>504</h></coordinates><panel_attributes>&lt;&lt;device&gt;&gt; 
 HP ultra xxl mega SRV00420i
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>981</x><y>81</y><w>288</w><h>576</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>776</x><y>182</y><w>224</w><h>448</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; 
 Ubuntu Ubuntu LTS 22.04
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1008</x><y>135</y><w>234</w><h>180</h></coordinates><panel_attributes>&lt;&lt;container&gt;&gt; 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>797</x><y>224</y><w>182</w><h>140</h></coordinates><panel_attributes>&lt;&lt;container&gt;&gt; 
 RabbitMQ-Docker
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>1062</x><y>432</y><w>99</w><h>36</h></coordinates><panel_attributes>&lt;&lt;schema&gt;&gt;
-Auftrag</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>1062</x><y>477</y><w>99</w><h>36</h></coordinates><panel_attributes>&lt;&lt;schema&gt;&gt;
-Blutprobe</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>1062</x><y>567</y><w>99</w><h>36</h></coordinates><panel_attributes>&lt;&lt;schema&gt;&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>839</x><y>455</y><w>77</w><h>28</h></coordinates><panel_attributes>&lt;&lt;schema&gt;&gt;
+Auftrag</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>839</x><y>490</y><w>77</w><h>28</h></coordinates><panel_attributes>&lt;&lt;schema&gt;&gt;
+Blutprobe</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>839</x><y>560</y><w>77</w><h>28</h></coordinates><panel_attributes>&lt;&lt;schema&gt;&gt;
 Patient
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>1062</x><y>522</y><w>99</w><h>36</h></coordinates><panel_attributes>&lt;&lt;schema&gt;&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>839</x><y>525</y><w>77</w><h>28</h></coordinates><panel_attributes>&lt;&lt;schema&gt;&gt;
 Personal
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>504</x><y>351</y><w>153</w><h>36</h></coordinates><panel_attributes>&lt;&lt;executable&gt;&gt;
-BlutentnahmeAPI.ddl</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>504</x><y>414</y><w>153</w><h>36</h></coordinates><panel_attributes>&lt;&lt;deployment spec&gt;&gt;
-Appsettings.json</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>567</x><y>378</y><w>27</w><h>45</h></coordinates><panel_attributes>lt=.&gt;
-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>90</x><y>216</y><w>153</w><h>36</h></coordinates><panel_attributes>&lt;&lt;executable&gt;&gt;
-Blutentnahme.ipa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1008</x><y>324</y><w>234</w><h>315</h></coordinates><panel_attributes>&lt;&lt;container&gt;&gt; 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>405</x><y>392</y><w>119</w><h>28</h></coordinates><panel_attributes>&lt;&lt;executable&gt;&gt;
+BlutentnahmeAPI.ddl</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>405</x><y>441</y><w>119</w><h>28</h></coordinates><panel_attributes>&lt;&lt;deployment spec&gt;&gt;
+Appsettings.json</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>454</x><y>413</y><w>21</w><h>35</h></coordinates><panel_attributes>lt=.&gt;
+</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>83</x><y>287</y><w>119</w><h>28</h></coordinates><panel_attributes>&lt;&lt;executable&gt;&gt;
+Blutentnahme.ipa</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>797</x><y>371</y><w>182</w><h>245</h></coordinates><panel_attributes>&lt;&lt;container&gt;&gt; 
 MySQL-Docker
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLFrame</id><coordinates><x>0</x><y>0</y><w>1791</w><h>783</h></coordinates><panel_attributes>vd_instantzebene_Blutentnahme_App</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLFrame</id><coordinates><x>13</x><y>119</y><w>1393</w><h>609</h></coordinates><panel_attributes>vd_instantzebene_Blutentnahme_App</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>90</x><y>357</y><w>98</w><h>56</h></coordinates><panel_attributes>symbol=component
+
+Benutzeroberfläche</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>132</x><y>308</y><w>21</w><h>63</h></coordinates><panel_attributes>lt=.&gt;
+</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element></diagram>
