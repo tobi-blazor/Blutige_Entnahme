@@ -26,7 +26,7 @@ namespace BlutentnahmeAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Patient>>> GetPatienten()
         {
-            var patienten = _patientenRepository.GetPatientenAsync();
+            var patienten = await _patientenRepository.GetPatientenAsync();
             return Ok(patienten);
         }
 
@@ -34,7 +34,7 @@ namespace BlutentnahmeAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Patient>> GetPatient(string id)
         {
-            var patient = _patientenRepository.GetPatientAsync(id);
+            var patient = await _patientenRepository.GetPatientAsync(id);
 
             if (patient == null)
             {
