@@ -65,7 +65,7 @@ namespace BlutentnahmeAPI.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(ex.Message);
             }
             return Ok();
 
@@ -81,7 +81,7 @@ namespace BlutentnahmeAPI.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(ex.Message);
             }
             return Ok();
         }

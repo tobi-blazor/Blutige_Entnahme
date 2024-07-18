@@ -29,7 +29,7 @@ namespace BlutentnahmeAPI.Repository
                     .ToListAsync();
         }
 
-        public async Task<Auftrag> GetAuftragAsync(string id)
+        public async Task<Auftrag?> GetAuftragAsync(string id)
         {
             var auftrag = await _dbContext.Aufträge
                     .Include(auftrag => auftrag.Blutproben)

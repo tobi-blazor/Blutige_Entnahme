@@ -17,7 +17,7 @@ builder.Services.AddDbContextFactory<BlutentnahmeDBContext>(options =>
 options.UseMySQL(builder.Configuration.GetConnectionString("AzureDB")));
 builder.Services.AddScoped<IAufträgeRepository, AufträgeRepository>();
 builder.Services.AddScoped<IBlutprobenRepository, BlutprobenRepository>();
-builder.Services.AddScoped<IPatientenRepository, BlutentnahmeAPI.Repository.PatientenRepository>();
+builder.Services.AddScoped<IPatientenRepository, PatientenRepository>();
 builder.Services.AddScoped<IPersonalRepository, PersonalRepository>();
 
 var app = builder.Build();

@@ -34,7 +34,7 @@ namespace BlutentnahmeAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Personal>> GetPersonal(string id)
         {
-            var personal = _personalRepository.GetPersonal(id);
+            var personal = await _personalRepository.GetPersonal(id);
 
             if (personal == null)
             {
