@@ -15,7 +15,7 @@ builder.Services.AddControllers().AddJsonOptions(x =>
    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 builder.Services.AddDbContextFactory<BlutentnahmeDBContext>(options =>
 options.UseMySQL(builder.Configuration.GetConnectionString("AzureDB")));
-builder.Services.AddScoped<IAuftragRepository, AuftragRepository>();
+builder.Services.AddScoped<IAufträgeRepository, AufträgeRepository>();
 
 var app = builder.Build();
 
