@@ -1,19 +1,19 @@
-<diagram program="umletino" version="15.1"><zoom_level>4</zoom_level><element><id>UMLClass</id><coordinates><x>856</x><y>560</y><w>84</w><h>48</h></coordinates><panel_attributes>WebApplication
+<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><element><id>UMLClass</id><coordinates><x>1568</x><y>968</y><w>168</w><h>96</h></coordinates><panel_attributes>WebApplication
 --
 - Enviorment
 --
 +UseHttpsRedirection()
 +UseAuthorization()
 +MapControllers()
-+Run()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>972</x><y>464</y><w>84</w><h>40</h></coordinates><panel_attributes>Program
++Run()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1800</x><y>776</y><w>168</w><h>80</h></coordinates><panel_attributes>Program
 --
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>848</x><y>320</y><w>84</w><h>36</h></coordinates><panel_attributes>DbSet&lt;T&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1552</x><y>488</y><w>168</w><h>72</h></coordinates><panel_attributes>DbSet&lt;T&gt;
 --
 
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>852</x><y>468</y><w>84</w><h>52</h></coordinates><panel_attributes>WebApplicationBuilder
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1560</x><y>784</y><w>168</w><h>104</h></coordinates><panel_attributes>WebApplicationBuilder
 --
 - Services
 - Configuration
@@ -21,7 +21,7 @@
 --
 +CreateBuilder()
 +Build():WebApplication
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>960</x><y>292</y><w>204</w><h>48</h></coordinates><panel_attributes>BlutentnahmeDBContext
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1776</x><y>432</y><w>408</w><h>96</h></coordinates><panel_attributes>BlutentnahmeDBContext
 --
 +Personal:DbSet&lt;Personal&gt;
 +Auftrag:DbSet&lt;Auftrag&gt;
@@ -29,23 +29,23 @@
 +Patienten:DbSet&lt;Patient&gt;
 --
 BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>932</x><y>476</y><w>48</w><h>16</h></coordinates><panel_attributes>lt=&lt;-
--builder</panel_attributes><additional_attributes>10;20;100;20</additional_attributes></element><element><id>Relation</id><coordinates><x>936</x><y>500</y><w>80</w><h>88</h></coordinates><panel_attributes>lt=&lt;-
--app</panel_attributes><additional_attributes>10;200;160;200;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>892</x><y>336</y><w>88</w><h>140</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>200;10;200;140;10;140;10;330</additional_attributes></element><element><id>UMLClass</id><coordinates><x>956</x><y>228</y><w>84</w><h>36</h></coordinates><panel_attributes>DbContext
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1720</x><y>800</y><w>96</w><h>32</h></coordinates><panel_attributes>lt=&lt;-
+-builder</panel_attributes><additional_attributes>10;20;100;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1728</x><y>848</y><w>160</w><h>176</h></coordinates><panel_attributes>lt=&lt;-
+-app</panel_attributes><additional_attributes>10;200;160;200;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1640</x><y>520</y><w>176</w><h>280</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>200;10;200;140;10;140;10;330</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1768</x><y>304</y><w>168</w><h>72</h></coordinates><panel_attributes>DbContext
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>996</x><y>260</y><w>12</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>800</x><y>484</y><w>60</w><h>16</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;contains&gt;&gt;</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>696</x><y>468</y><w>108</w><h>40</h></coordinates><panel_attributes>ServiceCollection  
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1848</x><y>368</y><w>24</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>1456</x><y>816</y><w>120</w><h>32</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;contains&gt;&gt;</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1248</x><y>784</y><w>216</w><h>80</h></coordinates><panel_attributes>ServiceCollection  
 --
 --
 + AddControllers()     
 + AddEndpointsApiExplorer() 
 + AddSwaggerGen()      
 + AddDbContextFactory&lt;TContext&gt;() 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>884</x><y>516</y><w>36</w><h>52</h></coordinates><panel_attributes>lt=&lt;.
-≪create≫</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>692</x><y>312</y><w>96</w><h>52</h></coordinates><panel_attributes>&lt;&lt;DTO&gt;&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1624</x><y>880</y><w>72</w><h>104</h></coordinates><panel_attributes>lt=&lt;.
+≪create≫</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1240</x><y>472</y><w>192</w><h>104</h></coordinates><panel_attributes>&lt;&lt;DTO&gt;&gt;
 Auftrag
 --
 - AuftragsID: String
@@ -53,7 +53,7 @@ Auftrag
 - Blutproben: Blutprobe[]
 - Patient: Patient
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>704</x><y>392</y><w>84</w><h>68</h></coordinates><panel_attributes>&lt;&lt;DTO&gt;&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1264</x><y>632</y><w>168</w><h>136</h></coordinates><panel_attributes>&lt;&lt;DTO&gt;&gt;
 Patient
 --
 - PersonID: String
@@ -63,7 +63,7 @@ Patient
 - Hinweise: String
 - Aufträge: Auftrag[]
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>204</y><w>108</w><h>52</h></coordinates><panel_attributes>Personal
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1496</x><y>256</y><w>216</w><h>104</h></coordinates><panel_attributes>Personal
 --
 - PersonID: String
 - Vorname: String
@@ -71,7 +71,7 @@ Patient
 - Geburtsdatum: DateTime
 - Blutentnahmen: Blutprobe[]
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>676</x><y>200</y><w>112</w><h>80</h></coordinates><panel_attributes>&lt;&lt;DTO&gt;&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1208</x><y>248</y><w>224</w><h>160</h></coordinates><panel_attributes>&lt;&lt;DTO&gt;&gt;
 Blutprobe
 --
 - ProbeNr: int
@@ -84,19 +84,19 @@ Blutprobe
 - Auftrag: Auftrag
 - LaborEingang: DateTime?
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>748</x><y>276</y><w>20</w><h>44</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1352</x><y>400</y><w>40</w><h>88</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=0..*
-bg=black</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>748</x><y>360</y><w>20</w><h>40</h></coordinates><panel_attributes>lt=-
+bg=black</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1352</x><y>568</y><w>40</w><h>80</h></coordinates><panel_attributes>lt=-
 m1=0..*
-m2=1</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>784</x><y>232</y><w>44</w><h>16</h></coordinates><panel_attributes>lt=-
+m2=1</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>1424</x><y>312</y><w>88</w><h>32</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=0..*
-bg=black</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>928</x><y>328</y><w>40</w><h>12</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>876</x><y>252</y><w>24</w><h>76</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>784</x><y>268</y><w>76</w><h>60</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;20;170;20;170;130</additional_attributes></element><element><id>Relation</id><coordinates><x>784</x><y>332</y><w>72</w><h>16</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>Relation</id><coordinates><x>784</x><y>352</y><w>84</w><h>72</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;160;190;160;190;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1004</x><y>384</y><w>180</w><h>68</h></coordinates><panel_attributes>PersonalController
+bg=black</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1712</x><y>504</y><w>80</w><h>24</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1608</x><y>352</y><w>48</w><h>152</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>1424</x><y>384</y><w>152</w><h>120</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;20;170;20;170;130</additional_attributes></element><element><id>Relation</id><coordinates><x>1424</x><y>512</y><w>144</w><h>32</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1424</x><y>552</y><w>168</w><h>144</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;160;190;160;190;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1864</x><y>616</y><w>360</w><h>136</h></coordinates><panel_attributes>PersonalController
 --
 -_context: BlutentnahmeDBContext
 --
@@ -106,7 +106,7 @@ bg=black</panel_attributes><additional_attributes>90;10;10;10</additional_attrib
 +PutPersonal(string id, Personal personal): Task&lt;IActionResult&gt;
 +PostPersonal(Personal personal):Task&lt;ActionResult&lt;Personal&gt;&gt;
 +DeletePersonal(string id):Task&lt;IActionResult&gt;
--PersonalExists(string id): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1068</x><y>336</y><w>12</w><h>56</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1192</x><y>340</y><w>180</w><h>68</h></coordinates><panel_attributes>PersonalController
+-PersonalExists(string id): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1992</x><y>520</y><w>24</w><h>112</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2240</x><y>528</y><w>360</w><h>136</h></coordinates><panel_attributes>PersonalController
 --
 - _context: BlutentnahmeDBContext
 --
@@ -117,7 +117,7 @@ bg=black</panel_attributes><additional_attributes>90;10;10;10</additional_attrib
 + PostPatient(patient: Patient): Task&lt;ActionResult&lt;Patient&gt;&gt;
 + DeletePatient(id: string): Task&lt;IActionResult&gt;
 - PatientExists(id: string): bool
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1192</x><y>244</y><w>180</w><h>88</h></coordinates><panel_attributes>BlutprobenController
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2240</x><y>336</y><w>360</w><h>176</h></coordinates><panel_attributes>BlutprobenController
 --
 - _context: BlutentnahmeDBContext
 --
@@ -131,7 +131,7 @@ bg=black</panel_attributes><additional_attributes>90;10;10;10</additional_attrib
 + PutEntnommeneBlutprobe(id: int, rohrID: string, personalID: string): Task&lt;IActionResult&gt;
 + PutBlutprobeInLaborTransportiert(id: string): Task&lt;IActionResult&gt;
 - BlutprobeExists(id: int): bool
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1052</x><y>144</y><w>180</w><h>88</h></coordinates><panel_attributes>AuftraegeController
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1960</x><y>136</y><w>360</w><h>176</h></coordinates><panel_attributes>AuftraegeController
 --
 - _context: BlutentnahmeDBContext
 --
@@ -144,92 +144,92 @@ bg=black</panel_attributes><additional_attributes>90;10;10;10</additional_attrib
 + GetAktiveAufträge(): Task&lt;ActionResult&lt;IEnumerable&lt;Auftrag&gt;&gt;&gt;
 + GetAktivenlAuftrag(id: string): Task&lt;ActionResult&lt;Auftrag&gt;&gt;
 - AuftragExists(id: string): bool
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1160</x><y>316</y><w>40</w><h>12</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1100</x><y>336</y><w>100</w><h>36</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;70;230;70</additional_attributes></element><element><id>Relation</id><coordinates><x>1112</x><y>228</y><w>12</w><h>72</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>164</x><y>340</y><w>84</w><h>44</h></coordinates><panel_attributes>VerifyPatient
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2176</x><y>480</y><w>80</w><h>24</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2056</x><y>520</y><w>200</w><h>72</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;70;230;70</additional_attributes></element><element><id>Relation</id><coordinates><x>2080</x><y>304</y><w>24</w><h>144</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>184</x><y>528</y><w>168</w><h>88</h></coordinates><panel_attributes>VerifyPatient
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>164</x><y>288</y><w>84</w><h>44</h></coordinates><panel_attributes>App
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>184</x><y>424</y><w>168</w><h>88</h></coordinates><panel_attributes>App
 --
 + Stack:
 --
 
-????</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>164</x><y>392</y><w>84</w><h>44</h></coordinates><panel_attributes>AuftragDetails
+????</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>184</x><y>632</y><w>168</w><h>88</h></coordinates><panel_attributes>AuftragDetails
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>164</x><y>500</y><w>84</w><h>44</h></coordinates><panel_attributes>FinishEntnahme
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>184</x><y>848</y><w>168</w><h>88</h></coordinates><panel_attributes>FinishEntnahme
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>72</x><y>392</y><w>84</w><h>44</h></coordinates><panel_attributes>Homescreen
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>632</y><w>168</w><h>88</h></coordinates><panel_attributes>Homescreen
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>72</x><y>288</y><w>84</w><h>44</h></coordinates><panel_attributes>Login
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>424</y><w>168</w><h>88</h></coordinates><panel_attributes>Login
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>72</x><y>340</y><w>84</w><h>44</h></coordinates><panel_attributes>MainScreen
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>528</y><w>168</w><h>88</h></coordinates><panel_attributes>MainScreen
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>164</x><y>556</y><w>84</w><h>44</h></coordinates><panel_attributes>Profile
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>184</x><y>960</y><w>168</w><h>88</h></coordinates><panel_attributes>Profile
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>308</x><y>132</y><w>84</w><h>48</h></coordinates><panel_attributes>Transporte
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>472</x><y>112</y><w>168</w><h>96</h></coordinates><panel_attributes>Transporte
 --
 -styles:StyleSheet
 --
 + Transporte()
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>164</x><y>444</y><w>84</w><h>44</h></coordinates><panel_attributes>AddRohr
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>184</x><y>736</y><w>168</w><h>88</h></coordinates><panel_attributes>AddRohr
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>72</x><y>612</y><w>84</w><h>44</h></coordinates><panel_attributes>Qrscan
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>1072</y><w>168</w><h>88</h></coordinates><panel_attributes>Qrscan
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>428</x><y>128</y><w>116</w><h>44</h></coordinates><panel_attributes>TransportListView
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>712</x><y>104</y><w>232</w><h>88</h></coordinates><panel_attributes>TransportListView
 --
 -styles:StyleSheet
 --
 TransportListView(blutprobe: Blutprobe)
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>72</x><y>500</y><w>84</w><h>48</h></coordinates><panel_attributes>IconGenerator
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>848</y><w>168</w><h>96</h></coordinates><panel_attributes>IconGenerator
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>72</x><y>444</y><w>84</w><h>48</h></coordinates><panel_attributes>AuftragListView
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>736</y><w>168</w><h>96</h></coordinates><panel_attributes>AuftragListView
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>72</x><y>556</y><w>84</w><h>48</h></coordinates><panel_attributes>BlutprobeListView
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>960</y><w>168</w><h>96</h></coordinates><panel_attributes>BlutprobeListView
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>76</y><w>84</w><h>32</h></coordinates><panel_attributes>Text
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>576</x><y>0</y><w>168</w><h>64</h></coordinates><panel_attributes>Text
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>76</y><w>84</w><h>32</h></coordinates><panel_attributes>View
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>776</x><y>0</y><w>168</w><h>64</h></coordinates><panel_attributes>View
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>152</y><w>184</w><h>56</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>440;120;440;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>428</x><y>104</y><w>12</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>484</x><y>104</y><w>12</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>388</x><y>144</y><w>48</w><h>16</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>936</x><y>152</y><w>368</w><h>112</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>440;120;440;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>712</x><y>56</y><w>24</w><h>64</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>824</x><y>56</y><w>24</w><h>64</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>632</x><y>136</y><w>96</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>428</x><y>328</y><w>112</w><h>40</h></coordinates><panel_attributes>Ref Frontend_Komponentendiagramm</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+m2=1</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>712</x><y>504</y><w>224</w><h>80</h></coordinates><panel_attributes>Ref Frontend-dependencies-diagramm.uxf</panel_attributes><additional_attributes></additional_attributes></element></diagram>
