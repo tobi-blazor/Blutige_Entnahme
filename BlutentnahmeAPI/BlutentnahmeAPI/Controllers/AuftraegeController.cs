@@ -17,18 +17,18 @@ namespace BlutentnahmeAPI.Controllers
     [ApiController]
     public class AuftraegeController : ControllerBase
     {
-        private readonly IAuftragRepository _auftragRepository;
+        private readonly IAufträgeRepository _aufträgeRepository;
 
-        public AuftraegeController(IAuftragRepository auftragRepository)
+        public AuftraegeController(IAufträgeRepository aufträgeRepository)
         {
-            _auftragRepository = auftragRepository;
+            _aufträgeRepository = aufträgeRepository;
         }
 
         // GET: api/Auftraege
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Auftrag>>> GetAufträge()
         {
-            var aufträge = await _auftragRepository.GetAufträgeAsync();
+            var aufträge = await _aufträgeRepository.GetAufträgeAsync();
             return Ok(aufträge);
         }
 
@@ -36,7 +36,7 @@ namespace BlutentnahmeAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Auftrag>> GetAuftrag(string id)
         {
-            var auftrag = await _auftragRepository.GetAuftragAsync(id);
+            var auftrag = await _aufträgeRepository.GetAuftragAsync(id);
 
             if (auftrag == null)
             {
@@ -52,7 +52,7 @@ namespace BlutentnahmeAPI.Controllers
         [HttpGet("aktiv")]
         public async Task<ActionResult<IEnumerable<Auftrag>>> GetAktiveAufträge()
         {
-            var aktiveAufträge = await _auftragRepository.GetAktiveAufträgeAsync();
+            var aktiveAufträge = await _aufträgeRepository.GetAktiveAufträgeAsync();
             return Ok(aktiveAufträge);
         }
 
@@ -60,7 +60,7 @@ namespace BlutentnahmeAPI.Controllers
         [HttpGet("aktiv/{id}")]
         public async Task<ActionResult<Auftrag>> GetAktivenAuftragWithNichtEntnommeneBlutproben(string id)
         {
-            var auftrag = await _auftragRepository.GetAktivenAuftragWithNichtEntnommeneBlutprobenAsync(id);
+            var auftrag = await _aufträgeRepository.GetAktivenAuftragWithNichtEntnommeneBlutprobenAsync(id);
 
             if (auftrag == null)
             {

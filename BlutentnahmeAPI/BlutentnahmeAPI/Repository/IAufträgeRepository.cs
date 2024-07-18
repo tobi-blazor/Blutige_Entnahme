@@ -4,7 +4,7 @@ using System;
 
 namespace BlutentnahmeAPI.Repository
 {
-    public interface IAuftragRepository
+    public interface IAufträgeRepository
     {
         Task<IEnumerable<Auftrag>> GetAufträgeAsync();
         Task<Auftrag> GetAuftragAsync(string id);
