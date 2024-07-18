@@ -6,11 +6,11 @@ using System;
 
 namespace BlutentnahmeAPI.Repository
 {
-    public class AuftragRepository : IAuftragRepository
+    public class AufträgeRepository : IAufträgeRepository
     {
         private readonly BlutentnahmeDBContext _dbContext;
 
-        public AuftragRepository(BlutentnahmeDBContext dbContext)
+        public AufträgeRepository(BlutentnahmeDBContext dbContext)
         {
             _dbContext = dbContext;
         }
