@@ -13,10 +13,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers().AddJsonOptions(x =>
    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
-builder.Services.AddDbContextFactory<BlutentnahmeDBContext>(options =>
+builder.Services.AddDbContextFactory<BlutentnahmeAPI.Data.PatientenRepository>(options =>
 options.UseMySQL(builder.Configuration.GetConnectionString("AzureDB")));
 builder.Services.AddScoped<IAufträgeRepository, AufträgeRepository>();
 builder.Services.AddScoped<IBlutprobenRepository, BlutprobenRepository>();
+builder.Services.AddScoped<IPatientenRepository, BlutentnahmeAPI.Repository.PatientenRepository>();
 
 var app = builder.Build();
 
