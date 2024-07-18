@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BlutentnahmeAPI.Data;
 using BlutentnahmeAPI.Models;
+using BlutentnahmeAPI.Repository;
 
 namespace BlutentnahmeAPI.Controllers
 {
@@ -14,109 +15,35 @@ namespace BlutentnahmeAPI.Controllers
     [ApiController]
     public class PersonalController : ControllerBase
     {
-        private readonly BlutentnahmeDBContext _context;
+        private readonly IPersonalRepository _personalRepository;
 
-        public PersonalController(BlutentnahmeDBContext context)
+        public PersonalController(IPersonalRepository personalRepository)
         {
-            _context = context;
+            _personalRepository = personalRepository;
         }
 
         // GET: api/Personal
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Personal>>> GetPersonal()
+        public async Task<ActionResult<IEnumerable<Personal>>> GetAllPersonal()
         {
-            return await _context.Personal.ToListAsync();
+            var personal = await _personalRepository.GetAllPersonalAsync();
+            return Ok(personal);
         }
 
         // GET: api/Personal/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Personal>> GetPersonal(string id)
         {
-            var personal = await _context.Personal.FindAsync(id);
+            var personal = _personalRepository.GetPersonal(id);
 
             if (personal == null)
             {
                 return NotFound();
             }
-
-            return personal;
-        }
-
-        // PUT: api/Personal/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutPersonal(string id, Personal personal)
-        {
-            if (id != personal.PersonID)
+            else
             {
-                return BadRequest();
+                return Ok(personal);
             }
-
-            _context.Entry(personal).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PersonalExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Personal
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Personal>> PostPersonal(Personal personal)
-        {
-            _context.Personal.Add(personal);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (PersonalExists(personal.PersonID))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtAction("GetPersonal", new { id = personal.PersonID }, personal);
-        }
-
-        // DELETE: api/Personal/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePersonal(string id)
-        {
-            var personal = await _context.Personal.FindAsync(id);
-            if (personal == null)
-            {
-                return NotFound();
-            }
-
-            _context.Personal.Remove(personal);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool PersonalExists(string id)
-        {
-            return _context.Personal.Any(e => e.PersonID == id);
         }
     }
 }
