@@ -1,0 +1,47 @@
+<diagram program="umletino" version="15.1"><zoom_level>11</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLGeneric</id><coordinates><x>1353</x><y>165</y><w>209</w><h>66</h></coordinates><panel_attributes>&lt;&lt;component&gt;&gt;
+symbol=component
+App
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>594</x><y>165</y><w>132</w><h>66</h></coordinates><panel_attributes>&lt;&lt;source&gt;&gt;
+symbol=artifact
+app.tsx</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>572</x><y>0</y><w>187</w><h>88</h></coordinates><panel_attributes>&lt;&lt;file&gt;&gt;
+symbol=artifact
+app.json</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>0</x><y>792</y><w>187</w><h>88</h></coordinates><panel_attributes>&lt;&lt;file&gt;&gt;
+symbol=artifact
+package.json</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>649</x><y>77</y><w>66</w><h>110</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>264</x><y>176</y><w>242</w><h>66</h></coordinates><panel_attributes>&lt;&lt;source&gt;&gt;
+symbol=artifact
+navigation.ts</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>495</x><y>187</y><w>121</w><h>44</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>90;20;10;20</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>275</x><y>396</y><w>187</w><h>88</h></coordinates><panel_attributes>&lt;&lt;library&gt;&gt;
+symbol=artifact
+React Native</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>374</x><y>231</y><w>66</w><h>187</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;10;10;150</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>385</x><y>792</y><w>165</w><h>88</h></coordinates><panel_attributes>&lt;&lt;file&gt;&gt;
+symbol=artifact
+tsconfig.json</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>429</x><y>715</y><w>66</w><h>99</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>176</x><y>660</y><w>121</w><h>44</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>90;20;10;20</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>22</x><y>638</y><w>165</w><h>88</h></coordinates><panel_attributes>&lt;&lt;file&gt;&gt;
+symbol=artifact
+yarn.lock</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>275</x><y>638</y><w>187</w><h>88</h></coordinates><panel_attributes>&lt;&lt;library&gt;&gt;
+symbol=artifact
+Metro Bundler</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>286</x><y>715</y><w>66</w><h>99</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>209</x><y>792</y><w>165</w><h>88</h></coordinates><panel_attributes>&lt;&lt;file&gt;&gt;
+symbol=artifact
+babel.config.json</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>352</x><y>473</y><w>66</w><h>187</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>979</x><y>165</y><w>242</w><h>66</h></coordinates><panel_attributes>&lt;&lt;executable&gt;&gt;
+symbol=artifact
+Blutentnahme.app</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1210</x><y>176</y><w>165</w><h>44</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;manifest&gt;&gt;</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>Relation</id><coordinates><x>88</x><y>715</y><w>66</w><h>99</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>770</x><y>396</y><w>286</w><h>176</h></coordinates><panel_attributes>&lt;&lt;source&gt;&gt;
+symbol=artifact
+screens</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>693</x><y>220</y><w>99</w><h>220</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;10;10;180;70;180</additional_attributes></element><element><id>Relation</id><coordinates><x>715</x><y>176</y><w>286</w><h>44</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;20;240;20</additional_attributes></element><element><id>Relation</id><coordinates><x>451</x><y>440</y><w>341</w><h>44</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>290;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>451</x><y>220</y><w>242</w><h>220</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>170;10;170;180;10;180</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>1155</x><y>671</y><w>286</w><h>176</h></coordinates><panel_attributes>&lt;&lt;source&gt;&gt;
+symbol=artifact
+models</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>770</x><y>671</y><w>286</w><h>176</h></coordinates><panel_attributes>&lt;&lt;source&gt;&gt;
+symbol=artifact
+components</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>902</x><y>561</y><w>66</w><h>132</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>1045</x><y>737</y><w>132</w><h>44</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;20;100;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1551</x><y>198</y><w>33</w><h>33</h></coordinates><panel_attributes>lt=[]-
+</panel_attributes><additional_attributes>10;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>484</x><y>231</y><w>308</w><h>495</h></coordinates><panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>260;430;10;430;10;10</additional_attributes></element></diagram>
