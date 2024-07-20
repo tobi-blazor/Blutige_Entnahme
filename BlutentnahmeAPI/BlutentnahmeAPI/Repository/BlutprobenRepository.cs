@@ -31,7 +31,7 @@ namespace BlutentnahmeAPI.Repository
 
         public async Task PutBlutprobeInLaborTransportiertAsync(string id)
         {
-            var blutprobe = await _dbContext.Blutproben.FirstAsync(b => b.RohrID == id);
+            var blutprobe = await _dbContext.Blutproben.FirstAsync(b => b.RohrID.Equals(id));
             if (blutprobe == null)
             {
                 throw new KeyNotFoundException();
@@ -45,7 +45,7 @@ namespace BlutentnahmeAPI.Repository
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!_dbContext.Blutproben.Any(e => e.RohrID == id))
+                if (!_dbContext.Blutproben.Any(e => e.RohrID.Equals(id)))
                 {
                     throw new KeyNotFoundException();
                 }
