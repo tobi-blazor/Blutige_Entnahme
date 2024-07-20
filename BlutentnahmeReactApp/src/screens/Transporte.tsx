@@ -1,8 +1,8 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import { View, Text, StyleSheet, FlatList, Button, Alert } from "react-native";
 import { RootStackParamList } from "../types/navigation";
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import Blutprobe from "../../models/Blutprobe";
 import TransportListView from "../../components/TransportListView";
 import useFetchBlutproben from "../../components/fetchBlutproben";
@@ -31,7 +31,7 @@ function Transporte() {
     showAlert(data, type, data);
   };
 
-  const showAlert = (scannedValue: string, type:string, data:string) => {
+  const showAlert = (scannedValue: string, type: string, data: string) => {
     Alert.alert(
       "Gescannt!",
       `Der gescannte Wert ist: ${scannedValue}`,
@@ -43,26 +43,28 @@ function Transporte() {
         },
         {
           text: "Abgeben",
-          onPress: () => {console.log("Type: " + type + "\nData: " + data),
-            fetchRequest(data)}
-          
+          onPress: () => {
+            console.log("Type: " + type + "\nData: " + data),
+              fetchRequest(data);
+          },
         },
       ],
       { cancelable: false }
     );
   };
-  const fetchRequest = async (id:string) => {
-    const apiUrl = 'https://blutentnahme.azurewebsites.net/api/Blutproben/transport/' + id;
+  const fetchRequest = async (id: string) => {
+    const apiUrl =
+      "https://blutentnahme.azurewebsites.net/api/Blutproben/transport/" + id;
     console.log(apiUrl);
     const response = await fetch(apiUrl, {
       method: "PUT",
       body: JSON.stringify({
         rohrID: id,
-      })
+      }),
     });
     if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+      throw new Error("Network response was not ok");
+    }
   };
 
   function renderBlutproben({ item }: { item: Blutprobe }) {
@@ -78,13 +80,25 @@ function Transporte() {
     return <TransportListView blutprobe={item} />;
   }
 
-  const { blutproben, loading, error } = useFetchBlutproben(
+  const { blutproben, loading, error, refetch } = useFetchBlutproben(
     "https://blutentnahme.azurewebsites.net/api/Blutproben/transport"
   );
 
-  if (loading) {
-    return <Text>Loading...</Text>;
-  }
+  const [refreshing, setRefreshing] = useState(loading);
+
+  useFocusEffect(
+    useCallback(() => {
+      refetch();
+    }, [])
+  );
+
+  useEffect(() => {
+    if (refreshing) {
+      refetch();
+      console.log("refresh");
+      setRefreshing(false);
+    }
+  }, [refreshing]);
 
   if (error) {
     return <Text>Error: {error}</Text>;
@@ -97,33 +111,41 @@ function Transporte() {
   if (blutproben === null) {
     throw new Error("Keine Blutproben");
   }
-  if(startScan)
-  {
+  if (startScan) {
     return (
       <View style={styles.container}>
-          <View style={styles.container}>
-            <BarCodeScanner
-              onBarCodeScanned={handleBarCodeScanned}
-              style={{ height: 600, width: 500 }}
-            />
-            <Text>{text}</Text>
-            <Button title = "Abbrechen" onPress={() => {setStartScan(false)}}/>
-          </View>
+        <View style={styles.container}>
+          <BarCodeScanner
+            onBarCodeScanned={handleBarCodeScanned}
+            style={{ height: 600, width: 500 }}
+          />
+          <Text>{text}</Text>
+          <Button
+            title="Abbrechen"
+            onPress={() => {
+              setStartScan(false);
+            }}
+          />
+        </View>
       </View>
     );
   }
-  if(startScan === false)
-  {
+  if (startScan === false) {
     return (
-        <View style={styles.safeViewContainer}>
-          <Button title="Scannen und abgeben" onPress={() => setStartScan(true)}/> 
-          <FlatList
-            data={blutproben}
-            keyExtractor={(item, index) => item.probeNr + ""}
-            renderItem={renderBlutproben}
-          />
-        </View>
-      );
+      <View style={styles.safeViewContainer}>
+        <Button
+          title="Scannen und abgeben"
+          onPress={() => setStartScan(true)}
+        />
+        <FlatList
+          data={blutproben}
+          keyExtractor={(item, index) => item.probeNr + ""}
+          renderItem={renderBlutproben}
+          refreshing={refreshing}
+          onRefresh={() => setRefreshing(true)}
+        />
+      </View>
+    );
   }
 }
 
@@ -146,7 +168,7 @@ const styles = StyleSheet.create({
   },
   barcodescanner: {
     marginBottom: 20,
-  }
+  },
 });
 
 export default Transporte;

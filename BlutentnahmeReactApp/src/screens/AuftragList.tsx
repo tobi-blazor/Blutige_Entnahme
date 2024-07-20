@@ -1,23 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import {
   View,
   Text,
   StyleSheet,
   FlatList,
   ActivityIndicator,
+  Button,
 } from "react-native";
 import AuftragListView from "../../components/AuftragListView";
 import Auftrag from "../../models/Auftrag";
 import useFetchAuftraege from "../../components/fetchAuftraege";
+import { useFocusEffect } from "@react-navigation/native";
 
 function AuftragList({ navigation }: any) {
-  const { auftraege, loading, error } = useFetchAuftraege(
+  const { auftraege, loading, error, refetch } = useFetchAuftraege(
     "https://blutentnahme.azurewebsites.net/api/Auftraege/aktiv"
   );
 
-  if (loading) {
-    return <ActivityIndicator size="large" color="#0000ff" />;
-  }
+  const [refreshing, setRefreshing] = useState(loading);
+
+  useFocusEffect(
+    useCallback(() => {
+      refetch();
+    }, [])
+  );
+
+  useEffect(() => {
+    if (refreshing) {
+      refetch();
+      console.log("refresh");
+      setRefreshing(false);
+    }
+  }, [refreshing]);
 
   if (error) {
     return <Text>Error: {error}</Text>;
@@ -56,6 +70,8 @@ function AuftragList({ navigation }: any) {
       data={auftraege}
       keyExtractor={(item) => item.auftragsID}
       renderItem={renderEntnahmeItem}
+      refreshing={refreshing}
+      onRefresh={() => setRefreshing(true)}
     />
   );
 }

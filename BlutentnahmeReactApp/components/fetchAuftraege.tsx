@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Patient from "../models/Patient";
 import Blutprobe from "../models/Blutprobe";
 import Auftrag from "../models/Auftrag";
@@ -49,34 +49,35 @@ const useFetchAuftraege = (apiUrl: string) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const json = await response.json();
-
-        const auftraege: Auftrag[] = json.$values.map((data: any) =>
-          deserializeAuftrag(data)
-        );
-        setAuftraege(auftraege);
-      } catch (error: unknown) {
-        if (error instanceof Error) {
-          setError(error.message);
-        } else {
-          setError("An unknown error occurred");
-        }
-      } finally {
-        setLoading(false);
+  const fetchData = useCallback(async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
       }
-    };
+      const json = await response.json();
 
-    fetchData();
+      const auftraege: Auftrag[] = json.$values.map((data: any) =>
+        deserializeAuftrag(data)
+      );
+      setAuftraege(auftraege);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("An unknown error occurred");
+      }
+    } finally {
+      setLoading(false);
+    }
   }, [apiUrl]);
 
-  return { auftraege, loading, error };
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  return { auftraege, loading, error, refetch: fetchData };
 };
 
 export default useFetchAuftraege;
