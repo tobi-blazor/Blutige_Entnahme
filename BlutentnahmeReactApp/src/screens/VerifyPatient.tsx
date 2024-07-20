@@ -108,6 +108,8 @@ function VerifyPatient({ route }: any) {
         </View>
       </View>
     );
+  } else {
+    return <Button title="Neu starten" onPress={() => setPatientID("")} />;
   }
 }
 
