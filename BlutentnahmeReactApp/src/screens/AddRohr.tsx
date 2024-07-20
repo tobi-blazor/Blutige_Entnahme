@@ -18,7 +18,34 @@ function VerifyRohr({ route }: { route: any }) {
 
   const handleScan = (scannedValue: string) => {
     setRohrID(scannedValue);
-    showAlert(rohrID);
+    verifyBlutproberohr(scannedValue);
+  };
+
+  const verifyBlutproberohr = async (id: string) => {
+    if (validateBPRString(id)) {
+      showAlert(id);
+    } else {
+      showErrorAlert();
+    }
+  };
+
+  const validateBPRString = (str: string): boolean => {
+    const pattern = /^BPR\d{3}$/;
+    return pattern.test(str);
+  };
+
+  const showErrorAlert = () => {
+    Alert.alert(
+      "Fehler",
+      "Das ist kein Blutproberöhrchen. Bitte erneut versuchen.",
+      [
+        {
+          text: "Wiederholen",
+          onPress: () => setRohrID(""),
+        },
+      ],
+      { cancelable: false }
+    );
   };
 
   const showAlert = (scannedValue: string) => {
