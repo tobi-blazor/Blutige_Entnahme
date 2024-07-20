@@ -13,7 +13,7 @@ type AboutScreenNavigationProp = NativeStackNavigationProp<
 
 function FinishEntnahme({ route }: { route: any }) {
   const navigation = useNavigation<AboutScreenNavigationProp>();
-  const { probeNr, patientID, rohrID, personalID } = route.params;
+  const { probeNr, patientID, rohrID } = route.params;
 
   const context = useContext(GlobalContext);
 
