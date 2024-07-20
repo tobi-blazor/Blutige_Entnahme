@@ -11,7 +11,7 @@ export default function AuftragListView({
   nachname: string;
   anzahl: number;
   timespan: Date;
-  onPress: any; //TODO: Type definieren
+  onPress: any;
 }) {
   const timeDifference = (timespan.getTime() - Date.now()) / (1000 * 60);
 

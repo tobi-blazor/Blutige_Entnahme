@@ -14,6 +14,7 @@ type AboutScreenNavigationProp = NativeStackNavigationProp<
 
 function AuftragDetails({ route }: any) {
   const navigation = useNavigation<AboutScreenNavigationProp>();
+  const { auftragsID } = route.params;
 
   function renderBlutproben({ item }: { item: Blutprobe }) {
     function pressHandler() {
@@ -36,8 +37,7 @@ function AuftragDetails({ route }: any) {
   }
 
   const { auftrag, loading, error } = useFetchAuftrag(
-    "https://blutentnahme.azurewebsites.net/api/Auftraege/aktiv/" +
-      route.params.auftragsID
+    "https://blutentnahme.azurewebsites.net/api/Auftraege/aktiv/" + auftragsID
   );
 
   if (loading) {
