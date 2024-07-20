@@ -2,7 +2,7 @@
 
 namespace BlutentnahmeAPI.Models
 {
-    public class Person
+    public abstract class Person
     {
         [Key]
         public string PersonID { get; set; } = string.Empty;
