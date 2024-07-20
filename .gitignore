@@ -1,6 +1,7 @@
 ﻿################################################################################
 # Diese .gitignore-Datei wurde von Microsoft(R) Visual Studio automatisch erstellt.
 ################################################################################
-
+/.vscode
+/.idea
 /.vs
 **/.DS_Store
