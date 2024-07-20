@@ -1,6 +1,6 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types/navigation";
-import { View, Text, StyleSheet, Alert } from "react-native";
+import { View, Text, StyleSheet, Alert, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import Qrscan from "../../components/Qrscan";
@@ -17,8 +17,35 @@ function VerifyRohr({ route }: { route: any }) {
   const { probeNr, patientID, auftrag } = route.params;
 
   const handleScan = (scannedValue: string) => {
-    rohrID = scannedValue;
-    showAlert(rohrID);
+    setRohrID(scannedValue);
+    verifyBlutproberohr(scannedValue);
+  };
+
+  const verifyBlutproberohr = async (id: string) => {
+    if (validateBPRString(id)) {
+      showAlert(id);
+    } else {
+      showErrorAlert();
+    }
+  };
+
+  const validateBPRString = (str: string): boolean => {
+    const pattern = /^BPR\d{3}$/;
+    return pattern.test(str);
+  };
+
+  const showErrorAlert = () => {
+    Alert.alert(
+      "Fehler",
+      "Das ist kein Blutproberöhrchen. Bitte erneut versuchen.",
+      [
+        {
+          text: "Wiederholen",
+          onPress: () => setRohrID(""),
+        },
+      ],
+      { cancelable: false }
+    );
   };
 
   const showAlert = (scannedValue: string) => {
@@ -45,7 +72,7 @@ function VerifyRohr({ route }: { route: any }) {
     );
   };
 
-  if (rohrID == "") {
+  if (rohrID === "") {
     return (
       <View style={styles.safeViewContainer}>
         <View
@@ -77,7 +104,7 @@ function VerifyRohr({ route }: { route: any }) {
       </View>
     );
   } else {
-    return <Text> Irgendwas schiefgelaufen</Text>;
+    return <Button title="Neu starten" onPress={() => setRohrID("")} />;
   }
 }
 

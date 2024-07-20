@@ -23,7 +23,7 @@ namespace BlutentnahmeAPI.Repository
         public async Task<IEnumerable<Auftrag>> GetAktiveAufträgeAsync()
         {
             return await _dbContext.Aufträge
-                    .Include(auftrag => auftrag.Blutproben)
+                    .Include(auftrag => auftrag.Blutproben.Where(probe => probe.EntnahmeZeitpunkt == null))
                     .Include(auftrag => auftrag.Patient)
                     .Where(auftrag => auftrag.Blutproben.Any(probe => probe.EntnahmeZeitpunkt == null))
                     .ToListAsync();
