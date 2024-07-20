@@ -28,11 +28,29 @@ function Transporte() {
   }: BarCodeEvent) => {
     setText(data);
     setStartScan(false);
-    console.log("Type: " + type + "\nData: " + data);
-    //TODO: Hier sollt die put aufgerufen werden mit der aktuellen sys time
-    fetchRequest(data);
+    showAlert(data, type, data);
   };
 
+  const showAlert = (scannedValue: string, type:string, data:string) => {
+    Alert.alert(
+      "Gescannt!",
+      `Der gescannte Wert ist: ${scannedValue}`,
+      [
+        {
+          text: "Wiederholen",
+          onPress: () => setStartScan(true),
+          style: "cancel",
+        },
+        {
+          text: "Abgeben",
+          onPress: () => {console.log("Type: " + type + "\nData: " + data),
+            fetchRequest(data)}
+          
+        },
+      ],
+      { cancelable: false }
+    );
+  };
   const fetchRequest = async (id:string) => {
     const apiUrl = 'https://blutentnahme.azurewebsites.net/api/Blutproben/transport/' + id;
     console.log(apiUrl);
