@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Blutprobe from "../models/Blutprobe";
 
 // Helper function to deserialize JSON into Blutprobe instances
@@ -22,34 +22,34 @@ const useFetchBlutproben = (apiUrl: string) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const json = await response.json();
-
-        const blutproben: Blutprobe[] = json.$values.map((data: any) =>
-          deserializeBlutprobe(data)
-        );
-        setBlutproben(blutproben);
-      } catch (error: unknown) {
-        if (error instanceof Error) {
-          setError(error.message);
-        } else {
-          setError("An unknown error occurred");
-        }
-      } finally {
-        setLoading(false);
+  const fetchData = useCallback(async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
       }
-    };
+      const json = await response.json();
 
-    fetchData();
+      const blutproben: Blutprobe[] = json.$values.map((data: any) =>
+        deserializeBlutprobe(data)
+      );
+      setBlutproben(blutproben);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("An unknown error occurred");
+      }
+    } finally {
+      setLoading(false);
+    }
   }, [apiUrl]);
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
-  return { blutproben, loading, error };
+  return { blutproben, loading, error, refetch: fetchData };
 };
 
 export default useFetchBlutproben;
