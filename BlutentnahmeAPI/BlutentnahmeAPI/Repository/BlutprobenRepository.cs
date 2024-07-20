@@ -31,7 +31,7 @@ namespace BlutentnahmeAPI.Repository
 
         public async Task PutBlutprobeInLaborTransportiertAsync(string id)
         {
-            var blutprobe = await _dbContext.Blutproben.FirstOrDefaultAsync(b => b.RohrID == id);
+            var blutprobe = await _dbContext.Blutproben.FirstAsync(b => b.RohrID == id);
             if (blutprobe == null)
             {
                 throw new KeyNotFoundException();
