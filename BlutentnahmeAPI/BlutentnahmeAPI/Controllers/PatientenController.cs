@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BlutentnahmeAPI.Data;
 using BlutentnahmeAPI.Models;
+using BlutentnahmeAPI.Repository;
 
 namespace BlutentnahmeAPI.Controllers
 {
@@ -14,109 +15,35 @@ namespace BlutentnahmeAPI.Controllers
     [ApiController]
     public class PatientenController : ControllerBase
     {
-        private readonly BlutentnahmeDBContext _context;
+        private readonly IPatientenRepository _patientenRepository;
 
-        public PatientenController(BlutentnahmeDBContext context)
+        public PatientenController(IPatientenRepository patientenRepository)
         {
-            _context = context;
+            _patientenRepository = patientenRepository;
         }
 
         // GET: api/Patienten
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Patient>>> GetPatienten()
         {
-            return await _context.Patienten.ToListAsync();
+            var patienten = await _patientenRepository.GetPatientenAsync();
+            return Ok(patienten);
         }
 
         // GET: api/Patienten/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Patient>> GetPatient(string id)
         {
-            var patient = await _context.Patienten.FindAsync(id);
+            var patient = await _patientenRepository.GetPatientAsync(id);
 
             if (patient == null)
             {
                 return NotFound();
             }
-
-            return patient;
-        }
-
-        // PUT: api/Patienten/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutPatient(string id, Patient patient)
-        {
-            if (id != patient.PersonID)
+            else
             {
-                return BadRequest();
+                return Ok(patient);
             }
-
-            _context.Entry(patient).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PatientExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Patienten
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Patient>> PostPatient(Patient patient)
-        {
-            _context.Patienten.Add(patient);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (PatientExists(patient.PersonID))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtAction("GetPatient", new { id = patient.PersonID }, patient);
-        }
-
-        // DELETE: api/Patienten/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePatient(string id)
-        {
-            var patient = await _context.Patienten.FindAsync(id);
-            if (patient == null)
-            {
-                return NotFound();
-            }
-
-            _context.Patienten.Remove(patient);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool PatientExists(string id)
-        {
-            return _context.Patienten.Any(e => e.PersonID == id);
         }
     }
 }
