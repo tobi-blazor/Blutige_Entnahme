@@ -7,12 +7,12 @@ RabbitMQ
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1110</x><y>500</y><w>200</w><h>260</h></coordinates><panel_attributes>&lt;&lt;Database&gt;&gt;
 MySQL</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>530</x><y>230</y><w>210</w><h>290</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt;
 CLR
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1670</x><y>170</y><w>170</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Hospital Management&gt;&gt; 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1670</x><y>170</y><w>170</w><h>140</h></coordinates><panel_attributes>&lt;&lt;Hospital Management&gt;&gt; 
 ixserv.4</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1470</x><y>210</y><w>220</w><h>50</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
-publish/subcribe</panel_attributes><additional_attributes>200;20;10;20</additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1630</x><y>110</y><w>240</w><h>180</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; 
+publish/subcribe</panel_attributes><additional_attributes>200;20;10;20</additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1630</x><y>110</y><w>240</w><h>220</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; 
 Ubuntu LTS 22.04 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>50</x><y>160</y><w>290</w><h>260</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; IOS</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>510</y><w>500</w><h>130</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
 TCP/IP</panel_attributes><additional_attributes>10;10;480;110</additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>260</y><w>250</w><h>50</h></coordinates><panel_attributes>&lt;&lt;protocol&gt;&gt;
-https</panel_attributes><additional_attributes>10;20;230;20</additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1600</x><y>60</y><w>310</w><h>260</h></coordinates><panel_attributes>&lt;&lt;device&gt;&gt; 
+https</panel_attributes><additional_attributes>10;20;230;20</additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1600</x><y>60</y><w>310</w><h>290</h></coordinates><panel_attributes>&lt;&lt;device&gt;&gt; 
 HP ultra xxl mega SRV00420i</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1600</x><y>530</y><w>310</w><h>260</h></coordinates><panel_attributes>&lt;&lt;device&gt;&gt; 
 Microsoft Server</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1630</x><y>590</y><w>240</w><h>180</h></coordinates><panel_attributes>&lt;&lt;execution env&gt;&gt; 
 Ubuntu LTS 22.04</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>1660</x><y>670</y><w>180</w><h>80</h></coordinates><panel_attributes>&lt;&lt;SSO&gt;&gt;
@@ -58,4 +58,7 @@ BlutetnahmeBroker.jar
 publish/subscribe
 </panel_attributes><additional_attributes>160;20;10;20</additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>510</x><y>180</y><w>260</w><h>360</h></coordinates><panel_attributes>&lt;&lt;container&gt;&gt; 
 .NET-Docker
-</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>1680</x><y>230</y><w>140</w><h>70</h></coordinates><panel_attributes>symbol=component
+
+&lt;&lt;component&gt;&gt;
+Krankenhaus</panel_attributes><additional_attributes></additional_attributes></element></diagram>
