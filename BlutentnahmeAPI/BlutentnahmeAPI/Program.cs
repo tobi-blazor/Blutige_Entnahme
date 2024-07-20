@@ -1,4 +1,5 @@
 using BlutentnahmeAPI.Data;
+using BlutentnahmeAPI.Repository;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -14,6 +15,10 @@ builder.Services.AddControllers().AddJsonOptions(x =>
    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 builder.Services.AddDbContextFactory<BlutentnahmeDBContext>(options =>
 options.UseMySQL(builder.Configuration.GetConnectionString("AzureDB")));
+builder.Services.AddScoped<IAufträgeRepository, AufträgeRepository>();
+builder.Services.AddScoped<IBlutprobenRepository, BlutprobenRepository>();
+builder.Services.AddScoped<IPatientenRepository, PatientenRepository>();
+builder.Services.AddScoped<IPersonalRepository, PersonalRepository>();
 
 var app = builder.Build();
 
