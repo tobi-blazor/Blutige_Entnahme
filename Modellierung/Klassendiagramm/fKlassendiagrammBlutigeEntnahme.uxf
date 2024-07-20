@@ -1,19 +1,48 @@
-<diagram program="umletino" version="15.1"><zoom_level>6</zoom_level><element><id>UMLClass</id><coordinates><x>270</x><y>672</y><w>126</w><h>72</h></coordinates><panel_attributes>WebApplication
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>444</x>
+      <y>798</y>
+      <w>126</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>WebApplication
 --
 - Enviorment
 --
 +UseHttpsRedirection()
 +UseAuthorization()
 +MapControllers()
-+Run()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>444</x><y>528</y><w>126</w><h>60</h></coordinates><panel_attributes>Program
++Run()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>636</x>
+      <y>660</y>
+      <w>126</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Program
 --
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>258</x><y>312</y><w>126</w><h>54</h></coordinates><panel_attributes>DbSet&lt;T&gt;
---
-
---
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>264</x><y>534</y><w>126</w><h>78</h></coordinates><panel_attributes>WebApplicationBuilder
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>438</x>
+      <y>660</y>
+      <w>126</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>WebApplicationBuilder
 --
 - Services
 - Configuration
@@ -21,31 +50,134 @@
 --
 +CreateBuilder()
 +Build():WebApplication
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>426</x><y>270</y><w>306</w><h>72</h></coordinates><panel_attributes>BlutentnahmeDBContext
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>840</x>
+      <y>408</y>
+      <w>306</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>BlutentnahmeDBContext
 --
-+Personal:DbSet&lt;Personal&gt;
-+Auftrag:DbSet&lt;Auftrag&gt;
-+Blutproben:DbSet&lt;Blutprobe&gt;
-+Patienten:DbSet&lt;Patient&gt;
+
 --
 BlutentnahmeDBContext(DbContextOptions&lt;BlutentnahmeDBContext&gt; options)
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>384</x><y>546</y><w>72</w><h>24</h></coordinates><panel_attributes>lt=&lt;-
--builder</panel_attributes><additional_attributes>10;20;100;20</additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>582</y><w>120</w><h>132</h></coordinates><panel_attributes>lt=&lt;-
--app</panel_attributes><additional_attributes>10;200;160;200;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>324</x><y>336</y><w>132</w><h>210</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>200;10;200;140;10;140;10;330</additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>174</y><w>126</w><h>54</h></coordinates><panel_attributes>DbContext
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>558</x>
+      <y>672</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=-builder
+</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>564</x>
+      <y>690</y>
+      <w>126</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=-app
+</panel_attributes>
+    <additional_attributes>10.0;230.0;160.0;230.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>498</x>
+      <y>474</y>
+      <w>378</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=-dbContextFactory</panel_attributes>
+    <additional_attributes>600.0;10.0;600.0;120.0;10.0;120.0;10.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>834</x>
+      <y>324</y>
+      <w>126</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>DbContext {abstract}
 --
 
 --
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>222</y><w>18</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>186</x><y>558</y><w>90</w><h>24</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;contains&gt;&gt;</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>534</y><w>162</w><h>60</h></coordinates><panel_attributes>ServiceCollection  
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>684</y>
+      <w>90</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;contains&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>204</x>
+      <y>660</y>
+      <w>162</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>ServiceCollection  
 --
 --
 + AddControllers()     
 + AddEndpointsApiExplorer() 
 + AddSwaggerGen()      
 + AddDbContextFactory&lt;TContext&gt;() 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>312</x><y>606</y><w>54</w><h>78</h></coordinates><panel_attributes>lt=&lt;.
-≪create≫</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>24</x><y>300</y><w>144</w><h>78</h></coordinates><panel_attributes>&lt;&lt;DTO&gt;&gt;
++ AddScoped&lt;IRepo,TRepo&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>486</x>
+      <y>732</y>
+      <w>54</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+≪create≫</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>198</x>
+      <y>426</y>
+      <w>144</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;DTO&gt;&gt;
 Auftrag
 --
 - AuftragsID: String
@@ -53,25 +185,51 @@ Auftrag
 - Blutproben: Blutprobe[]
 - Patient: Patient
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>42</x><y>420</y><w>126</w><h>102</h></coordinates><panel_attributes>&lt;&lt;DTO&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>546</y>
+      <w>126</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;DTO&gt;&gt;
 Patient
 --
-- PersonID: String
-- Vorname: String
-- Nachname: String
-- Geburtsdatum: DateTime
 - Hinweise: String
 - Aufträge: Auftrag[]
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>216</x><y>138</y><w>162</w><h>78</h></coordinates><panel_attributes>Personal
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>264</y>
+      <w>162</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;DTO&gt;&gt;
+Personal
 --
-- PersonID: String
-- Vorname: String
-- Nachname: String
-- Geburtsdatum: DateTime
 - Blutentnahmen: Blutprobe[]
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>132</y><w>168</w><h>120</h></coordinates><panel_attributes>&lt;&lt;DTO&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>174</x>
+      <y>258</y>
+      <w>168</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;DTO&gt;&gt;
 Blutprobe
 --
 - ProbeNr: int
@@ -84,72 +242,615 @@ Blutprobe
 - Auftrag: Auftrag
 - LaborEingang: DateTime?
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>108</x><y>246</y><w>30</w><h>66</h></coordinates><panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>282</x>
+      <y>372</y>
+      <w>30</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=-
 m1=1
 m2=0..*
-bg=black</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>108</x><y>372</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=-
+bg=black</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>282</x>
+      <y>498</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-
 m1=0..*
-m2=1</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>162</x><y>180</y><w>66</w><h>24</h></coordinates><panel_attributes>lt=-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>306</y>
+      <w>66</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-
 m1=1
 m2=0..*
-bg=black</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>378</x><y>324</y><w>60</w><h>18</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>210</y><w>36</w><h>114</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>162</x><y>234</y><w>114</w><h>90</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;20;170;20;170;130</additional_attributes></element><element><id>Relation</id><coordinates><x>162</x><y>330</y><w>108</w><h>24</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>Relation</id><coordinates><x>162</x><y>360</y><w>126</w><h>108</h></coordinates><panel_attributes>lt=&lt;.
-&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;160;190;160;190;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>492</x><y>408</y><w>270</w><h>102</h></coordinates><panel_attributes>PersonalController
+bg=black</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>552</x>
+      <y>438</y>
+      <w>300</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=4
+m2=1
++Personal &lt;&lt;bind&gt;&gt; &lt;T-&gt;Personal&gt;
++Aufträge &lt;&lt;bind&gt;&gt; &lt;T-&gt;Auftrag&gt;
++Blutproben &lt;&lt;bind&gt;&gt; &lt;T-&gt;Blutprobe&gt;
++Patienten &lt;&lt;bind&gt;&gt; &lt;T-&gt;PAtient&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;480.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>474</x>
+      <y>318</y>
+      <w>42</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>360</y>
+      <w>114</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0;170.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>456</y>
+      <w>102</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>474</y>
+      <w>132</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;180.0;190.0;180.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1668</x>
+      <y>630</y>
+      <w>270</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>PersonalController
 --
--_context: BlutentnahmeDBContext
+- _personalRepository: IPersonalRepository
 --
-+PersonalController(BlutentnahmeDBContext context)
-+GetPersonal():Task&lt;ActionResult&lt;IEnumerable&lt;Personal&gt;&gt;&gt;
-+GetPersonal(string id): Task&lt;ActionResult&lt;Personal&gt;&gt;
-+PutPersonal(string id, Personal personal): Task&lt;IActionResult&gt;
-+PostPersonal(Personal personal):Task&lt;ActionResult&lt;Personal&gt;&gt;
-+DeletePersonal(string id):Task&lt;IActionResult&gt;
--PersonalExists(string id): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>588</x><y>336</y><w>18</w><h>84</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>774</x><y>342</y><w>270</w><h>102</h></coordinates><panel_attributes>PersonalController
++ PersonalController(personalRepository: IPersonalRepository)
++ GetAllPersonal(): Task&lt;ActionResult&lt;IEnumerable&lt;Personal&gt;&gt;&gt;
++ GetPersonal(id: string): Task&lt;ActionResult&lt;Personal&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>204</x>
+      <y>786</y>
+      <w>168</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Ref Frontend-dependencies-diagramm.uxf</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>204</y>
+      <w>162</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>Person {abstract}
 --
-- _context: BlutentnahmeDBContext
++ PersonID: String
++ Vorname: String
++ Nachname: String
++ Geburtsdatum: DateTime
 --
-+ PersonalController(context: BlutentnahmeDBContext)
-+ GetPatienten(): Task&lt;ActionResult&lt;IEnumerable&lt;Patient&gt;&gt;&gt;
-+ GetPatient(id: string): Task&lt;ActionResult&lt;Personal&gt;&gt;
-+ PutPatient(id: string, patient: Patient): Task&lt;IActionResult&gt;
-+ PostPatient(patient: Patient): Task&lt;ActionResult&lt;Patient&gt;&gt;
-+ DeletePatient(id: string): Task&lt;IActionResult&gt;
-- PatientExists(id: string): bool
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>774</x><y>198</y><w>270</w><h>132</h></coordinates><panel_attributes>BlutprobenController
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>264</y>
+      <w>84</w>
+      <h>342</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;550.0;120.0;550.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>156</x>
+      <y>222</y>
+      <w>288</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;460.0;10.0;460.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1308</x>
+      <y>648</y>
+      <w>270</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt; IPersonalRepository
 --
-- _context: BlutentnahmeDBContext
++ GetAllPersonalAsync(): Task&lt;IEnumerable&lt;Personal&gt;&gt;
++ GetPersonal(id: string): Task&lt;Personal?&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>990</x>
+      <y>624</y>
+      <w>270</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>PersonalRepository
 --
-+ BlutprobenController(context: BlutentnahmeDBContext)
+- _dbContext: BlutentnahmeDBContext
+--
++ PersonalRepository(context: BlutentnahmeDBContext)
++ GetAllPersonalAsync(): Task&lt;IEnumerable&lt;Personal&gt;&gt;
++ GetPersonal(id: string): Task&lt;Personal?&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1254</x>
+      <y>672</y>
+      <w>66</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>990</x>
+      <y>474</y>
+      <w>60</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=-_dbContext
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1992</x>
+      <y>666</y>
+      <w>126</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ControllerBase {abstract}
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1572</x>
+      <y>666</y>
+      <w>108</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1932</x>
+      <y>642</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>140.0;40.0;140.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>354</y>
+      <w>18</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>426</x>
+      <y>426</y>
+      <w>144</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>template= T
+DbSet
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1356</x>
+      <y>168</y>
+      <w>270</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IAufträgeRepository
+--
++ GetAufträgeAsync(): Task&lt;IEnumerable&lt;Auftrag&gt;&gt;
++ GetAuftragAsync(id: string): Task&lt;Auftrag?&gt;
++ GetAktiveAufträgeAsync(): Task&lt;IEnumerable&lt;Auftrag&gt;&gt;
++ GetAktivenAuftragWithNichtEntnommeneBlutprobenAsync(id: string): Task&lt;Auftrag?&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1716</x>
+      <y>264</y>
+      <w>348</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>BlutprobenController
+--
+- _blutprobenRepository: IBlutprobenRepository
+--
++ BlutprobenController(blutprobenRepository: IBlutprobenRepository)
 + GetBlutproben(): Task&lt;ActionResult&lt;IEnumerable&lt;Blutprobe&gt;&gt;&gt;
 + GetBlutprobe(id: int): Task&lt;ActionResult&lt;Blutprobe&gt;&gt;
-+ PutBlutprobe(id: int, blutprobe: Blutprobe): Task&lt;IActionResult&gt;
-+ PostBlutprobe(blutprobe: Blutprobe): Task&lt;ActionResult&lt;Blutprobe&gt;&gt;
-+ DeleteBlutprobe(id: int): Task&lt;IActionResult&gt;
 + GetZuTransportierendeBlutproben(): Task&lt;ActionResult&lt;IEnumerable&lt;Blutprobe&gt;&gt;&gt;
 + PutEntnommeneBlutprobe(id: int, rohrID: string, personalID: string): Task&lt;IActionResult&gt;
 + PutBlutprobeInLaborTransportiert(id: string): Task&lt;IActionResult&gt;
-- BlutprobeExists(id: int): bool
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>564</x><y>48</y><w>270</w><h>132</h></coordinates><panel_attributes>AuftraegeController
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1716</x>
+      <y>168</y>
+      <w>270</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>AuftraegeController
 --
-- _context: BlutentnahmeDBContext
+- _aufträgeRepository: IAufträgeRepository
 --
-+ AuftraegeController(context: BlutentnahmeDBContext)
++ AuftraegeController(aufträgeRepository: IAufträgeRepository)
 + GetAufträge(): Task&lt;ActionResult&lt;IEnumerable&lt;Auftrag&gt;&gt;&gt;
 + GetAuftrag(id: string): Task&lt;ActionResult&lt;Auftrag&gt;&gt;
-+ PutAuftrag(id: string, auftrag: Auftrag): Task&lt;IActionResult&gt;
-+ PostAuftrag(auftrag: Auftrag): Task&lt;ActionResult&lt;Auftrag&gt;&gt;
-+ DeleteAuftrag(id: string): Task&lt;IActionResult&gt;
 + GetAktiveAufträge(): Task&lt;ActionResult&lt;IEnumerable&lt;Auftrag&gt;&gt;&gt;
-+ GetAktivenlAuftrag(id: string): Task&lt;ActionResult&lt;Auftrag&gt;&gt;
-- AuftragExists(id: string): bool
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>726</x><y>306</y><w>60</w><h>18</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>636</x><y>336</y><w>150</w><h>54</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;70;230;70</additional_attributes></element><element><id>Relation</id><coordinates><x>654</x><y>174</y><w>18</w><h>108</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>30</x><y>660</y><w>168</w><h>60</h></coordinates><panel_attributes>Ref Frontend-dependencies-diagramm.uxf</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>876</x><y>42</y><w>126</w><h>114</h></coordinates><panel_attributes>Receiver
++ GetAktivenAuftragWithNichtEntnommeneBlutproben(id: string): Task&lt;ActionResult&lt;Auftrag&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1668</x>
+      <y>546</y>
+      <w>270</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>PatientenController
 --
-#persondID: String
-#vorname: String
-#nachname: String
-#geburtsdatumStr: String
-#hinweise: String
+- _patientenRepository: IPatientenRepository
 --
-saveToSQL()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>684</x><y>150</y><w>264</w><h>132</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;200;10;60;420;60;420;10</additional_attributes></element></diagram>
++ PatientenController(patientenRepository: IPatientenRepository)
++ GetPatienten(): Task&lt;ActionResult&lt;IEnumerable&lt;Patient&gt;&gt;&gt;
++ GetPatient(id: string): Task&lt;ActionResult&lt;Patient&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1932</x>
+      <y>576</y>
+      <w>114</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>170.0;150.0;170.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2052</x>
+      <y>348</y>
+      <w>18</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;530.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1980</x>
+      <y>204</y>
+      <w>120</w>
+      <h>474</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;770.0;180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1308</x>
+      <y>558</y>
+      <w>270</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt; IPatientenRepository
+--
++ GetPatientenAsync(): Task&lt;IEnumerable&lt;Patient&gt;&gt;
++ GetPatientAsync(id: string): Task&lt;Patient?&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1356</x>
+      <y>264</y>
+      <w>270</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt; 
+IBlutprobenRepository
+--
++ GetBlutprobenAsync(): Task&lt;IEnumerable&lt;Blutprobe&gt;&gt;
++ GetBlutprobeAsync(id: int): Task&lt;Blutprobe?&gt;
++ GetZuTransportierendeBlutprobenAsync(): Task&lt;IEnumerable&lt;Blutprobe&gt;&gt;
++ PutEntnommeneBlutprobeAsync(id: int, rohrID: string, personalID: string): Task
++ PutBlutprobeInLaborTransportiertAsync(id: string): Task
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1572</x>
+      <y>570</y>
+      <w>108</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1620</x>
+      <y>306</y>
+      <w>108</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1620</x>
+      <y>198</y>
+      <w>108</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt;&lt;uses&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1014</x>
+      <y>540</y>
+      <w>270</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>PatientenRepository
+--
+- _dbContext: BlutentnahmeDBContext
+--
++ PatientenRepository(dbContext: BlutentnahmeDBContext)
++ GetPatientAsync(id: string): Task&lt;Patient?&gt;
++ GetPatientenAsync(): Task&lt;IEnumerable&lt;Patient&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1278</x>
+      <y>588</y>
+      <w>42</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1032</x>
+      <y>474</y>
+      <w>60</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=-_dbContext
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1014</x>
+      <y>258</y>
+      <w>306</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>BlutprobenRepository
+--
+- _dbContext: BlutentnahmeDBContext
+--
++ BlutprobenRepository(dbContext: BlutentnahmeDBContext)
++ GetBlutprobeAsync(id: int): Task&lt;Blutprobe?&gt;
++ GetBlutprobenAsync(): Task&lt;IEnumerable&lt;Blutprobe&gt;&gt;
++ GetZuTransportierendeBlutprobenAsync(): Task&lt;IEnumerable&lt;Blutprobe&gt;&gt;
++ PutBlutprobeInLaborTransportiertAsync(id: string): Task
++ PutEntnommeneBlutprobeAsync(id: int, rohrID: string, personalID: string): Task
+- BlutprobeExists(id: int): bool
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>966</x>
+      <y>162</y>
+      <w>342</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>AufträgeRepository
+--
+- _dbContext: BlutentnahmeDBContext
+--
++ AufträgeRepository(dbContext: BlutentnahmeDBContext)
++ GetAufträgeAsync(): Task&lt;IEnumerable&lt;Auftrag&gt;&gt;
++ GetAktiveAufträgeAsync(): Task&lt;IEnumerable&lt;Auftrag&gt;&gt;
++ GetAuftragAsync(id: string): Task&lt;Auftrag?&gt;
++ GetAktivenAuftragWithNichtEntnommeneBlutprobenAsync(id: string): Task&lt;Auftrag?&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1032</x>
+      <y>360</y>
+      <w>60</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=-_dbContext
+</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1302</x>
+      <y>210</y>
+      <w>66</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1314</x>
+      <y>312</y>
+      <w>54</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>978</x>
+      <y>240</y>
+      <w>60</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=-_dbContext
+</panel_attributes>
+    <additional_attributes>10.0;280.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
