@@ -212,43 +212,63 @@ m2=-_dbContext
 </panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1736</x><y>64</y><w>88</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1752</x><y>200</y><w>72</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1304</x><y>104</y><w>80</w><h>240</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 m2=-_dbContext
-</panel_attributes><additional_attributes>10;280;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2896</x><y>48</y><w>152</w><h>200</h></coordinates><panel_attributes>Receiver
+</panel_attributes><additional_attributes>10;280;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2840</x><y>48</y><w>208</w><h>352</h></coordinates><panel_attributes>Receiver
 --
+_-QUEUE_NAME: String {readOnly}_
 #persondID: String
 #vorname: String
 #nachname: String
 #geburtsdatumStr: String
 #hinweise: String
+#auftragsID: String
+#geplanterZeitpunktStr: String
+#patientPersonID: String
+#rohrID: String
+#spaetesterEntnahmezeitpunktStr: String
+#grund: String
+#entnahmeZeitpunktStr: String
+#personalPersonID: String
+#auftragsID: String
+#laborEingangStr: String
+
+
+
+
 --
-+main()
+_+ main(String[] args): void_
 +splt()
-+saveToSQL()
-+savePatientToSQL()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2904</x><y>312</y><w>168</w><h>152</h></coordinates><panel_attributes>ConnectionFactory
++saveToSQL(String message): void
++savePatientToSQL(String message): void
++saveAuftragToSQL(String message): void
++saveBlutprobeToSQL(String message): void
++savePersonalToSQL(String message): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>3176</x><y>88</y><w>168</w><h>152</h></coordinates><panel_attributes>ConnectionFactory
 --
 
 --
-
-+newConnection()
-+setHost()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>3376</x><y>392</y><w>168</w><h>152</h></coordinates><panel_attributes>DelieverCallback
++newConnection():void
++setHost():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2864</x><y>488</y><w>168</w><h>152</h></coordinates><panel_attributes>DelieverCallback
+--
+#consumerTag: consumerTag
+#delievery: delievery
+#message: String
+--
++getBody():String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>3128</x><y>280</y><w>168</w><h>152</h></coordinates><panel_attributes>DriverManger
 --
 
 --
-getBody()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>3176</x><y>72</y><w>168</w><h>152</h></coordinates><panel_attributes>DriverManger
++getConnection():void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>3424</x><y>88</y><w>168</w><h>152</h></coordinates><panel_attributes>Channel
 --
 
 --
-+getConnection()
-+prepareStatement()
-+setString</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>3152</x><y>288</y><w>168</w><h>152</h></coordinates><panel_attributes>Channel
++createChannel():void
++queueDeclare():void
++basicConsume():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>3376</x><y>280</y><w>168</w><h>152</h></coordinates><panel_attributes>PreparedStatement
 --
 
 --
-+createChannel()
-+queueDeclare()
-+basicConsume()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>3360</x><y>120</y><w>168</w><h>152</h></coordinates><panel_attributes>DriverManger
---
-
---
-+getConnection()
-+prepareStatement()
-+setString</panel_attributes><additional_attributes></additional_attributes></element></diagram>
++prepareStatement():void
++setString()
++parse():String
++executeUpdate():void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>3040</x><y>152</y><w>152</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>170;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>3336</x><y>152</y><w>104</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>110;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2944</x><y>392</y><w>24</w><h>112</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>3040</x><y>344</y><w>104</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>110;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>3288</x><y>336</y><w>104</w><h>32</h></coordinates><panel_attributes>lt=&lt;-
+&lt;&lt;uses&gt;&gt;</panel_attributes><additional_attributes>110;20;10;20</additional_attributes></element></diagram>
