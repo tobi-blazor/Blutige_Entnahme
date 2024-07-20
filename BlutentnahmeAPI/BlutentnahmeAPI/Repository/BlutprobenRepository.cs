@@ -31,7 +31,10 @@ namespace BlutentnahmeAPI.Repository
 
         public async Task PutBlutprobeInLaborTransportiertAsync(string id)
         {
-            var blutprobe = await _dbContext.Blutproben.FirstAsync(b => b.RohrID.Equals(id));
+            var blutprobe = await _dbContext.Blutproben
+                .Where(x => x.LaborEingang == null)
+                .Where(x => x.EntnahmeZeitpunkt != null)
+                .FirstAsync(b => b.RohrID.Equals(id));
             if (blutprobe == null)
             {
                 throw new KeyNotFoundException();
