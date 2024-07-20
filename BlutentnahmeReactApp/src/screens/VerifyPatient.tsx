@@ -69,7 +69,7 @@ function VerifyPatient({ route }: any) {
       "Patient konnte nicht verifiziert werden. Bitte erneut versuchen.",
       [
         {
-          text: "OK",
+          text: "Wiederholen",
           onPress: () => setPatientID(""),
         },
       ],
