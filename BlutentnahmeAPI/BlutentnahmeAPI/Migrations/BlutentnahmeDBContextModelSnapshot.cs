@@ -35,7 +35,7 @@ namespace BlutentnahmeAPI.Migrations
 
                     b.HasIndex("PatientPersonID");
 
-                    b.ToTable("Aufträge");
+                    b.ToTable("Aufträge", (string)null);
                 });
 
             modelBuilder.Entity("BlutentnahmeAPI.Models.Blutprobe", b =>
@@ -74,7 +74,7 @@ namespace BlutentnahmeAPI.Migrations
 
                     b.HasIndex("PersonalPersonID");
 
-                    b.ToTable("Blutproben");
+                    b.ToTable("Blutproben", (string)null);
                 });
 
             modelBuilder.Entity("BlutentnahmeAPI.Models.Patient", b =>
@@ -99,7 +99,7 @@ namespace BlutentnahmeAPI.Migrations
 
                     b.HasKey("PersonID");
 
-                    b.ToTable("Patienten");
+                    b.ToTable("Patienten", (string)null);
                 });
 
             modelBuilder.Entity("BlutentnahmeAPI.Models.Personal", b =>
@@ -120,7 +120,7 @@ namespace BlutentnahmeAPI.Migrations
 
                     b.HasKey("PersonID");
 
-                    b.ToTable("Personal");
+                    b.ToTable("Personal", (string)null);
                 });
 
             modelBuilder.Entity("BlutentnahmeAPI.Models.Auftrag", b =>
