@@ -24,14 +24,14 @@ fontsize=11
 
 
 // This text will be stored with each diagram;  use it for notes.</help_text>
-  <zoom_level>8</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>560</x>
-      <y>56</y>
-      <w>16</w>
-      <h>16</h>
+      <x>450</x>
+      <y>72</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=initial</panel_attributes>
     <additional_attributes/>
@@ -39,21 +39,21 @@ fontsize=11
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>568</x>
-      <y>56</y>
-      <w>72</w>
-      <h>24</h>
+      <x>450</x>
+      <y>72</y>
+      <w>78</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>624</x>
-      <y>48</y>
-      <w>72</w>
-      <h>40</h>
+      <x>516</x>
+      <y>66</y>
+      <w>54</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>unangemeldet</panel_attributes>
     <additional_attributes/>
@@ -61,23 +61,23 @@ fontsize=11
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>672</x>
-      <y>80</y>
-      <w>208</w>
-      <h>88</h>
+      <x>564</x>
+      <y>234</y>
+      <w>102</w>
+      <h>102</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Mitarbeiterausweis
 gescannt</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0;210.0;40.0;210.0;90.0;50.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0;40.0;80.0;120.0;80.0;120.0;150.0;30.0;150.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>600</x>
-      <y>128</y>
-      <w>112</w>
-      <h>64</h>
+      <x>498</x>
+      <y>306</y>
+      <w>84</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>authentifizierend
 --
@@ -89,25 +89,25 @@ des Mitarbeiterausweises</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>648</x>
-      <y>184</y>
-      <w>136</w>
-      <h>104</h>
+      <x>534</x>
+      <y>348</y>
+      <w>102</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Überprüfung abgeschlossen
 [Mitarbeiter =gültig]/
 Weiterleiten auf
 Hauptseite</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>816</x>
-      <y>488</y>
-      <w>272</w>
-      <h>64</h>
+      <x>660</x>
+      <y>564</y>
+      <w>102</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>Blutprobe zuordnend
 --
@@ -119,10 +119,10 @@ exit/Ausgabe der Ergebnisse</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>24</x>
-      <y>272</y>
-      <w>1144</w>
-      <h>432</h>
+      <x>66</x>
+      <y>402</y>
+      <w>858</w>
+      <h>324</h>
     </coordinates>
     <panel_attributes>
 layer=-1
@@ -132,23 +132,23 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>848</x>
-      <y>360</y>
-      <w>64</w>
-      <h>144</h>
+      <x>594</x>
+      <y>462</y>
+      <w>48</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-Scannen 
+Blutprobe 
 ausgewählt</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>112</x>
-      <y>280</y>
-      <w>120</w>
-      <h>16</h>
+      <x>132</x>
+      <y>408</y>
+      <w>90</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>Appzugang offen
 style=wordwrap</panel_attributes>
@@ -157,10 +157,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>528</x>
-      <y>504</y>
-      <w>120</w>
-      <h>32</h>
+      <x>444</x>
+      <y>576</y>
+      <w>90</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>Blutentnahme aktiv</panel_attributes>
     <additional_attributes/>
@@ -168,10 +168,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>640</x>
-      <y>504</y>
-      <w>192</w>
-      <h>32</h>
+      <x>528</x>
+      <y>576</y>
+      <w>144</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 [Zuordnung = erfolgreich]/
@@ -181,22 +181,22 @@ Blutabnahme starten</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>384</y>
-      <w>536</w>
-      <h>280</h>
+      <x>480</x>
+      <y>498</y>
+      <w>366</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Fertig gedrückt</panel_attributes>
-    <additional_attributes>10.0;190.0;10.0;330.0;650.0;330.0;650.0;10.0</additional_attributes>
+    <additional_attributes>10.0;170.0;10.0;220.0;590.0;220.0;590.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1048</x>
-      <y>360</y>
-      <w>104</w>
-      <h>32</h>
+      <x>798</x>
+      <y>480</y>
+      <w>78</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>weitere Proben prüfend</panel_attributes>
     <additional_attributes/>
@@ -204,34 +204,22 @@ Fertig gedrückt</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>920</x>
-      <y>384</y>
-      <w>168</w>
-      <h>120</h>
+      <x>672</x>
+      <y>498</y>
+      <w>156</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 [anzahlBlutproben &gt;= 1]</panel_attributes>
-    <additional_attributes>190.0;10.0;190.0;80.0;10.0;80.0;10.0;130.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>416</x>
-      <y>320</y>
-      <w>400</w>
-      <h>128</h>
-    </coordinates>
-    <panel_attributes>lt=-&gt;
-Patienten angeklickt</panel_attributes>
-    <additional_attributes>10.0;140.0;10.0;20.0;480.0;20.0</additional_attributes>
+    <additional_attributes>240.0;10.0;240.0;80.0;10.0;80.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>800</x>
-      <y>320</y>
-      <w>176</w>
-      <h>48</h>
+      <x>576</x>
+      <y>432</y>
+      <w>132</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>Patientendashboard
 offen
@@ -242,38 +230,38 @@ entry/ Ausgabe der Patientendaten</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>368</x>
-      <y>272</y>
-      <w>744</w>
-      <h>176</h>
+      <x>324</x>
+      <y>402</y>
+      <w>492</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 [anzahlBlutproben = 0]
 </panel_attributes>
-    <additional_attributes>910.0;110.0;910.0;20.0;10.0;20.0;10.0;200.0</additional_attributes>
+    <additional_attributes>800.0;130.0;800.0;20.0;10.0;20.0;10.0;200.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>688</x>
-      <y>64</y>
-      <w>392</w>
-      <h>120</h>
+      <x>564</x>
+      <y>78</y>
+      <w>204</w>
+      <h>270</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Überprüfung abgeschlossen
 [Mitarbeiter = ungültig]/
 Zurückleiten auf 
 Anmeldeseite</panel_attributes>
-    <additional_attributes>30.0;130.0;330.0;130.0;330.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>30.0;430.0;180.0;430.0;180.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>64</x>
-      <y>472</y>
-      <w>144</w>
-      <h>48</h>
+      <x>96</x>
+      <y>552</y>
+      <w>108</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>bereit
 --
@@ -283,10 +271,10 @@ entry/rufe Transportaufträge ab</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>368</x>
-      <y>472</y>
-      <w>144</w>
-      <h>48</h>
+      <x>324</x>
+      <y>552</y>
+      <w>108</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>bereit
 --
@@ -297,10 +285,10 @@ Blutauträge ab</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>488</y>
-      <w>184</w>
-      <h>32</h>
+      <x>198</x>
+      <y>564</y>
+      <w>138</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Transportmodus öffnen
@@ -310,10 +298,10 @@ ausgewählt</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>464</y>
-      <w>184</w>
-      <h>56</h>
+      <x>198</x>
+      <y>546</y>
+      <w>138</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Blutaufträge öffnen
@@ -325,10 +313,10 @@ ausgewählt
   <element>
     <id>Text</id>
     <coordinates>
-      <x>128</x>
-      <y>440</y>
-      <w>104</w>
-      <h>16</h>
+      <x>144</x>
+      <y>528</y>
+      <w>78</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>MainScreen offen
 style=wordwrap
@@ -339,10 +327,10 @@ style=wordwrap
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>472</x>
-      <y>536</y>
-      <w>16</w>
-      <h>16</h>
+      <x>402</x>
+      <y>600</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=initial</panel_attributes>
     <additional_attributes/>
@@ -350,10 +338,10 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>472</x>
-      <y>512</y>
-      <w>24</w>
-      <h>40</h>
+      <x>402</x>
+      <y>582</y>
+      <w>18</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
     <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
@@ -361,10 +349,10 @@ style=wordwrap
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>48</x>
-      <y>432</y>
-      <w>472</w>
-      <h>232</h>
+      <x>84</x>
+      <y>522</y>
+      <w>354</w>
+      <h>174</h>
     </coordinates>
     <panel_attributes>
 
@@ -374,10 +362,10 @@ bg=GRAY</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>136</x>
-      <y>400</y>
-      <w>16</w>
-      <h>16</h>
+      <x>150</x>
+      <y>498</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=initial</panel_attributes>
     <additional_attributes/>
@@ -385,10 +373,10 @@ bg=GRAY</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>136</x>
-      <y>424</y>
-      <w>24</w>
-      <h>24</h>
+      <x>150</x>
+      <y>516</y>
+      <w>18</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
@@ -396,22 +384,22 @@ bg=GRAY</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>448</x>
-      <y>400</y>
-      <w>200</w>
-      <h>88</h>
+      <x>126</x>
+      <y>474</y>
+      <w>372</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Scannen ausgewählt</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;20.0;230.0;20.0</additional_attributes>
+    <additional_attributes>10.0;130.0;10.0;20.0;600.0;20.0;600.0;40.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>632</x>
-      <y>400</y>
-      <w>128</w>
-      <h>32</h>
+      <x>468</x>
+      <y>498</y>
+      <w>78</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>scannend
 --
@@ -421,60 +409,60 @@ do/ Barcode überprüfen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>672</x>
-      <y>424</y>
-      <w>112</w>
+      <x>510</x>
+      <y>504</y>
+      <w>84</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 
 Wiederholen ausgewählt</panel_attributes>
-    <additional_attributes>30.0;10.0;30.0;40.0;100.0;40.0;100.0;10.0</additional_attributes>
+    <additional_attributes>10.0;30.0;10.0;60.0;80.0;60.0;80.0;10.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>512</x>
-      <y>424</y>
-      <w>168</w>
-      <h>48</h>
+      <x>390</x>
+      <y>498</y>
+      <w>90</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Scannen fehlgeschlagen </panel_attributes>
-    <additional_attributes>190.0;10.0;190.0;40.0;10.0;40.0</additional_attributes>
+    <additional_attributes>130.0;20.0;20.0;20.0;20.0;40.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>336</y>
-      <w>536</w>
-      <h>112</h>
+      <x>132</x>
+      <y>450</y>
+      <w>396</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-Scan erfolgreich</panel_attributes>
-    <additional_attributes>650.0;80.0;650.0;20.0;10.0;20.0;10.0;120.0</additional_attributes>
+übergeben angeklickt</panel_attributes>
+    <additional_attributes>640.0;80.0;640.0;20.0;10.0;20.0;10.0;170.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>688</x>
-      <y>40</y>
-      <w>288</w>
-      <h>32</h>
+      <x>564</x>
+      <y>60</y>
+      <w>72</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 App 
 beendet</panel_attributes>
-    <additional_attributes>10.0;20.0;340.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>960</x>
-      <y>48</y>
-      <w>16</w>
-      <h>16</h>
+      <x>624</x>
+      <y>66</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=final</panel_attributes>
     <additional_attributes/>
@@ -482,10 +470,10 @@ beendet</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>0</x>
+      <x>54</x>
       <y>0</y>
-      <w>1440</w>
-      <h>720</h>
+      <w>960</w>
+      <h>738</h>
     </coordinates>
     <panel_attributes>stm_App</panel_attributes>
     <additional_attributes/>
@@ -493,22 +481,22 @@ beendet</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>448</x>
-      <y>360</y>
-      <w>376</w>
-      <h>344</h>
+      <x>384</x>
+      <y>438</y>
+      <w>204</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Patient ausgewählt</panel_attributes>
-    <additional_attributes>10.0;200.0;10.0;410.0;450.0;410.0;450.0;10.0</additional_attributes>
+    <additional_attributes>10.0;190.0;10.0;20.0;320.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>136</x>
-      <y>408</y>
-      <w>24</w>
-      <h>40</h>
+      <x>150</x>
+      <y>504</y>
+      <w>18</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
@@ -516,23 +504,23 @@ Patient ausgewählt</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>504</x>
-      <y>80</y>
-      <w>160</w>
-      <h>96</h>
+      <x>426</x>
+      <y>234</y>
+      <w>102</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Mitarbeiternummer
 eingetippt</panel_attributes>
-    <additional_attributes>180.0;10.0;180.0;40.0;40.0;40.0;40.0;100.0;120.0;100.0</additional_attributes>
+    <additional_attributes>150.0;10.0;120.0;10.0;120.0;80.0;40.0;80.0;40.0;160.0;120.0;160.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>208</x>
-      <y>560</y>
-      <w>88</w>
-      <h>48</h>
+      <x>204</x>
+      <y>618</y>
+      <w>66</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>bereit
 --
@@ -542,10 +530,10 @@ entry/rufe Profil auf</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>88</x>
-      <y>512</y>
-      <w>152</w>
-      <h>168</h>
+      <x>114</x>
+      <y>582</y>
+      <w>114</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Profil
@@ -557,10 +545,10 @@ ausgewählt
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>96</x>
-      <y>512</y>
-      <w>128</w>
-      <h>72</h>
+      <x>120</x>
+      <y>582</y>
+      <w>96</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Transportmodus öffnen
@@ -570,10 +558,10 @@ ausgewählt</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>272</x>
-      <y>512</y>
-      <w>192</w>
-      <h>160</h>
+      <x>252</x>
+      <y>582</y>
+      <w>144</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Blutaufträge öffnen ausgewählt
@@ -584,10 +572,10 @@ Blutaufträge öffnen ausgewählt
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>288</x>
-      <y>512</y>
-      <w>112</w>
-      <h>104</h>
+      <x>264</x>
+      <y>582</y>
+      <w>84</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Profil
@@ -599,13 +587,118 @@ ausgewählt
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>232</x>
-      <y>16</y>
-      <w>424</w>
-      <h>560</h>
+      <x>222</x>
+      <y>30</y>
+      <w>318</w>
+      <h>600</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Abmelden gedrückt</panel_attributes>
-    <additional_attributes>10.0;680.0;10.0;10.0;510.0;10.0;510.0;40.0</additional_attributes>
+    <additional_attributes>10.0;980.0;20.0;10.0;510.0;10.0;510.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>534</x>
+      <y>90</y>
+      <w>48</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+anmelden
+angeklickt</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>498</x>
+      <y>132</y>
+      <w>84</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>authentifizierend
+--
+entry/prüfe auf
+Kamerarechte</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>534</x>
+      <y>174</y>
+      <w>102</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Überprüfung abgeschlossen
+[Kamerazugriff = erlaubt]/
+Weiterleiten auf
+Anmeldeseite</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>516</x>
+      <y>228</y>
+      <w>54</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Anmeldeseite
+offen</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>576</x>
+      <y>504</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>Patientendashboard
+offen</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>642</x>
+      <y>504</y>
+      <w>90</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Scannen ausgewählt</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>720</x>
+      <y>498</y>
+      <w>60</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>authentifizierend
+--
+entry/prüfen auf
+Patienten</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>708</x>
+      <y>450</y>
+      <w>90</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+[Zuordnung = erfolgreich]/
+Blutabnahme starten</panel_attributes>
+    <additional_attributes>100.0;80.0;100.0;20.0;40.0;20.0;40.0;80.0</additional_attributes>
   </element>
 </diagram>
