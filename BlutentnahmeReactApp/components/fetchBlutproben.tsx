@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import Blutprobe from "../models/Blutprobe";
 
-// Helper function to deserialize JSON into Blutprobe instances
 const deserializeBlutprobe = (data: any): Blutprobe => {
   return new Blutprobe(
     data.probeNr,
@@ -10,13 +9,12 @@ const deserializeBlutprobe = (data: any): Blutprobe => {
     data.grund,
     new Date(data.spätesterEntnahmezeitpunkt),
     data.entnahmeZeitpunkt ? new Date(data.entnahmeZeitpunkt) : undefined,
-    undefined, // Assuming personal is not provided in the API response
-    undefined, // Assuming auftrag is not provided in the API response
+    undefined,
+    undefined,
     data.laborEingang ? new Date(data.laborEingang) : undefined
   );
 };
 
-// Custom Hook to fetch Blutproben data from the API
 const useFetchBlutproben = (apiUrl: string) => {
   const [blutproben, setBlutproben] = useState<Blutprobe[]>([]);
   const [loading, setLoading] = useState<boolean>(true);

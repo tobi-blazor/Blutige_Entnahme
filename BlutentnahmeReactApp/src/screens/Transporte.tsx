@@ -1,6 +1,14 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import React, { useState, useEffect, useContext, useCallback } from "react";
-import { View, Text, StyleSheet, FlatList, Button, Alert } from "react-native";
+import React, { useState, useEffect, useCallback } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Button,
+  Alert,
+  TouchableOpacity,
+} from "react-native";
 import { RootStackParamList } from "../types/navigation";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import Blutprobe from "../../models/Blutprobe";
@@ -11,6 +19,7 @@ import {
   BarCodeEvent,
   BarCodeScannedCallback,
 } from "expo-barcode-scanner";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 type AboutScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -63,16 +72,16 @@ function Transporte() {
       }),
     });
     if (!response.ok) {
-      throw new Error("Network response was not ok");
+      throw new Error("Network war nicht ok");
     }
   };
 
   function renderBlutproben({ item }: { item: Blutprobe }) {
     if (!item) {
-      console.error("Invalid item:", item);
+      console.error("Üngültiges item:", item);
       return (
         <View>
-          <Text>Invalid Blutprobe data</Text>
+          <Text>Ungültige Blutprobe data</Text>
         </View>
       );
     }
@@ -133,10 +142,6 @@ function Transporte() {
   if (startScan === false) {
     return (
       <View style={styles.safeViewContainer}>
-        <Button
-          title="Scannen und abgeben"
-          onPress={() => setStartScan(true)}
-        />
         <FlatList
           data={blutproben}
           keyExtractor={(item, index) => item.probeNr + ""}
@@ -144,6 +149,12 @@ function Transporte() {
           refreshing={refreshing}
           onRefresh={() => setRefreshing(true)}
         />
+        <TouchableOpacity
+          style={styles.roundButton}
+          onPress={() => setStartScan(true)}
+        >
+          <MaterialCommunityIcons name="barcode-scan" size={24} color="white" />
+        </TouchableOpacity>
       </View>
     );
   }
@@ -168,6 +179,22 @@ const styles = StyleSheet.create({
   },
   barcodescanner: {
     marginBottom: 20,
+  },
+  roundButton: {
+    position: "absolute",
+    bottom: 20,
+    right: 20,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: "#841584",
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 5,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
   },
 });
 

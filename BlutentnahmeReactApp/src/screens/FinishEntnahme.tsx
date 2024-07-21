@@ -26,7 +26,7 @@ function FinishEntnahme({ route }: { route: any }) {
   }, []);
 
   if (!context) {
-    throw new Error("SomeComponent must be used within a GlobalProvider");
+    throw new Error("SomeComponent muss in GlobalProvider benutzt werden");
   }
 
   const { globalState, setGlobalState } = context;
@@ -35,7 +35,7 @@ function FinishEntnahme({ route }: { route: any }) {
     "https://blutentnahme.azurewebsites.net/api/Blutproben/" + probeNr
   );
   if (loading) {
-    return <Text>Loading...</Text>;
+    return <Text>Lädt...</Text>;
   }
 
   if (error) {

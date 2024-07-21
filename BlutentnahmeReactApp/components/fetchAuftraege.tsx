@@ -3,7 +3,6 @@ import Patient from "../models/Patient";
 import Blutprobe from "../models/Blutprobe";
 import Auftrag from "../models/Auftrag";
 
-// Helper function to deserialize JSON into class instances
 const deserializeAuftrag = (data: any): Auftrag => {
   const patient = new Patient(
     data.patient.personID,
@@ -11,7 +10,7 @@ const deserializeAuftrag = (data: any): Auftrag => {
     data.patient.nachname,
     new Date(data.patient.geburtsdatum),
     data.patient.hinweise,
-    [] // We'll populate this later
+    []
   );
 
   const blutproben: Blutprobe[] = data.blutproben.$values.map(
@@ -23,8 +22,8 @@ const deserializeAuftrag = (data: any): Auftrag => {
         bp.grund,
         new Date(bp.spätesterEntnahmezeitpunkt),
         bp.entnahmeZeitpunkt ? new Date(bp.entnahmeZeitpunkt) : undefined,
-        undefined, // We'll populate this later
-        undefined, // Assuming personal is not provided in the API response
+        undefined,
+        undefined,
         bp.laborEingang ? new Date(bp.laborEingang) : undefined
       )
   );
@@ -36,14 +35,12 @@ const deserializeAuftrag = (data: any): Auftrag => {
     patient
   );
 
-  // Set references to the parent objects
   blutproben.forEach((bp) => (bp.auftrag = auftrag));
   patient.auftragList.push(auftrag);
 
   return auftrag;
 };
 
-// Custom Hook to fetch data from the API
 const useFetchAuftraege = (apiUrl: string) => {
   const [auftraege, setAuftraege] = useState<Auftrag[]>([]);
   const [loading, setLoading] = useState<boolean>(true);

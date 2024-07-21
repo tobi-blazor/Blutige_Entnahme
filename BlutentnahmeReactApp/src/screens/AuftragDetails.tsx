@@ -28,7 +28,7 @@ function AuftragDetails({ route }: any) {
       console.error("Invalid item:", item);
       return (
         <View>
-          <Text>Invalid Blutprobe data</Text>
+          <Text>Ungültige Blutproben-Daten</Text>
         </View>
       );
     }
@@ -41,7 +41,7 @@ function AuftragDetails({ route }: any) {
   );
 
   if (loading) {
-    return <Text>Loading...</Text>;
+    return <Text>Lädt...</Text>;
   }
 
   if (error) {
@@ -49,11 +49,11 @@ function AuftragDetails({ route }: any) {
   }
 
   if (!auftrag) {
-    return <Text>No data</Text>;
+    return <Text>Keine Daten</Text>;
   }
 
   if (auftrag === null) {
-    throw new Error("Auftrag not found");
+    throw new Error("Auftrag nicht gefunden");
   }
 
   return (

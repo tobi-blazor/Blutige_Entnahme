@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Patient from "../models/Patient";
 
-// Helper function to deserialize JSON into class instances
 const deserializePatient = (data: any): Patient => {
   const patient = new Patient(
     data.patient.personID,
@@ -9,7 +8,7 @@ const deserializePatient = (data: any): Patient => {
     data.patient.nachname,
     new Date(data.patient.geburtsdatum),
     data.patient.hinweise,
-    [] // We'll populate this later
+    []
   );
 
   return patient;
@@ -21,7 +20,6 @@ interface FetchPatientResult {
   error: string | null;
 }
 
-// Custom Hook to fetch data from the API
 const useFetchPatient = (apiUrl: string): FetchPatientResult => {
   const [patient, setPatient] = useState<Patient | null>(null);
   const [loading, setLoading] = useState<boolean>(true);

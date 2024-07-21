@@ -10,13 +10,13 @@ export default function TransportListView({
     console.error("Invalid item:", blutprobe);
     return (
       <View>
-        <Text>Invalid patient data</Text>
+        <Text>Üngültige patient data</Text>
       </View>
     );
   }
 
   const timeDifference =
-    (blutprobe.spätesterEntnahmezeitpunkt.getTime() - Date.now()) / (1000 * 60); // Difference in minutes
+    (blutprobe.spätesterEntnahmezeitpunkt.getTime() - Date.now()) / (1000 * 60);
 
   return (
     <View style={styles.itemContainer}>
@@ -32,7 +32,10 @@ export default function TransportListView({
       <View style={{ flexDirection: "row" }}>
         <View style={{ alignItems: "flex-end" }}>
           <Text>{blutprobe.grund}</Text>
-          <Text>ProbeNr: {blutprobe.rohrID}</Text>
+          <Text>
+            ProbeNr:{" "}
+            <Text style={{ fontWeight: "bold" }}>{blutprobe.rohrID}</Text>
+          </Text>
         </View>
       </View>
     </View>

@@ -1,5 +1,3 @@
-// useFetchBlutprobe.ts
-
 import { useEffect, useState } from "react";
 import Blutprobe from "../models/Blutprobe";
 

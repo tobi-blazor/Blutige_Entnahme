@@ -7,7 +7,7 @@ export default function BlutprobeListView({
   onPress,
 }: {
   blutprobe: Blutprobe;
-  onPress: any; //TODO: Type definieren
+  onPress: any;
 }) {
   if (!blutprobe) {
     console.error("Invalid item:", blutprobe);
@@ -19,7 +19,7 @@ export default function BlutprobeListView({
   }
 
   const timeDifference =
-    (blutprobe.spätesterEntnahmezeitpunkt.getTime() - Date.now()) / (1000 * 60); // Difference in minutes
+    (blutprobe.spätesterEntnahmezeitpunkt.getTime() - Date.now()) / (1000 * 60);
 
   return (
     <Pressable onPress={onPress}>

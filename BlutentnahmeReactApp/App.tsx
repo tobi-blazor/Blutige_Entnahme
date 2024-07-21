@@ -11,6 +11,7 @@ import VerifyPatient from "./src/screens/VerifyPatient";
 import AddRohr from "./src/screens/AddRohr";
 import FinishEntnahme from "./src/screens/FinishEntnahme";
 import { GlobalProvider } from "./components/CreateContext";
+import { View } from "react-native";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -22,14 +23,50 @@ export default function App() {
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{ title: "Startseite" }}
+            options={{ headerShown: false }}
           />
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="MainScreen" component={MainScreen} />
-          <Stack.Screen name="AuftragDetails" component={AuftragDetails} />
-          <Stack.Screen name="VerifyPatient" component={VerifyPatient} />
-          <Stack.Screen name="AddRohr" component={AddRohr} />
-          <Stack.Screen name="FinishEntnahme" component={FinishEntnahme} />
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MainScreen"
+            component={MainScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AuftragDetails"
+            component={AuftragDetails}
+            options={{ headerLeft: () => null }}
+          />
+          <Stack.Screen
+            name="VerifyPatient"
+            component={VerifyPatient}
+            options={{
+              title: "Blutentnahmevorgang",
+              headerLeft: () => <View />,
+              gestureEnabled: false,
+            }}
+          />
+          <Stack.Screen
+            name="AddRohr"
+            component={AddRohr}
+            options={{
+              title: "Blutentnahmevorgang",
+              headerLeft: () => <View />,
+              gestureEnabled: false,
+            }}
+          />
+          <Stack.Screen
+            name="FinishEntnahme"
+            component={FinishEntnahme}
+            options={{
+              title: "Blutentnahmevorgang",
+              headerLeft: () => <View />,
+              gestureEnabled: false,
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </GlobalProvider>

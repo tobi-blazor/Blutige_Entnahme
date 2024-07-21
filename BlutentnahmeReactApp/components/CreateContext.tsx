@@ -1,9 +1,7 @@
-// createContext.tsx
 import React, { createContext, useState, ReactNode, FC } from "react";
 
 interface GlobalState {
   personalID: string;
-  // Weitere Zustandsvariablen hinzufügen
 }
 
 interface GlobalContextProps {
