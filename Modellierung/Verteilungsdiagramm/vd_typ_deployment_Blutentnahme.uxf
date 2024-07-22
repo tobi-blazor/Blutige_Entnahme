@@ -31,7 +31,7 @@ Patient
 Personal
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>940</x><y>700</y><w>260</w><h>330</h></coordinates><panel_attributes>&lt;&lt;container&gt;&gt; 
 MySQL-Docker
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLFrame</id><coordinates><x>0</x><y>250</y><w>1990</w><h>870</h></coordinates><panel_attributes>vd_instantzebene_app</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>120</x><y>550</y><w>140</w><h>80</h></coordinates><panel_attributes>symbol=component
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLFrame</id><coordinates><x>0</x><y>250</y><w>1990</w><h>870</h></coordinates><panel_attributes>vd_typebene_app</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>120</x><y>550</y><w>140</w><h>80</h></coordinates><panel_attributes>symbol=component
 &lt;&lt;component&gt;&gt;
 
 App</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>450</x><y>320</y><w>380</w><h>540</h></coordinates><panel_attributes>&lt;&lt;device&gt;&gt; 
@@ -62,5 +62,5 @@ publish/subscribe
 
 &lt;&lt;component&gt;&gt;
 Krankenhaus</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLDeployment</id><coordinates><x>940</x><y>430</y><w>260</w><h>220</h></coordinates><panel_attributes>&lt;&lt;container&gt;&gt; 
-RabbitMQ-Docker
+OpenJDK-Docker
 </panel_attributes><additional_attributes></additional_attributes></element></diagram>
