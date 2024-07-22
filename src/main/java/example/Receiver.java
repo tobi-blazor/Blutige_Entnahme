@@ -1,4 +1,4 @@
-package org.example;
+package example;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -15,7 +15,7 @@ import java.util.Date;
 
 public class Receiver {
 
-    private final static String QUEUE_NAME = "Blutige_Entnahme";
+    private final static String QUEUE_NAME = "Krankenhaus_Daten";
 
     public static void main(String[] argv) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
@@ -24,7 +24,7 @@ public class Receiver {
         Channel channel = connection.createChannel();
 
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-        System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+        System.out.println(" [*] Waiting for messages.");
 
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
@@ -126,7 +126,7 @@ public class Receiver {
 
     public static void saveBlutprobeToSQL(String message) {
         String[] parts = message.split(",");
-        if (parts.length != 9) {
+        if (parts.length != 8) {
             System.err.println("Invalid blutprobe message format");
             return;
         }

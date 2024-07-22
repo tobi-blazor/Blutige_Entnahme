@@ -1,4 +1,4 @@
-package org.example;
+package example;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -7,7 +7,7 @@ import java.nio.charset.StandardCharsets;
 
 public class Send {
 
-    private final static String QUEUE_NAME = "Blutige_Entnahme";
+    private final static String QUEUE_NAME = "Krankenhaus_Daten";
 
     public static void main(String[] argv) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
@@ -26,6 +26,16 @@ public class Send {
             String patientMessage = "PATIENT:" + personID + "," + vorname + "," + nachname + "," + geburtsdatum + "," + hinweise;
             channel.basicPublish("", QUEUE_NAME, null, patientMessage.getBytes(StandardCharsets.UTF_8));
             System.out.println("Patient: '" + patientMessage + "' was sent successfully");
+
+            // Example of sending a personal message
+            String personIDfFuerPersonal = "PER006";
+            String personalVorname = "Anna";
+            String personalNachname = "Musterfrau";
+            String personalGeburtsdatum = "1975-05-05 00:00:00";
+
+            String personalMessage = "PERSONAL:" + personIDfFuerPersonal + "," + personalVorname + "," + personalNachname + "," + personalGeburtsdatum;
+            channel.basicPublish("", QUEUE_NAME, null, personalMessage.getBytes(StandardCharsets.UTF_8));
+            System.out.println("Personal: '" + personalMessage + "' was sent successfully");
 
             // Example of sending an auftrag message
             String auftragsID = "AUF006";
@@ -49,16 +59,6 @@ public class Send {
             String blutprobeMessage = "BLUTPROBE:" + rohrID + "," + spaetesterEntnahmezeitpunkt + "," + grund + "," + hinweiseFuerBlutprobe + "," + entnahmeZeitpunkt + "," + personalPersonID + "," + auftragsIDFuerBlutprobe + "," + laborEingang;
             channel.basicPublish("", QUEUE_NAME, null, blutprobeMessage.getBytes(StandardCharsets.UTF_8));
             System.out.println("Blutprobe: '" + blutprobeMessage + "' was sent successfully");
-
-            // Example of sending a personal message
-            String personIDfFuerPersonal = "PER006";
-            String personalVorname = "Anna";
-            String personalNachname = "Musterfrau";
-            String personalGeburtsdatum = "1975-05-05 00:00:00";
-
-            String personalMessage = "PERSONAL:" + personIDfFuerPersonal + "," + personalVorname + "," + personalNachname + "," + personalGeburtsdatum;
-            channel.basicPublish("", QUEUE_NAME, null, personalMessage.getBytes(StandardCharsets.UTF_8));
-            System.out.println("Personal: '" + personalMessage + "' was sent successfully");
         }
     }
 }

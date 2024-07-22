@@ -1,1 +1,0 @@
-Projekt für SWT2
