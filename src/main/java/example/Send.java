@@ -18,8 +18,8 @@ public class Send {
 
             // Example of sending a patient message
             String personID = "PAT006";
-            String vorname = "Max";
-            String nachname = "Mustermann";
+            String vorname = "Lars";
+            String nachname = "Zeppenfeld";
             String geburtsdatum = "1980-01-01 00:00:00";
             String hinweise = "Diabetiker";
 
@@ -44,16 +44,13 @@ public class Send {
             channel.basicPublish("", QUEUE_NAME, null, auftragMessage.getBytes(StandardCharsets.UTF_8));
             System.out.println("Auftrag: '" + auftragMessage + "' wurde erfolgreich verschickt");
 
-            String rohrID = "BPR0020";
             String spaetesterEntnahmezeitpunkt = "2024-11-15 12:00:00";
             String grund = "Routine Check";
             String hinweiseFuerBlutprobe = "Super Wichtig";
-            String entnahmeZeitpunkt = "2024-01-01 11:00:00";
-            String personalPersonID = "PER001";
+            String personalPersonID = "PER006";
             String auftragsIDFuerBlutprobe = auftragsID;
-            String laborEingang = "2024-07-05 13:00:00";
 
-            String blutprobeMessage = "BLUTPROBE:" + rohrID + "," + spaetesterEntnahmezeitpunkt + "," + grund + "," + hinweiseFuerBlutprobe + "," + entnahmeZeitpunkt + "," + personalPersonID + "," + auftragsIDFuerBlutprobe + "," + laborEingang;
+            String blutprobeMessage = "BLUTPROBE:" +  spaetesterEntnahmezeitpunkt + "," + grund + "," + hinweiseFuerBlutprobe +  "," + personalPersonID + "," + auftragsIDFuerBlutprobe;
             channel.basicPublish("", QUEUE_NAME, null, blutprobeMessage.getBytes(StandardCharsets.UTF_8));
             System.out.println("Blutprobe: '" + blutprobeMessage + "' was sent successfully");
         }

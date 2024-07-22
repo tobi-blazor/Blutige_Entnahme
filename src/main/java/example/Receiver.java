@@ -126,19 +126,16 @@ public class Receiver {
 
     public static void saveBlutprobeToSQL(String message) {
         String[] parts = message.split(",");
-        if (parts.length != 8) {
+        if (parts.length != 5) {
             System.err.println("Invalid blutprobe message format");
             return;
         }
 
-        String rohrID = parts[0];
-        String spaetesterEntnahmezeitpunktStr = parts[1];
-        String grund = parts[2];
-        String hinweise = parts[3];
-        String entnahmeZeitpunktStr = parts[4];
-        String personalPersonID = parts[5];
-        String auftragsID = parts[6];
-        String laborEingangStr = parts[7];
+        String spaetesterEntnahmezeitpunktStr = parts[0];
+        String grund = parts[1];
+        String hinweise = parts[2];
+        String personalPersonID = parts[3];
+        String auftragsID = parts[4];
 
         try {
             java.sql.Connection connection = DriverManager.getConnection(
@@ -147,36 +144,21 @@ public class Receiver {
                     "MK9*FR!3kynqG_iBebsM78CH.XZ.dVYdTi2g_yByy2ekqdVHVGX"
             );
 
-            String query = "INSERT INTO blutproben (RohrID, spätesterEntnahmezeitpunkt, Grund, Hinweise, EntnahmeZeitpunkt, PersonalPersonID, AuftragsID, LaborEingang) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO blutproben (spätesterEntnahmezeitpunkt, Grund, Hinweise, PersonalPersonID, AuftragsID) VALUES (?, ?, ?, ?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                preparedStatement.setString(1, rohrID);
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 Date parsedDate = dateFormat.parse(spaetesterEntnahmezeitpunktStr);
                 java.sql.Timestamp timestamp = new java.sql.Timestamp(parsedDate.getTime());
-                preparedStatement.setTimestamp(2, timestamp);
+                preparedStatement.setTimestamp(1, timestamp);
 
-                preparedStatement.setString(3, grund);
-                preparedStatement.setString(4, hinweise);
+                preparedStatement.setString(2, grund);
+                preparedStatement.setString(3, hinweise);
 
-                if (!entnahmeZeitpunktStr.isEmpty()) {
-                    parsedDate = dateFormat.parse(entnahmeZeitpunktStr);
-                    timestamp = new java.sql.Timestamp(parsedDate.getTime());
-                    preparedStatement.setTimestamp(5, timestamp);
-                } else {
-                    preparedStatement.setNull(5, java.sql.Types.TIMESTAMP);
-                }
 
-                preparedStatement.setString(6, personalPersonID);
-                preparedStatement.setString(7, auftragsID);
+                preparedStatement.setString(4, personalPersonID);
+                preparedStatement.setString(5, auftragsID);
 
-                if (!laborEingangStr.isEmpty()) {
-                    parsedDate = dateFormat.parse(laborEingangStr);
-                    timestamp = new java.sql.Timestamp(parsedDate.getTime());
-                    preparedStatement.setTimestamp(8, timestamp);
-                } else {
-                    preparedStatement.setNull(8, java.sql.Types.TIMESTAMP);
-                }
 
                 preparedStatement.executeUpdate();
             }
