@@ -44,7 +44,7 @@ public class Send {
 
             String auftragMessage = "AUFTRAG:" + auftragsID + "," + geplanterZeitpunkt + "," + patientPersonID;
             channel.basicPublish("", QUEUE_NAME, null, auftragMessage.getBytes(StandardCharsets.UTF_8));
-            System.out.println("Auftrag: '" + auftragMessage + "' was sent successfully");
+            System.out.println("Auftrag: '" + auftragMessage + "' wurde erfolgreich verschickt");
 
             // Example of sending a blutprobe message
             String rohrID = "BPR0020";
