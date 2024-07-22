@@ -37,7 +37,6 @@ public class Send {
             channel.basicPublish("", QUEUE_NAME, null, personalMessage.getBytes(StandardCharsets.UTF_8));
             System.out.println("Personal: '" + personalMessage + "' was sent successfully");
 
-            // Example of sending an auftrag message
             String auftragsID = "AUF006";
             String geplanterZeitpunkt = "2024-07-25 10:00:00";
             String patientPersonID = personID;
