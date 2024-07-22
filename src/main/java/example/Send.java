@@ -27,7 +27,6 @@ public class Send {
             channel.basicPublish("", QUEUE_NAME, null, patientMessage.getBytes(StandardCharsets.UTF_8));
             System.out.println("Patient: '" + patientMessage + "' was sent successfully");
 
-            // Example of sending a personal message
             String personIDfFuerPersonal = "PER006";
             String personalVorname = "Anna";
             String personalNachname = "Musterfrau";
